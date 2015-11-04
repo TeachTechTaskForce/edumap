@@ -1,4 +1,6 @@
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +39,8 @@ public class Main {
 			}
 		}
 		
-		//FileWriter fw = new FileWriter("output.csv");
+		FileWriter fw = new FileWriter("output.csv", false);
+		BufferedWriter bw = new BufferedWriter(fw);
 		
 		for(String standard : standards){
 			//System.out.println(standard.substring(0, 2));
