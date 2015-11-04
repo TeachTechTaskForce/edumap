@@ -36,6 +36,9 @@ public class Main {
 				line += current;
 			}
 		}
+		
+		//FileWriter fw = new FileWriter("output.csv");
+		
 		for(String standard : standards){
 			//System.out.println(standard.substring(0, 2));
 			if(standard.substring(0, 2).equals("L.")){
@@ -46,7 +49,7 @@ public class Main {
 	}
 	
 	public static String[] splitByFirst(char splitter, String line){
-		String[] response = {"", ""};
+		String[] response = {"", "\""};
 		
 		char[] charArray = line.toCharArray();
 		Boolean code = true;
@@ -60,6 +63,9 @@ public class Main {
 				}
 			}
 			else{
+				if(c == '\r'){
+					response[1] += "\"";
+				}
 				response[1] += c;
 			}
 		}
