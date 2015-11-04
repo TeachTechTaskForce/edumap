@@ -42,13 +42,16 @@ public class Main {
 		FileWriter fw = new FileWriter("output.csv", false);
 		BufferedWriter bw = new BufferedWriter(fw);
 		
+		System.out.println("Started.");
 		for(String standard : standards){
 			//System.out.println(standard.substring(0, 2));
 			if(standard.substring(0, 2).equals("L.")){
 				String[] pair = splitByFirst(' ', standard);
-				System.out.println(pair[0] + "," + pair[1]);
+				bw.write(pair[0] + "," + pair[1]);
 			}
 		}
+		bw.close();
+		System.out.println("Finished.");
 	}
 	
 	public static String[] splitByFirst(char splitter, String line){
