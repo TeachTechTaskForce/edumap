@@ -26,9 +26,10 @@ public class Main {
 		String line = "";
 		for(int c = 0; c < size; c++){
 			char current = text.charAt(c);
-			System.out.println("-------------: " + current);
-			if(current == '\n' && inLine){
+			if((current == '\n') && inLine){
 				standards.add(line);
+				//System.out.println(line);
+				line = "";
 				//inLine = false;
 			}
 			else if(inLine){
@@ -36,7 +37,12 @@ public class Main {
 			}
 		}
 		for(String standard : standards){
-			//System.out.println("---" + standard);
+			//System.out.println(standard.substring(0, 2));
+			if(standard.substring(0, 2).equals("L.")){
+				//System.out.println(standard);
+				String[] pair = standard.split(". ");
+				System.out.println(pair[0] + " ------ " + pair[1]);
+			}
 		}
 	}
 
