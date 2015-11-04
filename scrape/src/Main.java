@@ -11,10 +11,10 @@ public class Main {
 
 	public static void main(String[] args) throws Exception{
 		PDFTextStripper stripper = new PDFTextStripper();
-		System.out.println(stripper);
+		//System.out.println(stripper);
 		File file = new File("elastandards1.pdf");
 		PDDocument doc = PDDocument.load(file);
-		System.out.println(doc);
+		//System.out.println(doc);
 		stripper.setStartPage(30);
 		stripper.setEndPage(30);
 		//stripper.writeText(doc, System.out);
@@ -39,11 +39,31 @@ public class Main {
 		for(String standard : standards){
 			//System.out.println(standard.substring(0, 2));
 			if(standard.substring(0, 2).equals("L.")){
-				//System.out.println(standard);
-				String[] pair = standard.split(". ");
-				System.out.println(pair[0] + " ------ " + pair[1]);
+				String[] pair = splitByFirst(' ', standard);
+				System.out.println(pair[0] + "," + pair[1]);
 			}
 		}
+	}
+	
+	public static String[] splitByFirst(char splitter, String line){
+		String[] response = {"", ""};
+		
+		char[] charArray = line.toCharArray();
+		Boolean code = true;
+		for(char c : charArray){
+			if(code){
+				if(c == splitter){
+					code = false;
+				}
+				else{
+					response[0] += c;
+				}
+			}
+			else{
+				response[1] += c;
+			}
+		}
+		return response;
 	}
 
 }
