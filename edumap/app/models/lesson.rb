@@ -1,6 +1,6 @@
 class Lesson < ActiveRecord::Base
 
-  belongs_to :module
+  belongs_to :unit
   has_many :results
 
 end
