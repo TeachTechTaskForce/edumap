@@ -1,20 +1,19 @@
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.util.PDFTextStripper;
 //import org.apache.pdfbox.searchengine.lucene.LucenePDFDocument;
 
 
-public class Main {
+public class Full {
 
 	public static void main(String[] args) throws Exception{
 		PDFTextStripper stripper = new PDFTextStripper();
 		//System.out.println(stripper);
-		File file = new File("elastandards1.pdf");
+		//File file = new File("elastandards1.pdf");
+		File file = new File("lustig.pdf");
 		PDDocument doc = PDDocument.load(file);
 		//System.out.println(doc);
 		/*stripper.setStartPage(30);
@@ -22,7 +21,7 @@ public class Main {
 		//stripper.writeText(doc, System.out);
 		String text = stripper.getText(doc);
 		//System.out.println(text);
-		List<String> standards = new ArrayList<String>();
+		/*List<String> standards = new ArrayList<String>();
 		int size = text.length();
 		Boolean inLine = true;
 		String line = "";
@@ -37,19 +36,21 @@ public class Main {
 			else if(inLine){
 				line += current;
 			}
-		}
+		}*/
 		
-		FileWriter fw = new FileWriter("output.csv", false);
+		//FileWriter fw = new FileWriter("output.csv", false);
+		FileWriter fw = new FileWriter("text.txt", false);
 		BufferedWriter bw = new BufferedWriter(fw);
 		
 		System.out.println("Started.");
-		for(String standard : standards){
+		/*for(String standard : standards){
 			//System.out.println(standard.substring(0, 2));
 			if(standard.substring(0, 2).equals("L.")){
 				String[] pair = splitByFirst(' ', standard);
 				bw.write(pair[0] + "," + pair[1]);
 			}
-		}
+		}*/
+		bw.write(text);
 		bw.close();
 		System.out.println("Finished.");
 	}
