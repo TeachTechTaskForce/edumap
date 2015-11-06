@@ -18,14 +18,12 @@ ActiveRecord::Schema.define(version: 20151030155107) do
 
   create_table "codes", force: :cascade do |t|
     t.string   "name"
-    t.integer  "proficiency_id"
-    t.integer  "level_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "standard_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_index "codes", ["level_id"], name: "index_codes_on_level_id", using: :btree
-  add_index "codes", ["proficiency_id"], name: "index_codes_on_proficiency_id", using: :btree
+  add_index "codes", ["standard_id"], name: "index_codes_on_standard_id", using: :btree
 
   create_table "curriculums", force: :cascade do |t|
     t.string   "name"
@@ -36,12 +34,12 @@ ActiveRecord::Schema.define(version: 20151030155107) do
   create_table "lessons", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "unit_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "curriculum_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
-  add_index "lessons", ["unit_id"], name: "index_lessons_on_unit_id", using: :btree
+  add_index "lessons", ["curriculum_id"], name: "index_lessons_on_curriculum_id", using: :btree
 
   create_table "levels", force: :cascade do |t|
     t.string   "name"
@@ -86,9 +84,8 @@ ActiveRecord::Schema.define(version: 20151030155107) do
 
   add_index "units", ["curriculum_id"], name: "index_units_on_curriculum_id", using: :btree
 
-  add_foreign_key "codes", "levels"
-  add_foreign_key "codes", "proficiencies"
-  add_foreign_key "lessons", "units"
+  add_foreign_key "codes", "standards"
+  add_foreign_key "lessons", "curriculums"
   add_foreign_key "levels", "proficiencies"
   add_foreign_key "proficiencies", "standards"
   add_foreign_key "results", "codes"
