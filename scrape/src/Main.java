@@ -14,7 +14,7 @@ public class Main {
 	public static void main(String[] args) throws Exception{
 		PDFTextStripper stripper = new PDFTextStripper();
 		//System.out.println(stripper);
-		File file = new File("elastandards1.pdf");
+		File file = new File("iste.pdf");
 		PDDocument doc = PDDocument.load(file);
 		//System.out.println(doc);
 		/*stripper.setStartPage(30);
@@ -22,36 +22,59 @@ public class Main {
 		//stripper.writeText(doc, System.out);
 		String text = stripper.getText(doc);
 		//System.out.println(text);
+		
+		/*
+		 * Place stripped lines in List
+		 */
+		
 		List<String> standards = new ArrayList<String>();
 		int size = text.length();
 		Boolean inLine = true;
 		String line = "";
 		for(int c = 0; c < size; c++){
 			char current = text.charAt(c);
-			if((current == '\n') && inLine){
+			String pair = current + text.charAt(c+1);
+			if((current == '.') && inLine){
 				standards.add(line);
 				//System.out.println(line);
 				line = "";
 				//inLine = false;
 			}
 			else if(inLine){
-				line += current;
+				if(current == '\n' || current == '\r'){
+					line += "";
+				}
+				else{
+					line += current;
+				}
 			}
 		}
+	
+		/*
+		 * Write to output files
+		 */
 		
 		FileWriter fw = new FileWriter("output.csv", false);
 		BufferedWriter bw = new BufferedWriter(fw);
 		
 		System.out.println("Started.");
-		for(String standard : standards){
+		
+		/*for(String standard : standards){
 			//System.out.println(standard.substring(0, 2));
 			if(standard.substring(0, 2).equals("L.")){
 				String[] pair = splitByFirst(' ', standard);
 				bw.write(pair[0] + "," + pair[1]);
 			}
+		}*/
+	
+		
+		for(String standard : standards){
+			System.out.println(standard);
 		}
+		
 		bw.close();
 		System.out.println("Finished.");
+		
 	}
 	
 	public static String[] splitByFirst(char splitter, String line){
