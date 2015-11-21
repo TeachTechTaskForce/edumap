@@ -33,7 +33,7 @@ public class Main {
 		String line = "";
 		for(int c = 0; c < size; c++){
 			char current = text.charAt(c);
-			String pair = current + text.charAt(c+1);
+			//String pair = current + text.charAt(c+1);
 			if((current == '.') && inLine){
 				standards.add(line);
 				//System.out.println(line);
