@@ -37,11 +37,11 @@ public class Full {
 				line += current;
 			}
 		}*/
-		
+
 		//FileWriter fw = new FileWriter("output.csv", false);
 		FileWriter fw = new FileWriter("text.txt", false);
 		BufferedWriter bw = new BufferedWriter(fw);
-		
+
 		System.out.println("Started.");
 		/*for(String standard : standards){
 			//System.out.println(standard.substring(0, 2));
@@ -54,10 +54,10 @@ public class Full {
 		bw.close();
 		System.out.println("Finished.");
 	}
-	
+
 	public static String[] splitByFirst(char splitter, String line){
 		String[] response = {"", "\""};
-		
+
 		char[] charArray = line.toCharArray();
 		Boolean code = true;
 		for(char c : charArray){

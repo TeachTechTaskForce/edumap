@@ -22,11 +22,11 @@ public class Main {
 		//stripper.writeText(doc, System.out);
 		String text = stripper.getText(doc);
 		//System.out.println(text);
-		
+
 		/*
 		 * Place stripped lines in List
 		 */
-		
+
 		List<String> standards = new ArrayList<String>();
 		int size = text.length();
 		Boolean inLine = true;
@@ -49,16 +49,16 @@ public class Main {
 				}
 			}
 		}
-	
+
 		/*
 		 * Write to output files
 		 */
-		
+
 		FileWriter fw = new FileWriter("output.csv", false);
 		BufferedWriter bw = new BufferedWriter(fw);
-		
+
 		System.out.println("Started.");
-		
+
 		/*for(String standard : standards){
 			//System.out.println(standard.substring(0, 2));
 			if(standard.substring(0, 2).equals("L.")){
@@ -66,20 +66,20 @@ public class Main {
 				bw.write(pair[0] + "," + pair[1]);
 			}
 		}*/
-	
-		
+
+
 		for(String standard : standards){
 			System.out.println(standard);
 		}
-		
+
 		bw.close();
 		System.out.println("Finished.");
-		
+
 	}
-	
+
 	public static String[] splitByFirst(char splitter, String line){
 		String[] response = {"", "\""};
-		
+
 		char[] charArray = line.toCharArray();
 		Boolean code = true;
 		for(char c : charArray){
