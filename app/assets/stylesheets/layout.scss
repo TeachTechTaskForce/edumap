@@ -1,0 +1,51 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.navbar {
+  padding: 20px 0;
+  background-color: white;
+  margin: 0 15px 25px 15px;
+  border: none;
+  border-bottom: 5px solid black;
+  border-radius: 0px;
+}
+
+.navbar-default .navbar-brand {
+  font-size: 40px;
+  font-weight: bold;
+  color: black;
+  font-family: 'Bookman Old Style', serif;
+  padding-left: 25px;
+}
+
+.btn-default {
+  background-color: #888;
+  color: white;
+}
+
+.navbar-form .form-control {
+  width: 330px;
+  height: 42px;
+}
+
+.btn-nav-search {
+  width: 130px;
+  height: 36px;
+  margin-left: 20px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.filter-frame ul {
+  list-style-type: none;
+  font-size: 24px;
+  padding-left: 15px;
+  li {
+    margin: 15px 0;
+  }
+}
+
+.main-content {
+  border-left: 1px solid #555;
+  min-height: 100%;
+}
