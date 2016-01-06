@@ -58,6 +58,14 @@ def codeSession():
 
     return session
 
+def getISTE(soup):
+    '''
+    Print the ISTE standard codes from a code.org lesson
+    '''
+
+    ISTEtag = soup.find("h3", text="ISTE Standards (formerly NETS)")
+    ISTEul = ISTEtag.find_next("ul")
+
 def parseLesson(lesson, session):
     '''
     This function takes a BeautifulSoup object for a Code.org lesson page and
@@ -77,6 +85,7 @@ def parseLesson(lesson, session):
     # PARCC
 
     # ISTE
+    getISTE(soup)
 
     # CSTA
 
@@ -110,5 +119,6 @@ session = codeSession() # create session object
 
 # list comprehension
 courses = ['course' + str(x) for x in range(1,5)] + ['algebra']
+courses = ['course1']
 for course in courses:
     parseCourse(course, session)
