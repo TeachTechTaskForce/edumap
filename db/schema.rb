@@ -17,21 +17,22 @@ ActiveRecord::Schema.define(version: 20160113044412) do
   enable_extension "plpgsql"
 
   create_table "codes", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "standards_id"
+    t.string   "identifier"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "standard_id"
   end
 
-  add_index "codes", ["standards_id"], name: "index_codes_on_standards_id", using: :btree
+  add_index "codes", ["standard_id"], name: "index_codes_on_standard_id", using: :btree
 
   create_table "codes_lessons", id: false, force: :cascade do |t|
-    t.integer "codes_id"
-    t.integer "lessons_id"
+    t.integer "code_id"
+    t.integer "lesson_id"
   end
 
-  add_index "codes_lessons", ["codes_id"], name: "index_codes_lessons_on_codes_id", using: :btree
-  add_index "codes_lessons", ["lessons_id"], name: "index_codes_lessons_on_lessons_id", using: :btree
+  add_index "codes_lessons", ["code_id"], name: "index_codes_lessons_on_code_id", using: :btree
+  add_index "codes_lessons", ["lesson_id"], name: "index_codes_lessons_on_lesson_id", using: :btree
 
   create_table "curriculums", force: :cascade do |t|
     t.string   "name"
@@ -43,20 +44,20 @@ ActiveRecord::Schema.define(version: 20160113044412) do
   create_table "lessons", force: :cascade do |t|
     t.string   "name"
     t.string   "lesson_url"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.integer  "curriculums_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "curriculum_id"
   end
 
-  add_index "lessons", ["curriculums_id"], name: "index_lessons_on_curriculums_id", using: :btree
+  add_index "lessons", ["curriculum_id"], name: "index_lessons_on_curriculum_id", using: :btree
 
   create_table "lessons_levels", id: false, force: :cascade do |t|
-    t.integer "lessons_id"
-    t.integer "levels_id"
+    t.integer "lesson_id"
+    t.integer "level_id"
   end
 
-  add_index "lessons_levels", ["lessons_id"], name: "index_lessons_levels_on_lessons_id", using: :btree
-  add_index "lessons_levels", ["levels_id"], name: "index_lessons_levels_on_levels_id", using: :btree
+  add_index "lessons_levels", ["lesson_id"], name: "index_lessons_levels_on_lesson_id", using: :btree
+  add_index "lessons_levels", ["level_id"], name: "index_lessons_levels_on_level_id", using: :btree
 
   create_table "levels", force: :cascade do |t|
     t.integer  "age"
@@ -66,8 +67,9 @@ ActiveRecord::Schema.define(version: 20160113044412) do
 
   create_table "standards", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "abbreviation"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end
