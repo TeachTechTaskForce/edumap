@@ -1,0 +1,39 @@
+.page-header{ :style => 'margin-bottom: 70px;' }
+  .pull-right
+    = link_to 'Home', root_path, :style => 'display: inline-block; margin-top: 25px;'
+  %h1.chardin_box{ :'data-position' => 'right', :'data-intro' => 'This is a demo for filterrific. Filter and sort the list of codes. Click anywhere to remove the overlay.' }
+    Codes
+  = link_to "Click me for instructions!",
+            "#",
+            :id => "overlayTrigger",
+            :class => 'btn btn-success btn-lg',
+            :style => 'margin: 0 0 15px 20px;'
+
+.well
+  = form_for_filterrific @filterrific do |f|
+    .row
+      .col-md-3
+        .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by standard.' }
+          %label Standard
+          = f.select :with_standard_id,
+                     @filterrific.select_options[:with_standard_id],
+                     { :include_blank => '- Any -' },
+                     { :class => 'form-control' }
+      .col-md-4
+        .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Change the sorting.' }
+          %label Sorted by
+          = f.select :sorted_by,
+                     @filterrific.select_options[:sorted_by],
+                     {},
+                     { :class => 'form-control' }
+
+#results
+  = render :partial => 'codes/list',
+           :locals => { :codes => @codes }
+
+:javascript
+  $('.js-datepicker').datepicker();
+  $('#overlayTrigger').click(function(event) {
+    event.preventDefault();
+    $('body').chardinJs('start');
+  });
