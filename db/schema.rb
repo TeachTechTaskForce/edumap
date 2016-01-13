@@ -11,63 +11,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151030155107) do
+ActiveRecord::Schema.define(version: 20160113044412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "codes", force: :cascade do |t|
     t.string   "name"
-    t.integer  "standard_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "standards_id"
   end
 
-  add_index "codes", ["standard_id"], name: "index_codes_on_standard_id", using: :btree
+  add_index "codes", ["standards_id"], name: "index_codes_on_standards_id", using: :btree
+
+  create_table "codes_lessons", id: false, force: :cascade do |t|
+    t.integer "codes_id"
+    t.integer "lessons_id"
+  end
+
+  add_index "codes_lessons", ["codes_id"], name: "index_codes_lessons_on_codes_id", using: :btree
+  add_index "codes_lessons", ["lessons_id"], name: "index_codes_lessons_on_lessons_id", using: :btree
 
   create_table "curriculums", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "lessons", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "curriculum_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "lessons", ["curriculum_id"], name: "index_lessons_on_curriculum_id", using: :btree
-
-  create_table "levels", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "proficiency_id"
+    t.string   "curriculum_url"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
 
-  add_index "levels", ["proficiency_id"], name: "index_levels_on_proficiency_id", using: :btree
-
-  create_table "proficiencies", force: :cascade do |t|
+  create_table "lessons", force: :cascade do |t|
     t.string   "name"
-    t.integer  "standard_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "lesson_url"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "curriculums_id"
   end
 
-  add_index "proficiencies", ["standard_id"], name: "index_proficiencies_on_standard_id", using: :btree
+  add_index "lessons", ["curriculums_id"], name: "index_lessons_on_curriculums_id", using: :btree
 
-  create_table "results", force: :cascade do |t|
-    t.integer  "lesson_id"
-    t.integer  "code_id"
+  create_table "lessons_levels", id: false, force: :cascade do |t|
+    t.integer "lessons_id"
+    t.integer "levels_id"
+  end
+
+  add_index "lessons_levels", ["lessons_id"], name: "index_lessons_levels_on_lessons_id", using: :btree
+  add_index "lessons_levels", ["levels_id"], name: "index_lessons_levels_on_levels_id", using: :btree
+
+  create_table "levels", force: :cascade do |t|
+    t.integer  "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "results", ["code_id"], name: "index_results_on_code_id", using: :btree
-  add_index "results", ["lesson_id"], name: "index_results_on_lesson_id", using: :btree
 
   create_table "standards", force: :cascade do |t|
     t.string   "name"
@@ -75,20 +70,4 @@ ActiveRecord::Schema.define(version: 20151030155107) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "units", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "curriculum_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "units", ["curriculum_id"], name: "index_units_on_curriculum_id", using: :btree
-
-  add_foreign_key "codes", "standards"
-  add_foreign_key "lessons", "curriculums"
-  add_foreign_key "levels", "proficiencies"
-  add_foreign_key "proficiencies", "standards"
-  add_foreign_key "results", "codes"
-  add_foreign_key "results", "lessons"
-  add_foreign_key "units", "curriculums"
 end

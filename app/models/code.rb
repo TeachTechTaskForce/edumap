@@ -1,6 +1,4 @@
 class Code < ActiveRecord::Base
-  has_many :results
-  # belongs_to :level
   belongs_to :standard
-  has_many :lessons, through: :results
+  has_and_belongs_to_many :lessons
 end
