@@ -9,14 +9,14 @@
 %table.table
   %tr
     %th= filterrific_sorting_link(@filterrific, :name)
-    %th Email
-    %th Country
-    %th Registered at
+    %th Description
+    %th Standard
+    %th Created at
   - codes.each do |code|
     %tr
       %td= code.identifier
       %td= code.description
-      %td= code.standard
+      %td= code.standard.abbreviation
       %td= code.created_at.to_date.to_s(:long)
 
 .chardin_box{ :'data-position' => 'top', :'data-intro' => "will_paginate's paginator works as expected." }
