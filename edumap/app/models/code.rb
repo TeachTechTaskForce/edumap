@@ -6,7 +6,8 @@ class Code < ActiveRecord::Base
   default_filter_params: { sorted_by: 'created_at_desc' },
   available_filters: [
     :sorted_by,
-    :with_standard_id
+    :with_standard_id,
+    :with_created_at_gte
   ]
   )
 
@@ -25,6 +26,10 @@ class Code < ActiveRecord::Base
 
   scope :with_standard_id, lambda { |standard_ids|
     where(:standard_id => [*standard_ids])
+  }
+
+  scope :with_created_at_gte, lambda { |ref_date|
+    where('codes.created_at >= ?', ref_date)
   }
 
   def self.options_for_sorted_by

@@ -1,8 +1,13 @@
 .page-header{ :style => 'margin-bottom: 70px;' }
   .pull-right
     = link_to 'Home', root_path, :style => 'display: inline-block; margin-top: 25px;'
-  %h1.chardin_box{ :'data-position' => 'right', :'data-intro' => 'This is a demo for filterrific. Filter and sort the list of codes. Click anywhere to remove the overlay.' }
+  %h1.chardin_box{ :'data-position' => 'right', :'data-intro' => 'This is a demo for filterrific. Filter and sort the list of students. Click anywhere to remove the overlay.' }
     Codes
+  = link_to "Click me for instructions!",
+            "#",
+            :id => "overlayTrigger",
+            :class => 'btn btn-success btn-lg',
+            :style => 'margin: 0 0 15px 20px;'
 
 .well
   = form_for_filterrific @filterrific do |f|
@@ -14,6 +19,11 @@
                      @filterrific.select_options[:with_standard_id],
                      { :include_blank => '- Any -' },
                      { :class => 'form-control' }
+      .col-md-2
+        .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by creation date.' }
+          %label Created after
+          = f.text_field :with_created_at_gte,
+                         :class => 'js-datepicker form-control'
       .col-md-4
         .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Change the sorting.' }
           %label Sorted by
