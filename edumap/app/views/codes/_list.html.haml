@@ -1,0 +1,23 @@
+.well.well-small
+  .pull-right{ :'data-position' => 'bottom', :'data-intro' => 'Reset the filter settings to defaults.' }
+    = link_to "Reset filters", reset_filterrific_url, :class => 'btn btn-default btn-sm'
+  .chardin_box{ :'data-position' => 'bottom', :'data-intro' => "will_paginate's entries info works as expected." }
+    = page_entries_info codes, :model => 'code'
+  .chardin_box{ :'data-position' => 'bottom', :'data-intro' => 'Spinner indicates update.' }
+    = render_filterrific_spinner
+
+%table.table
+  %tr
+    %th= filterrific_sorting_link(@filterrific, :abbreviation)
+    %th Description
+    %th Standard
+    %th Created at
+  - codes.each do |code|
+    %tr
+      %td= code.identifier
+      %td= code.description
+      %td= code.standard.abbreviation
+      %td= code.created_at.to_date.to_s(:long)
+
+.chardin_box{ :'data-position' => 'top', :'data-intro' => "will_paginate's paginator works as expected." }
+  = will_paginate codes, renderer: BootstrapPagination::Rails
