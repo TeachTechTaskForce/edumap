@@ -2,22 +2,22 @@
   .pull-right{ :'data-position' => 'bottom', :'data-intro' => 'Reset the filter settings to defaults.' }
     = link_to "Reset filters", reset_filterrific_url, :class => 'btn btn-default btn-sm'
   .chardin_box{ :'data-position' => 'bottom', :'data-intro' => "will_paginate's entries info works as expected." }
-    = page_entries_info codes, :model => 'code'
+    = page_entries_info lessons, :model => 'lesson'
   .chardin_box{ :'data-position' => 'bottom', :'data-intro' => 'Spinner indicates update.' }
     = render_filterrific_spinner
 
 %table.table
   %tr
-    %th Identifier
-    %th Description
-    %th Standard
+    %th Curriculum
+    %th Lesson ID
+    %th URL
     %th Created at
-  - codes.each do |code|
+  - lessons.each do |lesson|
     %tr
-      %td= code.identifier
-      %td= code.description
-      %td= code.standard.abbreviation
-      %td= code.created_at.to_date.to_s(:long)
+      %td= lesson.curriculum.name
+      %td= lesson.name
+      %td= link_to "Link", lesson.lesson_url
+      %td= lesson.created_at.to_date.to_s(:long)
 
 .chardin_box{ :'data-position' => 'top', :'data-intro' => "will_paginate's paginator works as expected." }
-  = will_paginate codes, renderer: BootstrapPagination::Rails
+  = will_paginate lessons, renderer: BootstrapPagination::Rails
