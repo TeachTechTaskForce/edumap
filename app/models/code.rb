@@ -6,6 +6,7 @@ class Code < ActiveRecord::Base
   default_filter_params: { sorted_by: 'created_at_desc' },
   available_filters: [
     :sorted_by,
+    :search_query,
     :with_standard_id,
     :with_created_at_gte
   ]
