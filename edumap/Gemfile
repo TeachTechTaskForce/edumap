@@ -25,6 +25,10 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveRecord for front end search
+gem 'bootstrap-datepicker-rails'
+gem 'chardinjs-rails'
+gem 'haml-rails'
+gem 'thin'
 gem 'filterrific'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
