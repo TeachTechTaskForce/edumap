@@ -3,7 +3,7 @@
 ## To use
 
 ```sh
-git clone https://github.com/pjsier/blendbook.git
+git clone https://github.com/andyras/edumap.git
 cd edumap/edumap
 gem install bundler
 bundle install
