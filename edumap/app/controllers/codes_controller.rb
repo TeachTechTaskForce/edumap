@@ -1,15 +1,15 @@
-class LessonsController < ApplicationController
+class CodesController < ApplicationController
 
   def index
     @filterrific = initialize_filterrific(
-      Lesson,
+      Code,
       params[:filterrific],
       :select_options => {
-        sorted_by: Lesson.options_for_sorted_by,
+        sorted_by: Code.options_for_sorted_by,
         with_standard_id: Standard.options_for_select
       }
     ) or return
-    @lessons = @filterrific.find.page(params[:page])
+    @codes = @filterrific.find.page(params[:page])
 
     respond_to do |format|
       format.html

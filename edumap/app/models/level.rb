@@ -1,4 +1,3 @@
-# class Level < ActiveRecord::Base
-#   belongs_to :proficiency
-#   has_many :codes
-# end
+class Level < ActiveRecord::Base
+   has_and_belongs_to_many :lessons
+end
