@@ -7,7 +7,9 @@ This script scrapes studio.code.org for the current standards mappings of their 
 
 from bs4 import BeautifulSoup as bs
 # from getpass import getpass as gp
+from unicodecsv import writer
 from hashlib import md5
+import re
 import requests
 import sys
 import urllib
@@ -58,22 +60,20 @@ def codeSession():
 
     return session
 
-def getISTE(soup):
-    '''
-    Print the ISTE standard codes from a code.org lesson
-    '''
-
-    ISTEtag = soup.find("h3", text="ISTE Standards (formerly NETS)")
-    ISTEul = ISTEtag.find_next("ul")
-
 def parseLesson(lesson, session):
     '''
     This function takes a BeautifulSoup object for a Code.org lesson page and
     gets the lesson name as well as any standards hits.
     '''
 
-    r = session.get("https:" + lesson.a['href'])
+    lessonUrl = "https:" + lesson.a['href']
+    print(lessonUrl.split("/"))
+    courseNo = lessonUrl.split("/")[4][-1]
+    lessonNo = lessonUrl.split("/")[5]
+    lessonCode = "Code.org" + courseNo + "." + lessonNo
 
+    # open page
+    r = session.get(lessonUrl)
     soup = bs(r.text, "html5lib")
 
     # get name
@@ -81,23 +81,40 @@ def parseLesson(lesson, session):
     print(name)
 
     # get hits
+    maps = []
 
-    # PARCC
+    headers = soup.find_all("h3")
+    for header in headers:
+        if "ISTE" in header.get_text():
+            print("found ISTE")
+            ul = header.find_next("ul")
+            for li in ul.find_all("li"):
+                print(re.match('(.*)([:\.])', '', li.get_text().split()[0]))
+                maps.append([lessonCode, name, "ISTE", li.get_text().split()[0]])
 
-    # ISTE
-    getISTE(soup)
+        if "CSTA" in header.get_text():
+            ul = header.find_next("ul")
+            for li in ul.find_all("li"):
+                maps.append([lessonCode, name, "CSTA", li.get_text().split()[0][:-1]]) # remove period at end
 
-    # CSTA
+        if "Common Core Mathematical" in header.get_text():
+            ul = header.find_next("ul")
+            for li in ul.find_all("li"):
+                maps.append([lessonCode, name, "CCMP", li.get_text().split()[0].split(".")[0]]) # remove period at end
 
-    # NGSS
+        if "Common Core Math Standards" in header.get_text():
+            ul = header.find_next("ul")
+            for li in ul.find_all("li"):
+                maps.append([lessonCode, name, "CC Math", li.get_text().split()[0]])
 
-    # CC Math practices
+        if "Language Arts" in header.get_text():
+            ul = header.find_next("ul")
+            for li in ul.find_all("li"):
+                maps.append([lessonCode, name, "CC LA", li.get_text().split()[0]])
 
-    # CC Math
+    return maps
 
-    # CC LA
-
-def parseCourse(courseName, session):
+def parseCourse(courseName, session, csvOut):
     '''
     Parses a code.org course page.
     '''
@@ -107,18 +124,23 @@ def parseCourse(courseName, session):
     print("%s status for Code.org %s retrieval" % (r.status_code, courseName))
     course = bs(r.text, "html5lib")
 
+    # find divs with class="stage-lesson-plan-link"
     lessons = course.findAll("div", {"class", "stage-lesson-plan-link"})
 
-    # find divs with class="stage-lesson-plan-link"
     for lesson in lessons:
-        parseLesson(lesson, session)
+        maps = parseLesson(lesson, session)
+        csvOut.writerows(maps)
 
 # main.exe
 
 session = codeSession() # create session object
 
 # list comprehension
-courses = ['course' + str(x) for x in range(1,5)] + ['algebra']
-courses = ['course1']
-for course in courses:
-    parseCourse(course, session)
+courses = ['course' + str(x) for x in range(1,4)] + ['algebra']
+# courses = ['course1']
+
+with open("code.org_maps.csv", "w+") as f:
+    csvOut = writer(f)
+
+    for course in courses:
+        parseCourse(course, session, csvOut)
