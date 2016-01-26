@@ -60,6 +60,15 @@ def codeSession():
 
     return session
 
+def codeGrab(li):
+    '''
+    grabs the code from a bs li on a code.org lesson plan page.
+
+    Assumption: code is first item in split() string, may have trailing period or colon
+    '''
+
+    return li.get_text().split()[0].rstrip(".:")
+
 def parseLesson(lesson, session):
     '''
     This function takes a BeautifulSoup object for a Code.org lesson page and
@@ -67,7 +76,6 @@ def parseLesson(lesson, session):
     '''
 
     lessonUrl = "https:" + lesson.a['href']
-    print(lessonUrl.split("/"))
     courseNo = lessonUrl.split("/")[4][-1]
     lessonNo = lessonUrl.split("/")[5]
     lessonCode = "Code.org" + courseNo + "." + lessonNo
@@ -78,39 +86,36 @@ def parseLesson(lesson, session):
 
     # get name
     name = soup.find_all("h1")[0].get_text()
-    print(name)
+    print(lessonCode, name)
 
-    # get hits
+    # get standards hits
     maps = []
 
     headers = soup.find_all("h3")
     for header in headers:
-        if "ISTE" in header.get_text():
-            print("found ISTE")
-            ul = header.find_next("ul")
-            for li in ul.find_all("li"):
-                print(re.match('(.*)([:\.])', '', li.get_text().split()[0]))
-                maps.append([lessonCode, name, "ISTE", li.get_text().split()[0]])
+        found_header = False
+        headerText = header.get_text()
 
-        if "CSTA" in header.get_text():
-            ul = header.find_next("ul")
-            for li in ul.find_all("li"):
-                maps.append([lessonCode, name, "CSTA", li.get_text().split()[0][:-1]]) # remove period at end
+        if "ISTE" in headerText:
+            found_header = True
+            standardName = "ISTE"
+        elif "CSTA" in headerText:
+            found_header = True
+            standardName = "CSTA"
+        elif "Common Core Mathematical" in headerText:
+            found_header = True
+            standardName = "CCMP"
+        elif "Common Core Math Standards" in headerText:
+            found_header = True
+            standardName = "CC Math"
+        elif "Language Arts" in headerText:
+            found_header = True
+            standardName = "CC LA"
 
-        if "Common Core Mathematical" in header.get_text():
+        if found_header == True:
             ul = header.find_next("ul")
             for li in ul.find_all("li"):
-                maps.append([lessonCode, name, "CCMP", li.get_text().split()[0].split(".")[0]]) # remove period at end
-
-        if "Common Core Math Standards" in header.get_text():
-            ul = header.find_next("ul")
-            for li in ul.find_all("li"):
-                maps.append([lessonCode, name, "CC Math", li.get_text().split()[0]])
-
-        if "Language Arts" in header.get_text():
-            ul = header.find_next("ul")
-            for li in ul.find_all("li"):
-                maps.append([lessonCode, name, "CC LA", li.get_text().split()[0]])
+                maps.append([lessonUrl, lessonCode, name, standardName, codeGrab(li)])
 
     return maps
 
