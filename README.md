@@ -15,7 +15,31 @@ rails s
 
 And visit <http://localhost:3000/>
 
-## Curricula so far
+## Curricula
+
+### Desiderata for each curriculum
+In general curricula are broken up into lessons; that is the quantum of curriculum we are working with.
+
+#### Essentials
+- Code for each lesson
+  - string with no whitespace, e.g. `Code.org1.1`
+- Age (or grade) range for each lesson
+  - string, e.g. `"Ages 8-10"`, `"Grade 4"`
+- Short description for each lesson
+  - string, e.g. `"Happy Maps"`
+- Time for lesson
+  - string, e.g. `"1 class period"`, `"45 minutes"`
+  - If you have to guess, add `"est."` before the time, e.g. `"est. 1 class period"`
+- Platform/OS or materials
+  - string, e.g. `"Web"`, `"iOS, Android"`,  `"pencil, paper, SPAM"`
+- Plugged vs. Unplugged
+  - string, either `"Plugged"` or `"Unplugged"`
+
+#### Nice-to-haves
+- Topic area
+  - string, e.g. `"Loops"`, `"Internet security"`
+
+### List and status
 - [CS Unplugged](csunplugged.org)
   - scraped: age, lesson names
 - [Google Computational Thinking](https://www.google.com/edu/resources/programs/exploring-computational-thinking/index.html#!ct-materials)
