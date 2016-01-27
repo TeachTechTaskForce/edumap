@@ -27,4 +27,12 @@ And visit <http://localhost:3000/>
 - [CS First](http://www.cs-first.com/)
 - Find more resources here...  http://cs4hs.com/resources/cscs-results.html#q=
 
-# Standards so far
+## Standards so far
+- [CSTA](http://csta.acm.org/Curriculum/sub/CurrFiles/CSTA_K-12_CSS.pdf)
+- [ISTE](http://www.iste.org/standards/iste-standards/standards-for-students)
+- [NGSS](http://www.nextgenscience.org/search-performance-expectations)
+- [Common Core ELA](http://www.corestandards.org/wp-content/uploads/ELA_Standards1.pdf)
+- [Common Core ELA](http://www.corestandards.org/ELA-Literacy/)
+- [Common Core Math](http://www.corestandards.org/wp-content/uploads/Math_Standards1.pdf)
+- [Common Core Math](http://www.corestandards.org/Math/)
+- [Common Core csv. file producer](http://www.ode.state.or.us/teachlearn/real/standards/)
