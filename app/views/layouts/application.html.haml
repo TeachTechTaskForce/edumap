@@ -21,8 +21,8 @@
               .row
                 .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by standard.' }
                   %label Standard
-                  = f.select :with_standard_id,
-                             @filterrific.select_options[:with_standard_id],
+                  = f.select :with_standard,
+                             @filterrific.select_options[:with_standard],
                              { :include_blank => '- Any -' },
                              { :class => 'form-control' }
               .row
