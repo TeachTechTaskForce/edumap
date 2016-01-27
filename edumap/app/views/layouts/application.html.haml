@@ -1,0 +1,41 @@
+!!!
+%html
+  %head
+    %meta{ charset: "utf-8" }
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" }
+    %title Edumap
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    %header
+      %nav{ class: "navbar navbar-default"}
+        .container-fluid
+          .navbar-header
+            %a.navbar-brand{href: "/"} Edumap
+          %div{class: "collapse navbar-collapse", id: "bs-example-navbar-collapse-1"}
+      .container-fluid
+        .row
+          %aside{class: "col-md-3 filter-frame"}
+            = form_for_filterrific @filterrific, html: {class: "filter col-md-12" } do |f|
+              .row
+                .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by standard.' }
+                  %label Standard
+                  = f.select :with_standard_id,
+                             @filterrific.select_options[:with_standard_id],
+                             { :include_blank => '- Any -' },
+                             { :class => 'form-control' }
+              .row
+                .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by creation date.' }
+                  %label Created after
+                  = f.text_field :with_created_at_gte,
+                                 :class => 'js-datepicker form-control'
+              .row
+                .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Change the sorting.' }
+                  %label Sorted by
+                  = f.select :sorted_by,
+                             @filterrific.select_options[:sorted_by],
+                             {},
+                             { :class => 'form-control' }
+          %div{class: "col-md-9 main-content"}
+            = yield
