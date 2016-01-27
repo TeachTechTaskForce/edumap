@@ -29,7 +29,7 @@ class Lesson < ActiveRecord::Base
   }
 
   scope :with_standard, lambda { |standards|
-    joins(:standards).where("standards.id = ?", *standards)
+    joins(:standards).where("standards.id = ?", *standards).group('lessons.id')
   }
 
   scope :with_created_at_gte, lambda { |ref_date|
