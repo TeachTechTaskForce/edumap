@@ -36,6 +36,9 @@ In general curricula are broken up into lessons; that is the quantum of curricul
 - Identifier for each lesson
   - The unique identifier for each lesson is the name of the curriculum plus a code for that lesson.
   - two strings with no whitespace, e.g. `Code.org,1.1`
+- URL for lesson
+  - should be publicly visible
+  - string, e.g. `"https://code.org/curriculum/course1/1/Teacher"`
 - Age (or grade) range for each lesson
   - string, e.g. `"Ages 8-10"`, `"Grade 4"`
 - Short description for each lesson
@@ -80,4 +83,6 @@ In general curricula are broken up into lessons; that is the quantum of curricul
 ## Mappings
 A mapping is a set of connections between a lesson and standards codes.
 
-
+### CSV Format
+- The format is the lesson identifier followed by the standard item identifier
+  - e.g. `"Code.org,1.1,ISTE,1.c"`
