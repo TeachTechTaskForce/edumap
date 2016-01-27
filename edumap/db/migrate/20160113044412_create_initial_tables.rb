@@ -39,6 +39,11 @@ class CreateInitialTables < ActiveRecord::Migration
       t.belongs_to :level, index: true
     end
 
+    create_table :lessons_standards, id: false do |t|
+      t.belongs_to :lesson, index: true
+      t.belongs_to :standard, index: true
+    end
+
     add_reference :codes, :standard, index: true
     add_reference :lessons, :curriculum, index: true
 
