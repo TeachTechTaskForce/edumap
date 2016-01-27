@@ -19,20 +19,20 @@ type = page.parser.xpath('//li/div/p[4]')
 reference = page.parser.xpath('//li/div/em')
 
 
-CSV.open("classes.csv", "w", {:col_sep => "|", :quote_char => '\'', :force_quotes => false, :skip_blanks => true}) do |csv| 
+CSV.open("classes.csv", "w", {:col_sep => "|", :quote_char => '\'', :force_quotes => false, :skip_blanks => true}) do |csv|
 	csv << ["Core Subject", "Subject", "Suggested Age", "Type", "Titel", "URL", "Description"]
 page.parser.xpath('//li').each do |row|
-  tarray = [] 
+  tarray = []
     row.xpath('div/*').each  do |cell|
 
-    tarray <<  cell.text.strip 
-  
+    tarray <<  cell.text.strip
+
   end
 
  # puts tarray
 
-  csv << tarray 
-  
+  csv << tarray
+
 
 	end
 
@@ -40,7 +40,7 @@ end
 
 
 =begin
-	
+
 rescue Exception => e
 	 #/^(?:,\s*)+$/ skip_lines:
 	#puts name
@@ -54,13 +54,13 @@ end
 CSV.open("classes.csv", "w", {:col_sep => '|'}) do |csv|
   csv << ["name", "description", "subject", "age", "type"]
  # [@name, @description, @subject, @age, @type].each do |row| #
-  	
+
 
   	#(name, description, subject, age, type).each do |row|
   csv << row if row.compact.empty?
 
-    
-  #end 
+
+  #end
     #link = cell.to_xml['href'] #attributes
    text = cell.text.strip
 end
