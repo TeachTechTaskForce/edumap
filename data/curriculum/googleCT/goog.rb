@@ -20,7 +20,7 @@ reference = page.parser.xpath('//li/div/em')
 
 
 CSV.open("classes.csv", "w", {:col_sep => "|", :quote_char => '\'', :force_quotes => false, :skip_blanks => true}) do |csv|
-	csv << ["Core Subject", "Subject", "Suggested Age", "Type", "Titel", "URL", "Description"]
+	csv << ["Core Subject", "Subject", "Suggested Age", "Type", "Title", "URL", "Description"]
 page.parser.xpath('//li').each do |row|
   tarray = []
     row.xpath('div/*').each  do |cell|
