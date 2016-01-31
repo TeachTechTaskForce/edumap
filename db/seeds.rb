@@ -30,10 +30,10 @@ end
 def lesson_parser(file)
   resource_path = 'db/seeds'
   CSV.foreach(Rails.root.join(resource_path, file)) do |result|
-    curriculum = Curriculum.find_or_create_by(name: result[1], curriculum_url: result[0])
+    curriculum = Curriculum.find_or_create_by(name: result[1])
     standard = Standard.find_or_create_by(abbreviation: result[3])
     code = Code.find_or_create_by(identifier: result[4], standard: standard)
-    lesson = Lesson.find_or_create_by(name: result[2], curriculum: curriculum)
+    lesson = Lesson.find_or_create_by(name: result[2], curriculum: curriculum, lesson_url: result[0])
     level = Level.find_or_create_by(age: result[5])
     lesson.codes << code
     lesson.standards << standard
