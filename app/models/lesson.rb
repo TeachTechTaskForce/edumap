@@ -45,6 +45,11 @@ class Lesson < ActiveRecord::Base
   end
 
   def level_list
-    self.levels.map {|l| l.age}.to_sentence
+    if self.levels.length < 2
+      self.levels[0].grade
+    else
+      "#{self.levels[0].grade}-#{self.levels.last.grade}"
+    end
   end
+
 end
