@@ -43,4 +43,8 @@ class Lesson < ActiveRecord::Base
       ['Creation date (oldest first)', 'created_at_asc'],
     ]
   end
+
+  def level_list
+    self.levels.map {|l| l.age}.to_sentence
+  end
 end
