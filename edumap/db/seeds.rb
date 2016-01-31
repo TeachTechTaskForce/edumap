@@ -23,7 +23,7 @@ end
 def level_parser(file)
   resource_path = 'db/seeds'
   CSV.foreach(Rails.root.join(resource_path, file)) do |result|
-    level = Level.find_or_create_by(age: result[0])
+    level = Level.find_or_create_by(grade: result[0])
   end
 end
 
@@ -34,11 +34,10 @@ def lesson_parser(file)
     standard = Standard.find_or_create_by(abbreviation: result[3])
     code = Code.find_or_create_by(identifier: result[4], standard: standard)
     lesson = Lesson.find_or_create_by(name: result[2], curriculum: curriculum, lesson_url: result[0])
-    level = Level.find_or_create_by(age: result[5])
     lesson.codes << code
     lesson.standards << standard
-    unless lesson.levels.exists?(age: result[5])
-      lesson.levels << level
+    unless lesson.levels.exists?(grade: result[5].to_i.ordinalize)
+      lesson.levels << Level.find_or_create_by(grade: result[5].to_i.ordinalize)
     end
   end
 end
