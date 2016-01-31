@@ -42,6 +42,15 @@ def lesson_parser(file)
   end
 end
 
+def ct_stem_parser(file)
+  resource_path = 'db/mappings/seed'
+  CSV.foreach(Rails.root.join(resource_path, file)) do |result|
+    curriculum = Curriculum.find_or_create_by(name: "Northwestern CT-STEM", curriculum_url: "http://ct-stem.northwestern.edu/lesson-plans/")
+    lesson = Lesson.find_or_create_by(name: result[0], curriculum: curriculum)
+    lesson.lesson_url = result.last
+  end
+end
+
 =begin
 def parser(file, resource)
   standard_parser = file.split(".")[0]
