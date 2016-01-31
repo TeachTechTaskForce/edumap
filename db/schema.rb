@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160113044412) do
+ActiveRecord::Schema.define(version: 20160131214340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,10 +59,18 @@ ActiveRecord::Schema.define(version: 20160113044412) do
   add_index "lessons_levels", ["lesson_id"], name: "index_lessons_levels_on_lesson_id", using: :btree
   add_index "lessons_levels", ["level_id"], name: "index_lessons_levels_on_level_id", using: :btree
 
+  create_table "lessons_standards", id: false, force: :cascade do |t|
+    t.integer "lesson_id"
+    t.integer "standard_id"
+  end
+
+  add_index "lessons_standards", ["lesson_id"], name: "index_lessons_standards_on_lesson_id", using: :btree
+  add_index "lessons_standards", ["standard_id"], name: "index_lessons_standards_on_standard_id", using: :btree
+
   create_table "levels", force: :cascade do |t|
-    t.integer  "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "grade"
   end
 
   create_table "standards", force: :cascade do |t|
