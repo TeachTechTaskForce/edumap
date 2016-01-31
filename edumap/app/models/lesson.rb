@@ -4,6 +4,7 @@ class Lesson < ActiveRecord::Base
                   sorted_by
                   search_query
                   with_standard
+                  with_grade
                   with_created_at_gte
                 ]
 
@@ -30,6 +31,10 @@ class Lesson < ActiveRecord::Base
 
   scope :with_standard, lambda { |standards|
     joins(:standards).where("standards.id = ?", *standards).group('lessons.id')
+  }
+
+  scope :with_grade, lambda { |grade|
+    joins(:levels).where("levels.id = ?", *grade).group('lessons.id')
   }
 
   scope :with_created_at_gte, lambda { |ref_date|
