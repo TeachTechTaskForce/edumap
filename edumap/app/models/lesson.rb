@@ -3,7 +3,8 @@ class Lesson < ActiveRecord::Base
                 :available_filters => %w[
                   sorted_by
                   search_query
-                  with_standard_id
+                  with_standard
+                  with_grade
                   with_created_at_gte
                 ]
 
@@ -13,6 +14,7 @@ class Lesson < ActiveRecord::Base
   belongs_to :curriculum
   has_and_belongs_to_many :codes
   has_and_belongs_to_many :levels
+  has_and_belongs_to_many :standards
 
   scope :sorted_by, lambda { |sort_option|
     # extract the sort direction from the param value.
@@ -27,10 +29,12 @@ class Lesson < ActiveRecord::Base
     end
   }
 
-  scope :with_standard_id, lambda { |standard_id|
-    joins("INNER JOIN codes_lessons ON lessons.id = codes_lessons.lesson_id INNER JOIN codes ON codes.id = codes_lessons.code_id").
-    where('codes.standard_id = ?', standard_id).
-    group('lessons.id')
+  scope :with_standard, lambda { |standards|
+    joins(:standards).where("standards.id = ?", *standards).group('lessons.id')
+  }
+
+  scope :with_grade, lambda { |grade|
+    joins(:levels).where("levels.id = ?", *grade).group('lessons.id')
   }
 
   scope :with_created_at_gte, lambda { |ref_date|
@@ -44,4 +48,13 @@ class Lesson < ActiveRecord::Base
       ['Creation date (oldest first)', 'created_at_asc'],
     ]
   end
+
+  def level_list
+    if self.levels.length < 2
+      self.levels[0].grade
+    else
+      "#{self.levels[0].grade}-#{self.levels.last.grade}"
+    end
+  end
+
 end

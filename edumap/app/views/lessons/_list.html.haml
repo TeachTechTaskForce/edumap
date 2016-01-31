@@ -9,15 +9,13 @@
 %table.table
   %tr
     %th Curriculum
-    %th Lesson ID
-    %th URL
-    %th Created at
+    %th Lesson
+    %th Level
   - lessons.each do |lesson|
     %tr
       %td= lesson.curriculum.name
-      %td= lesson.name
-      %td= link_to "Link", lesson.lesson_url
-      %td= lesson.created_at.to_date.to_s(:long)
+      %td= link_to lesson.name, lesson.lesson_url, :target => "_blank"
+      %td= lesson.level_list
 
 .chardin_box{ :'data-position' => 'top', :'data-intro' => "will_paginate's paginator works as expected." }
   = will_paginate lessons, renderer: BootstrapPagination::Rails

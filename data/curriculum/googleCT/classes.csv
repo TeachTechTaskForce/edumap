@@ -1,0 +1,657 @@
+Core Subject|Subject|Suggested Age|Type|Titel|URL|Description
+All|All|8-18|Reference|Computational Thinking Concepts Guide|'View the 
+                        Reference'|'This guide explores eleven terms and definitions for Computational
+                          Thinking (CT) concepts, enabling you to incorporate them into existing
+                          lesson plans, projects, and demonstrations. Teaching tips are included
+                          for each concept.'
+All|All|8-18|Reference|Differentiation Strategies Guide|'View the 
+                        Reference'|'This guide contains codes for seven differentiation strategies and their
+                          meanings. Differentiation strategies are practices for modifying content
+                          or instructional practices for a specific group of students.'
+All|All|8-18|Reference|Student Engagement Strategies Guide|'View the 
+                        Reference'|'This guide describes ten strategies for capturing and maintaining student
+                          attention during classroom lessons. These student engagement strategies
+                          can be interspersed throughout existing lesson plans, projects and
+                          activities to increase student interest in any topic.'
+All|All|8-18|Reference|Pseudocode Guide|'View the 
+                        Reference'|'This guide explores the benefits of using pseudocode, an informal,
+                          high-level description of the operating procedure of a computer program
+                          or other algorithm. With pseudocode, students can learn how plan out
+                          their programs even if they do not have access to a computer.'
+All|All|8-18|Reference|Introduction to Python|'View the 
+                        Reference'|'This guide to the Python programming languages helps you explore sample
+                          topics including mathematical notation, testing for equality, writing
+                          Python programs, and conditional logic.'
+All|All|8-18|Reference|Python Basics Quick Reference|'View the 
+                        Reference'|'This handy reference to programming in Python contains the most
+                          frequently used functions and syntax from the Exploring Computational
+                          Thinking lesson plans.'
+Computer Science|Algorithms and Complexity|14-18|Lesson|Measuring the Complexity of a Function or Algorithm|'View the 
+                        Lesson Plan'|'This lesson plan explores problems that are easy for the computer to
+                          solve and problems that are difficult for the computer to solve. Students
+                          will learn how to measure the complexity of a function/algorithm and how
+                          this applies to real world situations.'
+Computer Science|Algorithms and Complexity|8-12|Lesson|Ciphering a Sentence|'View the 
+                        Lesson Plan'|'This lesson plan enables student to develop a cipher, encode a sentence,
+                          and then develop an algorithm for encoding and decoding.'
+Computer Science|Algorithms and Complexity|11-18|Lesson|Algorithmic Thinking|'View the 
+                        Lesson Plan'|'This lesson plan demonstrates that an algorithm is a precise,
+                          step-by-step set of instructions. Students will be asked to create oral
+                          algorithms to solve problems that other students can then use
+                          effectively.'
+Computer Science|Algorithms and Complexity|11-14|Lesson|Divide and Conquer|'View the 
+                        Lesson Plan'|'This lesson plan requires students to use a ‘divide-and-conquer’ strategy
+                          to solve the mystery of the “stolen crystals”. Students will use
+                          decomposition to break the problem into smaller problems and algorithmic
+                          design to plan a solution strategy.'
+Computer Science|Algorithms and Complexity|11-14|Lesson|Water Water Everywhere!|'View the 
+                        Lesson Plan'|'This lesson plan presents students with the challenging problem of
+                          measuring a volume of water using containers of the wrong measurement
+                          size. Students will decompose a complex problem into discrete steps,
+                          design an algorithm for solving the problem, and evaluate the solution
+                          efficiencies and optimization in a simulation.'
+Computer Science|Data Analysis|8-15|Lesson|Describing an Everyday Object|'View the 
+                        Lesson Plan'|'This lesson plan explores the difficulty of providing detailed
+                          descriptions of objects without using their names. The CT concepts
+                          covered include abstraction, data representation and pattern recognition.'
+Computer Science|Data Analysis|8-12|Lesson|Exploring Your Environment|'View the 
+                        Lesson Plan'|'This lesson plan enables students to gather data about a place or
+                          environment, organize that data in a table, and look for patterns. The CT
+                          concepts covered include data collection, data representation, data
+                          analysis, and decomposition.'
+Computer Science|Logic|9-12|Lesson|Machine Testing|'View the 
+                        Lesson Plan'|'This lesson plan presents students with a mysterious new machine and
+                          requires them to develop testing strategies to determine its
+                          functionality.'
+Computer Science|Logic|8-12|Lesson|Solving a Guessing Game with Data|'View the 
+                        Lesson Plan'|'This lesson plan requires students to develop two guessing games. The CT
+                          concepts covered include data collection, data representation, data
+                          analysis, and algorithm design.'
+Computer Science|Software Development|13-18|Lesson|Functions and Algorithms|'View the 
+                        Lesson Plan'|'This lesson plan enables students to identify, evaluate, follow, and
+                          create functions, including functions that loop, functions that include
+                          decisions, and functions that include both. The activities increase in
+                          difficulty and students should continue as far as they are able to.'
+English-Language Arts|Language|8-12|Lesson|Indefinite Articles|'View the 
+                        Lesson Plan'|'This lesson plan explores the usage of ‘a’ and ‘an’. Students will use
+                          pattern recognition and pattern generalization to determine when to use
+                          these indefintite articles and then develop a written algorithm that
+                          enables them to refine basic algorithms to handle exceptions to a
+                          generalized rule.'
+English-Language Arts|Language|8-10|Lesson|Mystery Word X|'View the 
+                        Lesson Plan'|'This lesson plan enables students to analyze the classification of nouns
+                          and verbs. They begin by considering nouns as “a person, place, or thing”
+                          and verbs as “action words. They then run a group of words through a
+                          series of "tests" and identify instances in which this standard notion
+                          might lead to errors.'
+English-Language Arts|Language|8-10|Lesson|Present Participle|'View the 
+                        Lesson Plan'|'This lesson plan enables students to investigate how the ending letters
+                          of a verb affect its spelling as tense changes. Students begin by simply
+                          adding ‘ing’ to the end of verbs. By identifying patterns in the spelling
+                          of verbs for which this works and those for which it does not, students
+                          build a stronger algorithm for conjugating verbs.'
+English-Language Arts|Language|11-18|Lesson|Finding Patterns in Spelling Errors and History|'View the 
+                        Lesson Plan'|'This lesson plan helps students learn how to analyze spelling errors and
+                          large data sets to find patterns, develop abstractions, and discover how
+                          large amounts of data can reveal much about our society.'
+English-Language Arts|Language|10-14|Lesson|Writing a Story|'View the 
+                        Lesson Plan'|'This lesson plan enables student to collaborate with others to build a
+                          story, identify any "bugs" in the story, and fix those bugs to give the
+                          story a more logical flow.'
+English-Language Arts|Language|8-18|Program|Interactive Fiction|'View the 
+                        Program - Pencil Code'|'This Pencil Code program enables students to create a simple piece of
+                          interactive fiction with three "pages", with one function representing
+                          each page, and buttons to select the next action. Students can analyze,
+                          fill in, or change parts of the program.'
+English-Language Arts|Language|8-18|Program|Interactive Mad Libs|'View the 
+                        Program - Pencil Code'|'This Pencil Code program creates an interactive Mad Libs game, prompting
+                          the user to enter several words matching requested parts of speech and
+                          then stitching them together in humorous sentences. Students can analyze,
+                          fill in, or change parts of the program.'
+English-Language Arts|Language|8-18|Program|Interactive Mad Libs (Variation)|'View the 
+                        Program - Pencil Code'|'This Pencil Code program is a variation on the interactive Mad Libs
+                          program that automatically generates sentences by randomly choosing
+                          words. Students can analyze, fill in, or change parts of the program.'
+English-Language Arts|Language|8-18|Program|Lady Macbeth Chat Bot|'View the 
+                        Program - Pencil Code'|'This Pencil Code program enables students to create an interactive chat
+                          bot that answers questions as if it were Lady Macbeth. Students can
+                          students analyze, fill in, or change parts of the program.'
+English-Language Arts|Language|8-18|Program|Stroke Order of a Chinese Character|'View the 
+                        Program - Pencil Code'|'This Pencil Code program enables students to illustrate the stroke order
+                          of a chinese character by creating their own rendering of a Chinese
+                          character and drawing the strokes in the right order. Students can
+                          analyze, fill in, or change parts of the program.'
+History Social Science|US History|8-18|Program|Map Visualization|'View the 
+                        Program - Pencil Code'|'This Pencil Code program provides a simple way to illustrate statistics
+                          geographically by drawing bubbles on a map. Students can analyze, fill
+                          in, or change parts of the program.'
+History Social Science|US History|8-18|Program|Population Statistics|'View the 
+                        Program - Pencil Code'|'This Pencil Code program enables student to create a population graph
+                          from data in a spreadsheet. Students can analyze, fill in, or change
+                          parts of the program.'
+Mathematics|Algebra|12-15|Lesson|Linear Association|'View the 
+                        Lesson Plan'|'This lesson plan uses CT concepts to explore the linear association
+                          between variables using two sets of data. Students will read data in a
+                          spreadsheet and in a graph and identify positive and negative linear
+                          association based on the shape of the graph.'
+Mathematics|Algebra|14-18|Lesson|Degrees and Radians|'View the 
+                        Lesson Plan'|'This lesson plan uses basic patterns to label key points on the unit
+                          circle in terms of degrees, and then follows a similar process to relabel
+                          these points in terms of radians. Students can then develop an algorith
+                          to convert between degrees and radians based on the patterns they used to
+                          count their way around the unit circle.'
+Mathematics|Algebra|12-15|Lesson|Slope and Y-Intercept|'View the 
+                        Lesson Plan'|'This lesson plan uses CT to explain the properties of slope and
+                          y-intercept. Students will learn how to calculate the slope and
+                          y-intercepts of a line that passes through a given set of points, and
+                          then use Python to solve various challenging slope and y-intercept
+                          exercises.'
+Mathematics|Algebra|13-16|Program|Two Workers|'View the 
+                        Program - Python'|'This Python program helps students solve word problems with two people
+                          working together at different rates. Students can analyze, fill in parts
+                          of, or enhance the program to solve more sophisticated work problems.'
+Mathematics|Algebra|13-16|Program|Three Workers|'View the 
+                        Program - Python'|'This Python program helps students solve word problems with three people
+                          working together at different rates. Students can analyze, fill in parts
+                          of, or enhance the program to solve more sophisticated problems.'
+Mathematics|Algebra|13-16|Program|Savings and Interest|'View the 
+                        Program - Python'|'This Python program helps students understand how to calculate interest
+                          based on the savings amount, interest rate, and number of years of
+                          investing. Students can analyze, fill in parts of, or use the program to
+                          check results to exercises on which they are already working.'
+Mathematics|Algebra|13-16|Program|Cereal|'View the 
+                        Program - Python'|'This Python program helps students conceptualize the following word
+                          problem: Charisse is buying two different types of cereals from the bulk
+                          bins at the store. Granola costs $2.29 per pound, and muesli costs $3.75
+                          per pound. She has $7.00. Use x as the amount of granola and y as the
+                          amount of muesli. How many pounds of granola can she buy if she buys 1.5
+                          pounds of muesli?'
+Mathematics|Algebra|13-16|Program|DVD Rentals|'View the 
+                        Program - Python'|'This Python program helps students conceptualize the following word
+                          problem: Shanti has just joined a DVD rental club. She pays a monthly
+                          membership fee of $4.95, and each DVD rental is $1.95. If Shanti’s budget
+                          for DVD rentals in a month is $42, how many DVDs can Shanti rent in her
+                          first month if she doesn’t want to go over her budget?'
+Mathematics|Algebra|13-16|Program|Theme Park Ride|'View the 
+                        Program - Python'|'This Python program helps students conceptualize the following word
+                          problem: There are 90 people in line at a theme park ride. Every 5
+                          minutes, 40 people get on the ride and 63 join the line. Estimate how
+                          long it would take for 600 people to be in line.'
+Mathematics|Algebra|13-16|Program|T Tables for Simple Functions|'View the 
+                        Program - Python'|'This Python program helps students compute the T table for a given
+                          function. Students can analyze, fill in parts of, or use the program to
+                          check solutions to exercises on which they are already working.'
+Mathematics|Algebra|12-16|Program|Ratios|'View the 
+                        Program - Python'|'This Python program helps students understand ratios by solving for x in
+                          the equation a/b = c/d, where x can be in any location in the two
+                          fractions. Students can analyze, fill in parts of, or use the program to
+                          check solutions to exercises on which they are already working.'
+Mathematics|Algebra|12-16|Program|Quadratic Formula|'View the 
+                        Program - Python'|'This Python program helps students automatically compute the quadratic
+                          formula given the values of a, b and c. Students can analyze, fill in
+                          parts of, or use the program to check solutions to exercises on which
+                          they are already working.'
+Mathematics|Algebra|12-16|Program|FOIL|'View the 
+                        Program - Python'|'This Python program helps students use their knowledge of FOIL on
+                          zero-variable or one-variable expressions to automatically solve various
+                          expressions. Students can analyze, fill in parts of, or use the program
+                          to check solutions to exercises on which they are already working.'
+Mathematics|Algebra|12-16|Program|Factoring Perfect Square Binomial Expressions|'View the 
+                        Program - Python'|'This Python program helps students factor binomial expressions into the
+                          form (x+c)^2 if the expression fits the pattern. Students can analyze,
+                          fill in parts of, or use the program to check solutions to exercises on
+                          which they are already working.'
+Mathematics|Algebra|12-16|Program|Distance, Rate, Time|'View the 
+                        Program - Python'|'This Python program helps students automatically compute distance, rate,
+                          or time, given two of the three variables. Students can analyze, fill in
+                          parts of, or use the program to check solutions to exercises on which
+                          they are already working.'
+Mathematics|Algebra|12-16|Program|Binomial Products|'View the 
+                        Program - Python'|'This Python program helps students automatically calculate the binomial
+                          product, that is, (ax + b)(cx + d) = acx^2 + adx + bcx + bd. Students can
+                          analyze, fill in parts of, or use the program to check solutions to
+                          exercises on which they are already working.'
+Mathematics|Algebra|12-16|Program|Functions|'View the 
+                        Program - Python'|'This Python program helps students see the connection between a
+                          mathematical function and a programmatic function by defining a function
+                          in Python and seeing what it means to pass a value to that function.'
+Mathematics|Algebra|12-16|Program|Properties of Quadratic Equations|'View the 
+                        Program - Python'|'This Python program helps students apply their knowledge of quadratic
+                          equations to automatically complete the square of a quadratic equation
+                          and find the location of the vertex. Students can analyze, fill in parts
+                          of, or use the program to check solutions to exercises on which they are
+                          already working.'
+Mathematics|Algebra|12-16|Program|Substitution with Two Equations|'View the 
+                        Program - Python'|'This Python program enables students to substitute and solve for
+                          variables using two equations. The first equation can be any equation;
+                          the second must be of the form variable = ... where variable appears in
+                          the first equation. Students can analyze the program or predict the
+                          substitution given the two equations.'
+Mathematics|Algebra|12-16|Program|Pascal’s Triangle|'View the 
+                        Program - Python'|'This Python program illustrates how Pascal’s Triangle is computed.
+                          Students can trace through the program and learn more about nested
+                          for-loops and why they are needed in certain applications. This program
+                          may require additional guidance from the educator.'
+Mathematics|Algebra|14-18|Program|Vertex of a Quadratic|'View the 
+                        Program - Python'|'This Python program anables students to calculate the vertex for any
+                          given quadratic and automatically calculate the vertex (h, k) for a given
+                          quadratic in the form of y = ax^2 + bx + c. Students can analyze or fill
+                          in parts of the program to reinforce their understanding.'
+Mathematics|Algebra|14-18|Program|Roots of an Equation|'View the 
+                        Program - Python'|'This Python program enables students to solve for the roots of an
+                          equation. Students can analyze or fill in parts of the program to
+                          reinforce their knowledge.'
+Mathematics|Algebra|14-18|Program|Conic Sections|'View the 
+                        Program - Python'|'This Python program illustrates how the coefficients of functions
+                          representing conic sections can be used to determine the type of conic
+                          section (circle, ellipse, hyperbola) and display results based on that
+                          conic section. Students can analyze, fill in parts of, or use the program
+                          to check results to exercises on which they are already working.'
+Mathematics|Algebra|14-18|Program|Combinations: n choose k|'View the 
+                        Program - Python'|'This Python program enables students to check solutions to combinations
+                          (n choose k) exercises. Students can analyze, fill in parts of, or use
+                          the program to check results to exercises on which they are already
+                          working.'
+Mathematics|Algebra|14-18|Program|Matrix Multiplication|'View the 
+                        Program - Python'|'This Python program helps students develop their understandings of matrix
+                          multiplication by performing it on two randomly generated matrices.
+                          Students can analyze or fill in parts of the program to reinforce their
+                          understanding. This program is fairly sophisticated and may only work for
+                          students with prior Python experience.'
+Mathematics|Algebra|14-18|Program|Logarithm Notation|'View the 
+                        Program - Python'|'This Python program helps students develop their understanding of
+                          logarithm notation by automatically computing the result of a given base
+                          and exponent and displaying it in log notation. Students can analyze or
+                          fill in parts of the program to reinforce their knowledge.'
+Mathematics|Algebra|14-18|Program|Determinant of a 3x3 Matrix|'View the 
+                        Program - Python'|'This Python program enables students to find the determinant of a 3x3
+                          matrix. Students can analyze or fill in parts of the program to reinforce
+                          their knowledge.'
+Mathematics|Algebra|14-18|Program|Determinant of a 2x2 Matrix|'View the 
+                        Program - Python'|'This Python program enables students to find the determinant of a 2x2
+                          matrix. Students can analyze or fill in parts of the program to reinforce
+                          their knowledge.'
+Mathematics|Arithmetic|8-18|Program|Chaos Game|'View the 
+                        Program - Pencil Code'|'This Pencil Code program enables student to play the "chaos game" by
+                          randomly moving the turtle to create a pattern. Students can analyze,
+                          fill in, or change parts of the program.'
+Mathematics|Arithmetic|8-18|Program|Graphing Sums of Dice Rolls|'View the 
+                        Program - Pencil Code'|'This Pencil Code program illustrates randomness by rolling two dice 100
+                          times and graphing the results in two different ways.'
+Mathematics|Arithmetic|8-18|Program|Random Number Illustrator|'View the 
+                        Program - Pencil Code'|'This Pencil Code program can be used to generate and then illustrate a
+                          random number. Students can analyze, fill in, or change parts of the
+                          program.'
+Mathematics|Arithmetic|8-18|Program|Sum of Two Dice|'View the 
+                        Program - Pencil Code'|'This Pencil Code program can be used to roll two dice a number of times
+                          and then print the sum. Students can analyze, fill in, or change parts of
+                          the program.'
+Mathematics|Calculus|16-18|Program|Instantaneous Rate of Change|'View the 
+                        Program - Python'|'This Python program enables students to determine the instantaneous rate
+                          of change for a given function and then automatically calculate it for a
+                          given function. Students can analyze, fill in parts of, or use the
+                          program to check results to exercises on which they are already working.'
+Mathematics|Calculus|16-18|Program|Calculating Definite Integrals|'View the 
+                        Program - Python'|'This Python program enables students to calculate the definite integral
+                          for a given function and then automatically calculate it for a specified
+                          function. Students can analyze, fill in parts of, or use the program to
+                          check results to exercises on which they are already working.'
+Mathematics|Calculus|16-18|Program|Fundamental Theorem of Calculus|'View the 
+                        Program - Python'|'This Python program enables students to use the Fundamental Theorem of
+                          Calculus for a given function and automatically calculate it for a
+                          specified function. Students can analyze, fill in parts of, or use the
+                          program to check results to exercises on which they are already working.'
+Mathematics|Data Analysis|14-18|Lesson|Mean and Standard Deviation|'View the 
+                        Lesson Plan'|'This lesson plan demonstrates how to use standard deviation to better
+                          understand a set of data. Students will use standard deviation to
+                          determine the general pattern/shape of a given set of data to draw more
+                          reliable conclusions.'
+Mathematics|Data Analysis|14-18|Lesson|Application and Modeling of Standard Deviation|'View the 
+                        Lesson Plan'|'This lesson plan explores using the central tendency to discover patterns
+                          in data. Students will simulate a dice-throwing game and alter the
+                          algorithm design to reflect changes to the game. The CT concepts covered
+                          include data collection, decomposition, abstraction, and data analysis.'
+Mathematics|Data Analysis|11-14|Lesson|Using Data from Sensors - Introduction|'View the 
+                        Lesson Plan'|'In this lesson plan, students identify and describe various sensors.
+                          Students will use sensors to collect data and use Computational Thinking
+                          to decompose one large problem into multiple smaller problems.'
+Mathematics|Data Analysis|14-18|Lesson|Using Data from Sensors - Filters and Functions|'View the 
+                        Lesson Plan'|'In this lesson plan, student explore the use of filters to isolate and
+                          analyze data generated by various types of sensors. Students use
+                          computational thinking to identify patterns generated by a potential
+                          agent during a specific activity (such as a human falling to the ground).'
+Mathematics|Data Analysis|11-14|Lesson|Continuous vs Discrete Data - Introduction|'View the 
+                        Lesson Plan'|'This lesson plan illustrates how data can be continuous or discrete.
+                          Students will collect data from classmates and then use data analysis and
+                          data representation to label the data as continuous or discrete. They
+                          will also learn to recognize different graphical and tabular
+                          representations of data as discrete and continuous.'
+Mathematics|Data Analysis|14-18|Lesson|Continuous vs Discrete Data - Modeling Continuous Functions|'View the 
+                        Lesson Plan'|'This lesson plan requires students to apply their knowledge about
+                          continuous and discrete data to categorize data from historical
+                          calculations of the speed of light and to examine the effects of modeling
+                          a continuous curved shape with an increasing number of discrete points
+                          and segments.'
+Mathematics|Geometry|13-17|Lesson|Area of a Circle|'View the 
+                        Lesson Plan'|'This lesson plan uses CT to explain the derivation of the formula A =
+                          pi*r^2. Students will complete Python programs that calculate the area of
+                          a circle as well as individual sectors.'
+Mathematics|Geometry|11-16|Program|Pythagorean Theorem - Pencil Code|'View the 
+                        Program - Pencil Code'|'This Pencil Code program enables students to use the Pythagorean Theorem
+                          to calculate a third side of a right triangle given the other two sides.
+                          Students can analyze, fill in parts of, or use the program to check
+                          results to exercises on which they are already working.'
+Mathematics|Geometry|12-16|Program|Acute, Obtuse, and Right Triangles|'View the 
+                        Program - Python'|'This Python program helps students precisely define the relationships
+                          between the angles for different types of triangles (acute, obtuse, or
+                          right). Students can analyze, fill in parts of, or use the program to
+                          check results to exercises on which they are already working.'
+Mathematics|Geometry|12-16|Program|Calculating Surface Area|'View the 
+                        Program - Python'|'This Python program helps students use surface area formulas to
+                          automatically to calculate the surface areas of several geometric objects
+                          (cube, rectangular prism, cylinder, sphere). Students can analyze, fill
+                          in parts of, or use the program to check results to exercises on which
+                          they are already working.'
+Mathematics|Geometry|12-16|Program|Pythagorean Theorem - Python|'View the 
+                        Program - Python'|'This Python program helps students use the Pythagorean Theorem to
+                          calculate a third side of a right triangle given the other two sides.
+                          Students can analyze, fill in parts of, or use the program to check
+                          results to exercises on which they are already working.'
+Mathematics|Geometry|12-16|Program|Polygonal Formulas|'View the 
+                        Program - Python'|'This Python program helps students use formulas related to polygons to
+                          display several results based on the number of sides of a polygon.
+                          Students can analyze, fill in parts of, or use the program to check
+                          results to exercises on which they are already working.'
+Mathematics|Geometry|12-16|Program|Distance Between Two Points|'View the 
+                        Program - Python'|'This Python program helps students use the distance formula to
+                          automatically calculate the distance between two points (x1, y1) and (x2,
+                          y2). Students can analyze or fill in parts of the program to reinforce
+                          their understanding.'
+Mathematics|Geometry|12-16|Program|Area Calculations|'View the 
+                        Program - Python'|'This Python program demonstrates how area formulas can be used to
+                          automatically compute the area of various geometric objects. Students can
+                          analyze, fill in parts of, or use the program to check results to
+                          exercises on which they are already working.'
+Mathematics|Logic|12-14|Lesson|Nonograms|'View the 
+                        Lesson Plan'|'This lesson plan requires students to apply logical reasoning to deduce
+                          information from rules in a game scenario. The CT concepts covered
+                          include data representation, data analysis, and decomposition.'
+Mathematics|Logic|11-14|Lesson|Pattern Machine|'View the 
+                        Lesson Plan'|'This lesson plan requires students to play a triplet game in which a set
+                          of three numbers can be described according to a specific rule. Students
+                          use data analysis to recognize and generalize patterns from which they
+                          derive the rule and solve the puzzle.'
+Mathematics|Logic|12-14|Lesson|Fruit Mix!|'View the 
+                        Lesson Plan'|'This lesson plan requires student to use logical reasoning to deduce
+                          information about the labels on fruit boxes based upon rules. The CT
+                          concepts covered include data analysis and simmulation.'
+Mathematics|Logic|10-12|Lesson|Logic Party|'View the 
+                        Lesson Plan'|'This lesson plan requires students to solve a numerical problem using
+                          constraints to graphically eliminate possibilities and arrive at the
+                          correct answer. The CT concepts covered include data representation, data
+                          analysis, and decomposition.'
+Mathematics|Pre-Algebra|9-12|Lesson|Fraction Addition and Common Denominators|'View the 
+                        Lesson Plan'|'This lesson plan explores how to find a common denominator between two
+                          fractions and add or subtract the fractions. It covers a variety of CT
+                          concepts, including decomposition, abstraction, pattern recognition,
+                          pattern generalization and algorithm design.'
+Mathematics|Pre-Algebra|11-14|Lesson|Multiplication with Fractions|'View the 
+                        Lesson Plan'|'This lesson plan explores how to visualize the multiplication of
+                          fractions and identify patterns between the multiplicands and their
+                          product. Upon completion of this lesson, students will be able to
+                          multiply simple fractions using a visual model and a computational
+                          algorithm.'
+Mathematics|Pre-Algebra|11-13|Lesson|Ratios and Proportions|'View the 
+                        Lesson Plan'|'This lesslon plan uses CT concepts and the Python programming language to
+                          develop an algorithm for answering questions involving ratios and
+                          proportions. It coveres a variety of CT concepts including problem
+                          decompostion, abstraction, pattern identification, pattern generalization
+                          and algorithm design.'
+Mathematics|Pre-Algebra|11-14|Lesson|Multiplying by Numbers Between Zero and One|'View the 
+                        Lesson Plan'|'This lesson plan uses CT concepts to to demonstrate that when multiplying
+                          a positive number by a decimal between 0 and 1, the product is always
+                          less than the original number.'
+Mathematics|Pre-Algebra|11-14|Lesson|Dividing by Numbers Between Zero and One|'View the 
+                        Lesson Plan'|'This lesson plan uses CT concepts to demonstrate that when dividing a
+                          positive number by a decimal between 0 and 1, the quotient is always
+                          greater than the original number.'
+Mathematics|Pre-Algebra|9-12|Lesson|Common Fractions and Equivalent Percentages|'View the 
+                        Lesson Plan'|'This lesson plan uses CT concepts to demonstrate the conversion of common
+                          fractions into their equivalent percentages. Students identify patterns
+                          between fractions, decimals, and percents, and generalize these patterns.'
+Mathematics|Pre-Algebra|11-14|Lesson|Percent Change|'View the 
+                        Lesson Plan'|'This lesson plan uses CT concepts to demonstrate how to calculate the
+                          percent change between any two numbers. Students identify patterns in
+                          percent change and decompose an algorithm to help strengthen their
+                          understanding.'
+Mathematics|Pre-Algebra|12-15|Lesson|Scientific Notation|'View the 
+                        Lesson Plan'|'This lesson plan uses CT concepts to identify patterns between the
+                          exponent, the number of places the decimal point moves, and the direction
+                          the decimal point moves when multiplying by powers of ten.'
+Mathematics|Pre-Algebra|11-13|Lesson|Percentages|'View the 
+                        Lesson Plan'|'This lesson plan uses CT concepts to demonstrate how to develop an
+                          algorithm for calculating percentages using mental math.'
+Mathematics|Pre-Algebra|9-12|Program|Long Multiplication on Two-Digit Numbers - Pencil Code|'View the 
+                        Program - Pencil Code'|'This Pencil Code program enables student to perform long multiplication
+                          on two-digit numbers, for example, 42 x 31. Students can analyze, fill in
+                          parts of, or use the program to check results to exercises on which they
+                          are already working.'
+Mathematics|Pre-Algebra|9-12|Program|Long Multiplication on Two-Digit Numbers - Python|'View the 
+                        Program - Python'|'This Python program enables students to perform long multiplication on
+                          two-digit numbers, for example, 23 x 46. Students can analyze, fill in
+                          parts of, or use the program to check results to exercises on which they
+                          are already working.'
+Mathematics|Pre-Algebra|9-12|Program|Fractions and Proportions|'View the 
+                        Program - Python'|'This Python program enables students to check whether two fractions are
+                          proportional. Students can analyze, fill in parts of, or use the program
+                          to check results to exercises on which they are already working.'
+Mathematics|Pre-Algebra|9-12|Program|Lemonade and Glasses|'View the 
+                        Program - Python'|'This Python program helps students conceptualize word problems,
+                          specifically: Sam has a jar with 5 cups of fresh lemonade. Jack has some
+                          glasses which hold 1.5 cups each of liquid. How many glasses of lemonade
+                          can Jack serve of Sam’s lemonade?'
+Mathematics|Pre-Algebra|9-12|Program|Evaluating Expressions|'View the 
+                        Program - Python'|'This Python program llustrates how a basic calculator functions. It
+                          introduces Python’s eval function as a way of computing expressions
+                          containing variables a, b, and c when given values for each of these
+                          variables. Students can analyze, fill in parts of, or use the program to
+                          check results to exercises on which they are already working.'
+Mathematics|Pre-Algebra|9-12|Program|Midpoint Between Two Points|'View the 
+                        Program - Python'|'This Python program helps students apply their knowledge of the midpoint
+                          formula to automatically calculate the midpoint between two points (x1,
+                          y1) and (x2, y2). Students can analyze or fill in parts of the program to
+                          help reinforce their understanding.'
+Mathematics|Pre-Algebra|9-12|Program|Complementary and Supplementary Angles|'View the 
+                        Program - Python'|'This Python program helps students apply their knowledge of complements
+                          and supplements to automatically compute the complement and supplement of
+                          a given angle. Students can analyze or fill in parts of the program to
+                          help reinforce their understanding.'
+Mathematics|Pre-Algebra|9-12|Program|Populations|'View the 
+                        Program - Python'|'This Python program helps students determine how long it will take to
+                          reach a certain target population, given a starting population,
+                          birthrate, and death rate. Students can analyze, fill in parts of, or use
+                          the program to check results to exercises on which they are already
+                          working.'
+Mathematics|Pre-Algebra|9-12|Program|Rock Climber, Cliff, and Shadows|'View the 
+                        Program - Python'|'This Python program helps students conceptualize the following word
+                          problems: A rock climber wants to know the height of a cliff. She
+                          measures the shadow of her friend, who is 5 feet tall and standing beside
+                          the cliff and measures the shadow of the cliff. If the friends shadow is
+                          4 feet long and the cliffs shadow is 60 feet long, how tall is the cliff?'
+Mathematics|Pre-Algebra|9-12|Program|Basketball Hoops and Buildings|'View the 
+                        Program - Python'|'This Python program helps students conceptualize the following word
+                          problem: A basketball rim 10 ft high casts a shadow 15 ft long. At the
+                          same time, a nearby building casts a shadow that is 54 ft long. How tall
+                          is the building?'
+Mathematics|Pre-Algebra|9-12|Program|Fractional Exponents|'View the 
+                        Program - Python'|'This Python program demonstrates fractional exponents by automatically
+                          computing one based on a given base and fractional exponent. Students can
+                          analyze or fill in parts of the program to reinforce their knowledge.'
+Mathematics|Statistics and Probability|14-18|Lesson|Combinations with Repeats|'View the 
+                        Lesson Plan'|'This lesson plan uses CT concepts to illustrate how to compute the number
+                          of possible arrangements for a given number of digits in a given number
+                          of spaces. Students will identify patterns in relatively easy cases that
+                          can lead them to an algorithm which applies to all cases.'
+Mathematics|Statistics and Probability|14-18|Lesson|Factorials with Names|'View the 
+                        Lesson Plan'|'This lesson plan uses CT concepts to investigate the number of possible
+                          arrangements of the letters in a given name. Students will identify
+                          patterns in the number of possible arrangements given an increasing
+                          number of letters, and then decompose the results to arrive at the
+                          factorial function.'
+Mathematics|Statistics and Probability|14-18|Lesson|Sorting Data|'View the 
+                        Lesson Plan'|'This lesson plan illustrates how to sort data using spreadsheet functions
+                          and/or Python. Students compare the algorithms used by both tools and
+                          then write their own algorithms for analyzing data with the mean, median,
+                          and mode.'
+Mathematics|Statistics and Probability|11-18|Lesson|Surveys and Estimating Large Quantities|'View the 
+                        Lesson Plan'|'This lesson plan shows students how to estimate the approximate size of
+                          data and determine the extent to which that data is realiable. Students
+                          will observe smaller data sets and identify patterns that enable them to
+                          make general predictions and to create algorithms capable of making
+                          approximations.'
+Mathematics|Statistics and Probability|11-18|Lesson|Randomness in Stochastic Models|'View the 
+                        Lesson Plan'|'This lesson plan explores random variables and probability. In this
+                          lesson, students will be introduced to methods to create random numbers
+                          as well as ways in which randomization can be used in scientific
+                          experiments.'
+Mathematics|Statistics and Probability|14-18|Lesson|Stochastic and Deterministic Modeling|'View the 
+                        Lesson Plan'|'This lesson plan explores deterministic models (the output is always the
+                          same) and stochastic models (the output is based on random sampling and
+                          can vary) and how, by modeling real phenomena using simulations, it is
+                          possible to improve a model and make better predictions.'
+Mathematics|Statistics and Probability|11-18|Lesson|Analyzing Discrete and Continuous Data in a Spreadsheet|'View the 
+                        Lesson Plan'|'In this lesson plan, students will collect data in a spreadsheet and
+                          learn to use various functions and analysis tools to better see patterns
+                          in their eating habits.'
+Mathematics|Statistics and Probability|11-18|Lesson|Analyzing Discrete and Continuous Data in a Map|'View the 
+                        Lesson Plan'|'This lesson plan illustrates how data is more than just numbers and that
+                          a map can also be a source of both discrete and continuous data. Using
+                          various tools, students will analyze and calculate the amount of urban
+                          open space available in their city.'
+Mathematics|Statistics and Probability|11-18|Lesson|Correlation vs Causation|'View the 
+                        Lesson Plan'|'In this lesson, plan, students will test the strength of a correlation
+                          and discern whether or not a law or conclusion can be made based on that
+                          correlation. Students will see the threshold commonly accepted for
+                          correlating data and test their own assumptions about causation.'
+Mathematics|Statistics and Probability|16-18|Lesson|Data Aggregation and Decomposition (Advanced Python)|'View the 
+                        Lesson Plan'|'This lesson plan explores how to use/analyze data to draw conclusions
+                          about the world around us. Students will improve their computational
+                          thinking by collecting/aggregating data onto a spreadsheet, identifying
+                          patterns in their data, decomposing the data into specified groups for
+                          analysis and further pattern recognition, and modifying an algorithm
+                          written in Python to facilitate data analysis.'
+Mathematics|Statistics and Probability|16-18|Lesson|Data Aggregation and Decomposition (Using Google Sheets)|'View the 
+                        Lesson Plan'|'This lesson plan uses CT to help students decompose and re-aggregate
+                          small sets of data using Google Sheets. Students use decomposition to
+                          break down long lists of information and write basic algorithms to use
+                          for the data analysis process.'
+Mathematics|Statistics and Probability|14-18|Lesson|The Law of Large Numbers and Probability|'View the 
+                        Lesson Plan'|'This lesson plan uses CT to help students use large amounts of data to
+                          explore the Law of Large Numbers and the Birthday Paradox to see how
+                          closely projected calculations match outcomes in the real world.'
+Mathematics|Trigonometry|12-17|Program|Application of Sin(x) and Cos(x)|'View the 
+                        Program - Pencil Code'|'This Python program enables students to graph two functions and apply
+                          their knowledge of the fact that C*sin(x + p) is the same as A*sin(x) +
+                          B*cos(x), for the right choice of A and B. Students can analyze, fill in
+                          parts of, or use the program to check results to exercises on which they
+                          are already working.'
+Science|Biology|14-18|Demo|Modeling the Genome using Computational Thinking|'View the 
+                        Demonstration'|'This demonstration explores how scientific knowledge of DNA progressed
+                          over the course of sixty years to the point where scientists could encode
+                          genes using a computer. It covers a variety of CT concepts, including
+                          decomposition, pattern recognition, abstraction, and algorithm design and
+                          their relation to natural phenomena.'
+Science|Biology|14-18|Demo|Modeling GDP and Waste using Computational Thinking|'View the 
+                        Demonstration'|'This demonstration explores the hazards of making decisions based on
+                          incomplete data. It covers a variety of CT concepts, including
+                          decomposition, pattern recognition, abstraction, and algorithm design and
+                          their relation to natural phenomena.'
+Science|Biology|14-18|Demo|Modeling Natural Selection using Computational Thinking|'View the 
+                        Demonstration'|'This demonstration illustrates how Charles Darwin and Gregor Mendel use
+                          Computational Thinking methods to make foundational discoveries in
+                          natural selection. It covers a variety of CT concepts, including
+                          decomposition, pattern recognition, abstraction, and algorithm design and
+                          their relation to natural phenomena.'
+Science|Biology|14-17|Lesson|Cell Biology - Filters|'View the 
+                        Lesson Plan'|'This lesson plan uses CT to improve students'' understandings of filters
+                          in cell bioloigy. Students will find patterns in filters of all types to
+                          help them understand how these filters function. Prior to this lesson,
+                          have students complete the related lesson titled Inquiry and Observation.'
+Science|Biology|14-17|Lesson|Cell Biology - Filter Design and Construction|'View the 
+                        Lesson Plan'|'This lesson plan uses Computational Thinking to help students understand
+                          the movement of molecules across a cell membrane. Students will decompose
+                          their “molecules” to develop a design for their own “cell membranes” and
+                          then write an algorithm to describe them before building them. Prior to
+                          this lesson, have students complete the related lesson titled Filters.'
+Science|Chemistry|14-18|Demo|Modeling Electron Configuration using Computational Thinking|'View the 
+                        Demonstration'|'This demonstration uses Computational Thinking to show the relationship
+                          between electron configuration and an element’s position in the periodic
+                          table. It covers a variety of CT concepts, including decomposition,
+                          pattern recognition, abstraction and algorithm design to show how the
+                          atomic number of an element affects the configuration of its electrons.'
+Science|Chemistry|14-18|Demo|Modeling Radioactive Decay using Computational Thinking|'View the 
+                        Demonstration'|'This demonstration explores how Computational Thinking is used to model
+                          the radioactive decay of an element. It covers a variety of CT concepts,
+                          including decomposition, pattern recognition, abstraction, and algorithm
+                          design and their relation to natural phenomena.'
+Science|Chemistry|14-18|Demo|'Modeling Boyle''s Law using Computational Thinking'|'View the 
+                        Demonstration'|'This demonstration describes how Computational Thinking can be used to
+                          understand the relationship between pressure and volume in a container of
+                          gas as described by Boyle’s Law. It covers a variety of CT concepts,
+                          including decomposition, pattern recognition, abstraction, and algorithm
+                          design and their relation to natural phenomena.'
+Science|Chemistry|13-16|Lesson|Patterns in the Periodic Table|'View the 
+                        Lesson Plan'|'This lesson plan illustrates how spreadsheet functions can be used to
+                          identify organizational patterns in the periodic table. The spreadsheet
+                          functions presented can be used on any data set.'
+Science|Data Analysis|13-18|Lesson|'Sorting the World''s Cities with Google Sheets'|'View the 
+                        Lesson Plan'|'This lesson plan demonstrates how to use spreadsheet functions to sort
+                          and graph data. Once the data is sorted, students can begin to identify
+                          patterns and trends.'
+Science|Data Analysis|13-18|Lesson|'Sorting the World''s Cities (Advanced Python)'|'View the 
+                        Lesson Plan'|'This lesson plan demonstrateshow to read data from a spreadsheet into a
+                          Python program and then sort that data. When taught in conjunction with
+                          Sorting the World''s Cities with Excel, this lesson can help student make
+                          the connection between writing a program and using a spreadsheet
+                          application.'
+Science|Data Analysis|11-14|Lesson|What is Data? - Introduction|'View the 
+                        Lesson Plan'|'This lesson plan describes what data is, how prevalent it is, and how it
+                          can be used to make informed decisions. The CT concepts covered include
+                          pattern recognition and data representation.'
+Science|Data Analysis|14-18|Lesson|What is Data? - Code Breaking and Patterns|'View the 
+                        Lesson Plan'|'This lesson plan introduces the concept of data. Students will create new
+                          data, look for patterns in existing data and attempt to decode text and
+                          numeric messages. They will use data analysis, including pattern
+                          recognition, to make sense of the provided data.'
+Science|Data Analysis|14-18|Program|Sorting|'View the 
+                        Program - Python'|'This Python program enables students to process data sets using a simple
+                          sorting algorithm. It can also be used to illustrate how sorting might be
+                          done automatically by an application such as Excel.'
+Science|Earth Science|14-18|Lesson|Energy Analysis|'View the 
+                        Lesson Plan'|'This lesson plan explores how spreadsheet functions can be used to
+                          analyze data on energy production and consumption around the world.
+                          Students learn how to display the results of their data collection on a
+                          map of the world, creating a visual representation of the numbers they
+                          input into their spreadsheets. This example is most suitable for high
+                          school biology or earth science classes.'
+Science|Physics|14-18|Demo|Modeling Projectile Motion using Computational Thinking|'View the 
+                        Demonstration'|'In this demonstration illustrates how a program can be used to simulate
+                          projectile motion. It enables students to see how decomposition, pattern
+                          recognition and abstraction can be used to understand natural phenomena.'
+Science|Physics|14-18|Demo|Modeling Pendulums using Computational Thinking|'View the 
+                        Demonstration'|'This demonstration illustrates how Computational Thinking concepts can be
+                          used to explore the laws that govern a pendulum’s motion. It covers a
+                          variety of CT concepts, including decomposition, pattern recognition,
+                          abstraction, and algorithm design and their relation to natural
+                          phenomena.'
+Science|Physics|14-18|Demo|Modeling Free Fall using Computational Thinking|'View the 
+                        Demonstration'|'This demonstration explores how Galileo used Computational Thinking and
+                          inclined planes to calculate acceleration of a sphere in free fall. It
+                          covers a variety of CT concepts, including decomposition, pattern
+                          recognition, abstraction, and algorithm design and their relation to
+                          natural phenomena.'
+Science|Physics|11-18|Lesson|Working with Large Tables of Data|'View the 
+                        Lesson Plan'|'This lesson plan enables students to work with large tables of GPS data.
+                          Students will learn to sort, manipulate, and visualize data so it can be
+                          easily understood.'
+
