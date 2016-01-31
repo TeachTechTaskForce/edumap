@@ -1,6 +1,26 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+h1,
+h2 {
+  font-family: "Roboto Condensed";
+  text-transform: uppercase;
+}
+
+th,
+label {
+  font-family: "Roboto Condensed";
+  text-transform: uppercase;
+  font-size: 1.3em;
+  font-weight: 100;
+}
+
+body {
+  font-family: Lato;
+  font-size: 1.5em;
+
+}
+
 .navbar {
   padding: 20px 0;
   background-color: white;
@@ -8,6 +28,7 @@
   border: none;
   border-bottom: 5px solid black;
   border-radius: 0px;
+  min-height: 150px;
 }
 
 .navbar-default .navbar-brand {
@@ -16,6 +37,7 @@
   color: black;
   font-family: 'Bookman Old Style', serif;
   padding-left: 25px;
+  height: 100%;
 }
 
 .btn-default {
@@ -48,4 +70,24 @@
 .main-content {
   border-left: 1px solid #555;
   min-height: 100%;
+}
+
+#logo img {
+  height: 130px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#site-title {
+  height: 100%;
+}
+
+.row {
+  display: flex;
+  align-items: flex-end;
+}
+
+#site-title h1 {
+  font-size: 5em;
+  align-self: flex-end;
 }

@@ -5,15 +5,19 @@
     %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" }
     %title Edumap
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300|Lato:400,700,400italic,700italic"
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
     %header
       %nav{ class: "navbar navbar-default"}
         .container-fluid
-          .navbar-header
-            %a.navbar-brand{href: "/"} Edumap
-          %div{class: "collapse navbar-collapse", id: "bs-example-navbar-collapse-1"}
+          .row
+            %div{class: "col-md-2 col-sm-6", id: "logo"}
+              %a.navbar-brand{href: "/"}
+                =image_tag "EduMap_Logo_150x150.png"
+            %div{class: "col-md-10 col-sm-12", id: "site-title"}
+              %h1 EDU MAP
       .container-fluid
         .row
           %aside{class: "col-md-3 filter-frame"}
