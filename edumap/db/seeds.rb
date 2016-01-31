@@ -6,14 +6,14 @@ end
 =end
 
 def standard_parser(file)
-  resource_path = 'db/mappings/seed'
+  resource_path = 'db/seeds'
   CSV.foreach(Rails.root.join(resource_path, file)) do |result|
     standard = Standard.find_or_create_by(name: result[0], abbreviation: result[1])
   end
 end
 
 def code_parser(file)
-  resource_path = 'db/mappings/seed'
+  resource_path = 'db/seeds'
   CSV.foreach(Rails.root.join(resource_path, file)) do |result|
     standard = Standard.find_or_create_by(abbreviation: result[2])
     code = Code.find_or_create_by(identifier: result[0], description: result[1], standard: standard)
@@ -21,14 +21,14 @@ def code_parser(file)
 end
 
 def level_parser(file)
-  resource_path = 'db/mappings/seed'
+  resource_path = 'db/seeds'
   CSV.foreach(Rails.root.join(resource_path, file)) do |result|
     level = Level.find_or_create_by(age: result[0])
   end
 end
 
 def lesson_parser(file)
-  resource_path = 'db/mappings/seed'
+  resource_path = 'db/seeds'
   CSV.foreach(Rails.root.join(resource_path, file)) do |result|
     curriculum = Curriculum.find_or_create_by(name: "code.org", curriculum_url: "https://code.org/")
     standard = Standard.find_or_create_by(abbreviation: "NGSS")
@@ -59,12 +59,12 @@ end
 parser("CSTA.csv","code.org")
 =end
 
-standard_parser("standards.csv")
-code_parser("ngss_topics.csv")
-code_parser("CSTA_codes.csv")
-code_parser("CC_Codes.csv")
-code_parser("ISTE_codes.csv")
-level_parser("levels.csv")
-lesson_parser("NGSS.csv")
+standard_parser("standards/standards.csv")
+code_parser("standards/ngss_topics.csv")
+code_parser("standards/CSTA_codes.csv")
+code_parser("standards/CC_Codes.csv")
+code_parser("standards/ISTE_codes.csv")
+level_parser("levels/levels.csv")
+lesson_parser("mappings/code.org/NGSS.csv")
 
 # write code to get the standard in the file
