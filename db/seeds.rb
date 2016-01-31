@@ -37,6 +37,15 @@ def lesson_parser(file)
   end
 end
 
+def ct_stem_parser(file)
+  resource_path = 'db/mappings/seed'
+  CSV.foreach(Rails.root.join(resource_path, file)) do |result|
+    curriculum = Curriculum.find_or_create_by(name: "Northwestern CT-STEM", curriculum_url: "http://ct-stem.northwestern.edu/lesson-plans/")
+    lesson = Lesson.find_or_create_by(name: result[0], curriculum: curriculum)
+    lesson.lesson_url = result.last
+  end
+end
+
 =begin
 def parser(file, resource)
   standard_parser = file.split(".")[0]
@@ -64,5 +73,6 @@ code_parser("CC_Codes.csv")
 code_parser("ISTE_codes.csv")
 level_parser("levels.csv")
 lesson_parser("NGSS.csv")
+ct_stem_parser("ct_stem.csv")
 
 # write code to get the standard in the file
