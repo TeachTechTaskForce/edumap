@@ -26,10 +26,12 @@
                              { :include_blank => '- Any -' },
                              { :class => 'form-control' }
               .row
-                .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by creation date.' }
-                  %label Created after
-                  = f.text_field :with_created_at_gte,
-                                 :class => 'js-datepicker form-control'
+                .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by grade level.' }
+                  %label Grade Level
+                  = f.select :with_grade,
+                            @filterrific.select_options[:with_grade],
+                            { :include_blank => '- Any -' },
+                            { :class => 'form-control' }
               .row
                 .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Change the sorting.' }
                   %label Sorted by

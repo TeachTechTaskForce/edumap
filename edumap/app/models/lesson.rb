@@ -4,6 +4,7 @@ class Lesson < ActiveRecord::Base
                   sorted_by
                   search_query
                   with_standard
+                  with_grade
                   with_created_at_gte
                 ]
 
@@ -32,6 +33,10 @@ class Lesson < ActiveRecord::Base
     joins(:standards).where("standards.id = ?", *standards).group('lessons.id')
   }
 
+  scope :with_grade, lambda { |grade|
+    joins(:levels).where("levels.id = ?", *grade).group('lessons.id')
+  }
+
   scope :with_created_at_gte, lambda { |ref_date|
     where('codes.created_at >= ?', ref_date)
   }
@@ -45,6 +50,11 @@ class Lesson < ActiveRecord::Base
   end
 
   def level_list
-    self.levels.map {|l| l.age}.to_sentence
+    if self.levels.length < 2
+      self.levels[0].grade
+    else
+      "#{self.levels[0].grade}-#{self.levels.last.grade}"
+    end
   end
+
 end
