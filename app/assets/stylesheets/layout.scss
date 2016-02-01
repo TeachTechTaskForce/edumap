@@ -1,6 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+// default styles
+
 h1,
 h2 {
   font-family: "Roboto Condensed";
@@ -21,12 +24,26 @@ body {
 
 }
 
+a {
+  color: #1E913C;
+}
+
+.btn-default {
+  border: none;
+  opacity: .8;
+}
+
+header {
+  background-color: #f8f8f8;;
+}
+
+//navigation
+
 .navbar {
   padding: 20px 0;
-  background-color: white;
   margin: 0 15px 25px 15px;
   border: none;
-  border-bottom: 5px solid black;
+  // border-bottom: 5px solid black;
   border-radius: 0px;
   min-height: 150px;
 }
@@ -35,7 +52,7 @@ body {
   font-size: 40px;
   font-weight: bold;
   color: black;
-  font-family: 'Bookman Old Style', serif;
+  // font-family: 'Bookman Old Style', serif;
   padding-left: 25px;
   height: 100%;
 }
@@ -48,6 +65,23 @@ body {
 .navbar-form .form-control {
   width: 330px;
   height: 42px;
+}
+
+#logo img {
+  height: 130px;
+}
+
+#site-title {
+  height: 100%;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+}
+
+#site-title h1 {
+  font-size: 5em;
 }
 
 .btn-nav-search {
@@ -72,22 +106,35 @@ body {
   min-height: 100%;
 }
 
-#logo img {
-  height: 130px;
-  margin-left: auto;
-  margin-right: auto;
+//info well
+
+.well {
+  // background-color: #4CD2F6;
+  background-image: url("map.jpg");
+  background-size: cover;
+  font-size: 1.2em;
 }
 
-#site-title {
-  height: 100%;
+.well div.chardin_box {
+  color: white;
 }
 
-.row {
-  display: flex;
-  align-items: flex-end;
+//pagination
+
+
+.pagination li > a {
+  color: #1E913C;
 }
 
-#site-title h1 {
-  font-size: 5em;
-  align-self: flex-end;
+.pagination > .active > span:hover {
+  border-color: #1E913C;
+  background-color: #1E913C;
+}
+
+.pagination > .active > span {
+  border: none;
+  // border-color: #1E913C;
+  // background-color: #1E913C;
+  background-image: url("map.jpg");
+  background-size: cover;
 }
