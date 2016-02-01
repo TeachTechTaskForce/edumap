@@ -110,7 +110,7 @@ header {
 
 .well {
   // background-color: #4CD2F6;
-  background-image: url("map.jpg");
+  background-image: image-url("map.jpg");
   background-size: cover;
   font-size: 1.2em;
 }
@@ -135,6 +135,6 @@ header {
   border: none;
   // border-color: #1E913C;
   // background-color: #1E913C;
-  background-image: url("map.jpg");
+  background-image: image-url("map.jpg");
   background-size: cover;
 }
