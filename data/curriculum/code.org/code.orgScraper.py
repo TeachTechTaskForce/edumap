@@ -14,6 +14,11 @@ import requests
 import sys
 import urllib
 
+debug = True
+
+lessonRE = re.compile(r'dashboard\.progress\.renderCourseProgress\((.*)\);$')
+lessonRE = re.compile(r'renderCourseProgress')
+
 def codeSession():
     '''
     returns a session object that has signed into code.org
@@ -35,6 +40,9 @@ def codeSession():
                'user[password]': password,
                'commit': 'Sign in'}
 
+    if debug:
+        print("\nSigning in to code.org...\n")
+
     # get authentication token and such
     session = requests.Session()
     response = session.get(signInURL)
@@ -55,6 +63,8 @@ def codeSession():
 
     # sign in to code.org
     r = session.post(signInURL, headers=headers, data=payload)
+    if debug:
+        print(payload)
 
     print(r.status_code)
 
@@ -124,13 +134,22 @@ def parseCourse(courseName, session, csvOut):
     Parses a code.org course page.
     '''
 
+    if debug:
+        print("\nParsing %s...\n" % courseName)
+
     # make course soup, mmm
     r = session.get('https://studio.code.org/s/' + courseName)
     print("%s status for Code.org %s retrieval" % (r.status_code, courseName))
     course = bs(r.text, "html5lib")
 
-    # find divs with class="stage-lesson-plan-link"
-    lessons = course.findAll("div", {"class", "stage-lesson-plan-link"})
+    # find json where lesson info lurks
+    courseLayout = re.sub(lessonRE, '\1', r.text)
+    print("\n### json\n"+ courseLayout + "\n###json\n")
+    with open(courseName + ".html", "w") as o:
+        o.write(r.text)
+
+    # parse json to get lesson plan links
+    lessons = []
 
     for lesson in lessons:
         maps = parseLesson(lesson, session)
