@@ -1,11 +1,12 @@
 .well.well-small
-  .pull-right{ :'data-position' => 'bottom', :'data-intro' => 'Reset the filter settings to defaults.' }
-    = link_to "Reset filters", reset_filterrific_url, :class => 'btn btn-default btn-sm'
-  .chardin_box{ :'data-position' => 'bottom', :'data-intro' => "will_paginate's entries info works as expected." }
-    = page_entries_info lessons, :model => 'lesson'
-  .chardin_box{ :'data-position' => 'bottom', :'data-intro' => 'Spinner indicates update.' }
-    = render_filterrific_spinner
-
+  %p
+    .pull-right{ :'data-position' => 'bottom', :'data-intro' => 'Reset the filter settings to defaults.' }
+      = link_to "Reset filters", reset_filterrific_url, :class => 'btn btn-default btn-sm'
+    .chardin_box{ :'data-position' => 'bottom', :'data-intro' => "will_paginate's entries info works as expected." }
+      = page_entries_info lessons, :model => 'lesson'
+    .chardin_box{ :'data-position' => 'bottom', :'data-intro' => 'Spinner indicates update.' }
+      = render_filterrific_spinner
+      
 %table.table
   %tr
     %th Curriculum
@@ -14,7 +15,7 @@
   - lessons.each do |lesson|
     %tr
       %td= lesson.curriculum.name
-      %td= link_to lesson.name, lesson.lesson_url
+      %td= link_to lesson.name, lesson.lesson_url, :target => "_blank"
       %td= lesson.level_list
 
 .chardin_box{ :'data-position' => 'top', :'data-intro' => "will_paginate's paginator works as expected." }

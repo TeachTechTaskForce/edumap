@@ -5,37 +5,43 @@
     %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" }
     %title Edumap
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300|Lato:400,700,400italic,700italic"
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
     %header
       %nav{ class: "navbar navbar-default"}
         .container-fluid
-          .navbar-header
-            %a.navbar-brand{href: "/"} Edumap
-          %div{class: "collapse navbar-collapse", id: "bs-example-navbar-collapse-1"}
-      .container-fluid
-        .row
-          %aside{class: "col-md-3 filter-frame"}
-            = form_for_filterrific @filterrific, html: {class: "filter col-md-12" } do |f|
-              .row
-                .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by standard.' }
-                  %label Standard
-                  = f.select :with_standard,
-                             @filterrific.select_options[:with_standard],
-                             { :include_blank => '- Any -' },
-                             { :class => 'form-control' }
-              .row
-                .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by creation date.' }
-                  %label Created after
-                  = f.text_field :with_created_at_gte,
-                                 :class => 'js-datepicker form-control'
-              .row
-                .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Change the sorting.' }
-                  %label Sorted by
-                  = f.select :sorted_by,
-                             @filterrific.select_options[:sorted_by],
-                             {},
-                             { :class => 'form-control' }
-          %div{class: "col-md-9 main-content"}
-            = yield
+          %div{class: "header-row row", id: "logo"}
+            %div{class: "col-md-2 col-sm-6", id: "logo"}
+              %a.navbar-brand{href: "/"}
+                =image_tag "EduMap_Logo_150x150.png"
+            %div{class: "col-md-10 col-sm-12", id: "site-title"}
+              %h1 EDU MAP
+    .container-fluid
+      .row
+        %aside{class: "col-md-3 filter-frame"}
+          = form_for_filterrific @filterrific, html: {class: "filter col-md-12" } do |f|
+            .row
+              .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by standard.' }
+                %label Standard
+                = f.select :with_standard,
+                           @filterrific.select_options[:with_standard],
+                           { :include_blank => '- Any -' },
+                           { :class => 'form-control' }
+            .row
+              .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by grade level.' }
+                %label Grade Level
+                = f.select :with_grade,
+                          @filterrific.select_options[:with_grade],
+                          { :include_blank => '- Any -' },
+                          { :class => 'form-control' }
+            .row
+              .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Change the sorting.' }
+                %label Sorted by
+                = f.select :sorted_by,
+                           @filterrific.select_options[:sorted_by],
+                           {},
+                           { :class => 'form-control' }
+        %div{class: "col-md-9 main-content"}
+          = yield

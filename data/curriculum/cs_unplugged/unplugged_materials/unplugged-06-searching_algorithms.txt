@@ -1,0 +1,7 @@
+Each child will need:
+Copy of battleships games
+(cid:131)  1A, 1B for game 1
+(cid:131)  2A, 2B for game 2
+(cid:131)  3A, 3B for game 3
+You may also need a few copies of the supplementary game sheets, 1A', 1B', 2A',
+2B', 3A', 3B'.
