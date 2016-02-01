@@ -14,7 +14,7 @@
   - lessons.each do |lesson|
     %tr
       %td= lesson.curriculum.name
-      %td= link_to lesson.name, lesson.lesson_url
+      %td= link_to lesson.name, lesson.lesson_url, :target => "_blank"
       %td= lesson.level_list
 
 .chardin_box{ :'data-position' => 'top', :'data-intro' => "will_paginate's paginator works as expected." }
