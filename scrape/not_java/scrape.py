@@ -21,7 +21,7 @@ for fileName in filesToScrape:
 	for line in f:
 		lineCounter += 1
 		print '{0}\r'.format(filePath + ": reading line ", lineCounter),
-		if "Photocopiable" in line or "Creative Commons" in line:
+		if "Photocopiable" in line or "Creative Commons" in line or "What to do" in line:
 			printing = False
 		if printing:
 			material = line.replace('(cid:57)', '').strip();
