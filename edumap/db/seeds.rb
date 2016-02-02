@@ -41,7 +41,11 @@ def lesson_parser(file)
       lesson.standards << standard
     end
     unless lesson.levels.exists?(grade: result[5].to_i.ordinalize)
-      lesson.levels << Level.find_or_create_by(grade: result[5].to_i.ordinalize)
+      unless result[5] == 'K'
+        lesson.levels << Level.find_or_create_by(grade: result[5].to_i.ordinalize)
+      else
+        lesson.levels << Level.find_or_create_by(grade: result[5])
+      end
     end
   end
 end
