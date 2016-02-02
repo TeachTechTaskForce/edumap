@@ -53,7 +53,8 @@ class Lesson < ActiveRecord::Base
     if self.levels.length < 2
       self.levels[0].grade
     else
-      "#{self.levels[0].grade}-#{self.levels.last.grade}"
+      levels_ordered = self.levels.order(:id)
+      "#{levels_ordered[0].grade}-#{levels_ordered.last.grade}"
     end
   end
 
