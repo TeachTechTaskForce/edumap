@@ -43,7 +43,7 @@ class Lesson < ActiveRecord::Base
 
   def self.options_for_sorted_by
     [
-      ['Identifier (a-z)', 'identifier_asc'],
+      ['Name (a-z)', 'name_asc'],
       ['Creation date (newest first)', 'created_at_desc'],
       ['Creation date (oldest first)', 'created_at_asc'],
     ]
