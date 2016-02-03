@@ -30,7 +30,6 @@ a {
 
 .btn-default {
   border: none;
-  opacity: .8;
 }
 
 header {
@@ -102,15 +101,15 @@ header {
 }
 
 .main-content {
-  border-left: 1px solid #555;
+  // border-left: 1px solid #555;
   min-height: 100%;
 }
 
 //info well
 
 .well {
-  // background-color: #4CD2F6;
-  background-image: image-url("map.jpg");
+  background-color: #4CD2F6;
+  border-color: #00BFF3;
   background-size: cover;
   font-size: 1.2em;
 }
@@ -120,7 +119,6 @@ header {
 }
 
 //pagination
-
 
 .pagination li > a {
   color: #1E913C;
@@ -133,8 +131,7 @@ header {
 
 .pagination > .active > span {
   border: none;
-  // border-color: #1E913C;
-  // background-color: #1E913C;
-  background-image: image-url("map.jpg");
+  border-color: #00BFF3;
+  background-color: #00BFF3;
   background-size: cover;
 }
