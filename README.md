@@ -20,7 +20,7 @@ And visit <http://localhost:3000/>
 ### List and status
 - [CS Unplugged](csunplugged.org)
   - scraped: age, lesson names
-- [Google Computational Thinking](https://www.google.com/edu/resources/programs/exploring-computational-thinking/index.html#!ct-materials)
+- [Google Computational Thinking](https://www.google.com/edu/resources/programs/exploring-computational-thinking/index.html#!ct-materials) - Pete is working on this during the week of 2/2
 - [ScratchEd Creative Computing](http://scratched.gse.harvard.edu/guide/download.html)
 - [Code.org](https://studio.code.org)
   - standards
