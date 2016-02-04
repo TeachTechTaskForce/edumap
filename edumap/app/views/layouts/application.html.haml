@@ -23,6 +23,11 @@
         %aside{class: "col-md-3 filter-frame"}
           = form_for_filterrific @filterrific, html: {class: "filter col-md-12" } do |f|
             .row
+              .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Search lessons.' }
+                %label Search
+                = f.text_field :search_query,
+                               :class => 'filterrific-periodically-observed form-control'
+            .row
               .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by standard.' }
                 %label Standard
                 = f.select :with_standard,
