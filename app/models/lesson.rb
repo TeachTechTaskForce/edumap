@@ -75,7 +75,9 @@ class Lesson < ActiveRecord::Base
   end
 
   def level_list
-    if self.levels.length < 2
+    if self.levels.blank?
+      "No data"
+    elsif self.levels.length < 2
       self.levels[0].grade
     else
       levels_ordered = self.levels.order(:id)

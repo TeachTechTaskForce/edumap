@@ -50,6 +50,37 @@ def lesson_parser(file)
   end
 end
 
+def bootstrap_parser(file)
+  resource_path = "db/seeds"
+  CSV.foreach(Rails.root.join(resource_path, file)) do |result|
+    curriculum = Curriculum.find_or_create_by(name: "Bootstrap World")
+    bootstrap_standard = Standard.find_or_create_by(abbreviation: "Bootstrap")
+    ccmath = Standard.find_or_create_by(abbreviation: "CC Math")
+    if result[1].start_with?('BS')
+      code = Code.find_or_create_by(identifier: result[1], standard: bootstrap_standard)
+      standard = bootstrap_standard
+    else
+      code = Code.find_or_create_by(identifier: result[1], standard: ccmath)
+      standard = ccmath
+    end
+    lesson = Lesson.find_or_create_by(name: result[4], curriculum: curriculum, lesson_url: result[0])
+    unless lesson.codes.exists?(identifier: result[1])
+      lesson.codes << code
+    end
+    unless lesson.standards.exists?(abbreviation: result[3])
+      lesson.standards << standard
+    end
+  end
+end
+
+def cs_first_parser(file)
+  resource_path = "db/seeds"
+  CSV.foreach(Rails.root.join(resource_path, file)) do |result|
+    curriculum = Curriculum.find_or_create_by(name: result[1])
+    lesson = Lesson.find_or_create_by(name: result[2], curriculum: curriculum, lesson_url: result[0])
+  end
+end
+
 def ct_stem_parser(file)
   resource_path = 'db/mappings/seed'
   CSV.foreach(Rails.root.join(resource_path, file)) do |result|
@@ -86,5 +117,8 @@ code_parser("standards/CC_Codes.csv")
 code_parser("standards/ISTE_codes.csv")
 level_parser("levels/levels.csv")
 lesson_parser("lessons/code_org_lessons.csv")
+ct_stem_parser("ct_stem.csv")
+bootstrap_parser("lessons/bootstrap_world.csv")
+cs_first_parser("lessons/cs_first_lessons.csv")
 
 # write code to get the standard in the file
