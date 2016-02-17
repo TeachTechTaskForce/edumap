@@ -19,7 +19,7 @@ And visit <http://localhost:3000/>
 ## Curricula
 
 ### List and status
-[View curriculum status here](https://docs.google.com/spreadsheets/d/1jbdx7ImdbcGbpG2AB5V37Rdjj6ABXP5y4fkM0onpRzw/edit?usp=sharing)
+[View curriculum status here](https://docs.google.com/spreadsheets/d/1jbdx7ImdbcGbpG2AB5V37Rdjj6ABXP5y4fkM0onpRzw/edit#gid=1308793623)
 - [CS Unplugged](csunplugged.org)
   - scraped: age, lesson names
 - [Google Computational Thinking](https://www.google.com/edu/resources/programs/exploring-computational-thinking/index.html#!ct-materials) - Pete is working on this during the week of 2/2
