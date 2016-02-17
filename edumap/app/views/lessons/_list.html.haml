@@ -13,13 +13,22 @@
     %th Lesson
     %th Time
     %th Level
+<<<<<<< HEAD
   - lessons.each do |lesson|
     %tr.accordion-toggle{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}
+=======
+  - lessons.each_with_index do |lesson,index|
+    %tr.accordion-toggle{ :'data-toggle' => 'collapse', :'data-target' => :"#description#{index}"}
+>>>>>>> 680d3ecdd37a3e0e10d6f4ed0e541caf6291c18b
       %td= lesson.curriculum.name
       %td= link_to lesson.name, lesson.lesson_url, :target => "_blank"
       %td= lesson.time
       %td= lesson.level_list
+<<<<<<< HEAD
     %tr.accordion-body.collapse{:id => "#{lesson.id}"}
+=======
+    %tr.accordion-body.collapse{:id => "description#{index}"}
+>>>>>>> 680d3ecdd37a3e0e10d6f4ed0e541caf6291c18b
       %td
         - if lesson.plugged?
           %i.fa.fa-plug.fa-lg.plugged
