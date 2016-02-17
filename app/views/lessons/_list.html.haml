@@ -14,17 +14,17 @@
     %th Time
     %th Level
   - lessons.each do |lesson|
-    %tr.accordion-toggle{ :'data-toggle' => 'collapse', :'data-target' => :'#description'}
+    %tr.accordion-toggle{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}
       %td= lesson.curriculum.name
       %td= link_to lesson.name, lesson.lesson_url, :target => "_blank"
       %td= lesson.time
       %td= lesson.level_list
-    %tr.accordion-body.collapse#description
+    %tr.accordion-body.collapse{:id => "#{lesson.id}"}
       %td
         - if lesson.plugged?
           %i.fa.fa-plug.fa-lg.plugged
         - else
-          %i.fa.fa-plug.fa-lg.unplugged Unplugged
+          %i.fa.fa-plug.fa-lg.unplugged Unpl
       %td
         - if lesson.description
           %p= lesson.description
