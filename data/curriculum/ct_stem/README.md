@@ -1,3 +1,3 @@
 ## CT STEM Status
 
-Might want a little more info on details of lessons, any ids (if they exist)
+This includes all current data.  Standards are not in an easily usable format, these might need to be evaluated and converted to match existing standards.  
