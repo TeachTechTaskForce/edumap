@@ -6,17 +6,25 @@
       = page_entries_info lessons, :model => 'lesson'
     .chardin_box{ :'data-position' => 'bottom', :'data-intro' => 'Spinner indicates update.' }
       = render_filterrific_spinner
-      
+
 %table.table
   %tr
     %th Curriculum
     %th Lesson
     %th Level
   - lessons.each do |lesson|
-    %tr
+    %tr.accordion-toggle{ :'data-toggle' => 'collapse', :'data-target' => :'#description'}
       %td= lesson.curriculum.name
       %td= link_to lesson.name, lesson.lesson_url, :target => "_blank"
       %td= lesson.level_list
+    %tr
+      .accordion-body.collapse#description
+        = "Sample text"
+      -# - if lesson.plugged?
+      -#   %i.fa.fa-plug.fa-lg.plugged
+      -# - else
+      -#   %i.fa.fa-plug.fa-lg.unplugged
+
 
 .chardin_box{ :'data-position' => 'top', :'data-intro' => "will_paginate's paginator works as expected." }
   = will_paginate lessons, renderer: BootstrapPagination::Rails
