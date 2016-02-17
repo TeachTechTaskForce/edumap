@@ -15,6 +15,9 @@ class CreateInitialTables < ActiveRecord::Migration
     create_table :lessons do |t|
       t.string :name
       t.string :lesson_url
+      t.string :time
+      t.text :description
+      t.boolean :plugged?, default: true
       t.timestamps null: false
     end
 
