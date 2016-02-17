@@ -11,20 +11,27 @@
   %tr
     %th Curriculum
     %th Lesson
+    %th Time
     %th Level
   - lessons.each do |lesson|
     %tr.accordion-toggle{ :'data-toggle' => 'collapse', :'data-target' => :'#description'}
       %td= lesson.curriculum.name
       %td= link_to lesson.name, lesson.lesson_url, :target => "_blank"
+      %td= lesson.time
       %td= lesson.level_list
-    %tr
-      .accordion-body.collapse#description
-        = "Sample text"
-      -# - if lesson.plugged?
-      -#   %i.fa.fa-plug.fa-lg.plugged
-      -# - else
-      -#   %i.fa.fa-plug.fa-lg.unplugged
-
+    %tr.accordion-body.collapse#description
+      %td
+        - if lesson.plugged?
+          %i.fa.fa-plug.fa-lg.plugged
+        - else
+          %i.fa.fa-plug.fa-lg.unplugged Unplugged
+      %td
+        - if lesson.description
+          %p= lesson.description
+        - else
+          %p No description is available for this lesson.
+      %td
+      %td
 
 .chardin_box{ :'data-position' => 'top', :'data-intro' => "will_paginate's paginator works as expected." }
   = will_paginate lessons, renderer: BootstrapPagination::Rails
