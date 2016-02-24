@@ -11,3 +11,8 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore vim stuff
+
+*~
+*.swp

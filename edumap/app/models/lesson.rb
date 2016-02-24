@@ -10,61 +10,47 @@ class Lesson < ActiveRecord::Base
 
   self.per_page = 10
 
-  # belongs_to :unit
   belongs_to :curriculum
   has_and_belongs_to_many :codes
   has_and_belongs_to_many :levels
   has_and_belongs_to_many :standards
 
   scope :search_query, lambda { |query|
-    return nil  if query.blank?
-    # condition query, parse into individual keywords
+    return nil if query.blank?
+    # most people use * for wildcard searches
+    # MySQL uses % instead for reasons
     terms = query.downcase.split(/\s+/)
-    # replace "*" with "%" for wildcard searches,
-    # append '%', remove duplicate '%'s
-    terms = terms.map { |e|
-      ("%" + e.gsub('*', '%') + '%').gsub(/%+/, '%')
-    }
-    # configure number of OR conditions for provision
-    # of interpolation arguments. Adjust this if you
-    # change the number of OR conditions.
-    num_or_conditions = 2
-    where(
-      terms.map {
-        or_clauses = [
-          "LOWER(lessons.name) LIKE ?",
-          "LOWER(lessons.lesson_url) LIKE ?",
-        ].join(' OR ')
-        "(#{ or_clauses })"
-      }.join(' AND '),
-      *terms.map { |e| [e] * num_or_conditions }.flatten
-    )
+                 .map { |e| "%#{e.gsub('*', '%')}%" }
+
+    terms.inject(self) do |current_scope, term|
+      current_scope.where(
+          "LOWER(lessons.name) LIKE :term OR LOWER(lessons.lesson_url) LIKE :term",
+          term: term
+      )
+    end
   }
 
-  scope :sorted_by, lambda { |sort_option|
+
+  scope :with_created_at_gte, -> (ref_date) { where('created_at >= ?', ref_date) }
+
+  scope :with_standard, -> (standards) { with_association(:standards, standards) }
+  scope :with_grade, -> (levels) { with_association(:levels, levels) }
+  scope :with_association, -> (assoc, assoc_ids) do
+    joins(assoc).where(assoc => {id: assoc_ids}).group("lessons.id")
+  end
+
+  scope :sorted_by, -> sort_option do
     # extract the sort direction from the param value.
     direction = (sort_option =~ /desc$/) ? 'desc' : 'asc'
     case sort_option.to_s
     when /^created_at_/
-      order("lessons.created_at #{ direction }")
+      order(created_at: direction)
     when /^name_/
       order("LOWER(lessons.name) #{ direction }")
     else
       raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")
     end
-  }
-
-  scope :with_standard, lambda { |standards|
-    joins(:standards).where("standards.id = ?", *standards).group('lessons.id')
-  }
-
-  scope :with_grade, lambda { |grade|
-    joins(:levels).where("levels.id = ?", *grade).group('lessons.id')
-  }
-
-  scope :with_created_at_gte, lambda { |ref_date|
-    where('codes.created_at >= ?', ref_date)
-  }
+  end
 
   def self.options_for_sorted_by
     [
@@ -75,13 +61,13 @@ class Lesson < ActiveRecord::Base
   end
 
   def level_list
-    if self.levels.blank?
+    if levels.blank?
       "No data"
-    elsif self.levels.length < 2
-      self.levels[0].grade
+    elsif levels.length == 1
+      levels.first.grade
     else
-      levels_ordered = self.levels.order(:id)
-      "#{levels_ordered[0].grade}-#{levels_ordered.last.grade}"
+      levels_ordered = levels.order(:id)
+      "#{levels_ordered.first.grade}-#{levels_ordered.last.grade}"
     end
   end
 
