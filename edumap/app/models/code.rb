@@ -12,35 +12,30 @@ class Code < ActiveRecord::Base
   belongs_to :standard
   has_and_belongs_to_many :lessons
 
-  scope :sorted_by, lambda { |sort_option|
+  scope :with_standard_id, -> (ids) { where(standard_id: ids) }
+  scope :with_created_at_gte, -> (ref_date) { where('created_at >= ?', ref_date) }
+  scope :sorted_by, -> sort_option do
     # extract the sort direction from the param value.
-    direction = (sort_option =~ /desc$/) ? 'desc' : 'asc'
-    case sort_option.to_s
+    output = case sort_option.to_s
     when /^created_at_/
-      order("codes.created_at #{ direction }")
+      order(:created_at)
     when /^name_/
-      order("LOWER(codes.identifier) #{ direction }")
+      order("LOWER(identifier)")
     when /^standard_abbreviation_/
-      order("LOWER(standards.abbreviation) #{ direction }").includes(:standard)
+      joins(:standard).order("LOWER(standards.abbreviation)")
     else
       raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")
     end
-  }
-
-  scope :with_standard_id, lambda { |standard_ids|
-    where(:standard_id => [*standard_ids])
-  }
-
-  scope :with_created_at_gte, lambda { |ref_date|
-    where('codes.created_at >= ?', ref_date)
-  }
+    output = output.reverse_order if sort_option =~ /desc$/
+    output
+  end
 
   def self.options_for_sorted_by
     [
       ['Identifier (a-z)', 'identifier_asc'],
+      ['Standard (a-z)', 'standard_abbreviation_asc'],
       ['Creation date (newest first)', 'created_at_desc'],
       ['Creation date (oldest first)', 'created_at_asc'],
-      ['Standard (a-z)', 'standard_asc']
     ]
   end
 end
