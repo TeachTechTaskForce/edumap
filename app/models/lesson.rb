@@ -41,15 +41,16 @@ class Lesson < ActiveRecord::Base
 
   scope :sorted_by, -> sort_option do
     # extract the sort direction from the param value.
-    direction = (sort_option =~ /desc$/) ? 'desc' : 'asc'
-    case sort_option.to_s
+    output = case sort_option.to_s
     when /^created_at_/
-      order(created_at: direction)
+      order(:created_at)
     when /^name_/
-      order("LOWER(lessons.name) #{ direction }")
+      order("LOWER(lessons.name)")
     else
       raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")
     end
+    output = output.reverse_order if sort_option =~ /desc$/
+    output
   end
 
   def self.options_for_sorted_by
