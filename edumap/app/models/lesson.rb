@@ -20,7 +20,8 @@ class Lesson < ActiveRecord::Base
     # most people use * for wildcard searches
     # MySQL uses % instead for reasons
     terms = query.downcase.split(/\s+/)
-                 .map { |e| "%#{e.gsub('*', '%')}%" }
+                 .map{|e| e.gsub('*', '%')}
+                 .map{|e| "%#{e}%"}
 
     terms.inject(self) do |current_scope, term|
       current_scope.where(
