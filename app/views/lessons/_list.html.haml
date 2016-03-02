@@ -9,12 +9,14 @@
 
 %table.table
   %tr
+    %th Foo
     %th Curriculum
     %th Lesson
     %th Time
     %th Level
   - lessons.each do |lesson|
     %tr.accordion-toggle{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}
+      %td.btn.foo= "foo"
       %td= lesson.curriculum.name
       %td= link_to lesson.name, lesson.lesson_url, :target => "_blank"
       %td= lesson.time

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'lessons#index'
+  post 'sessions/add_lesson/:lesson' => 'sessions#add_lesson', as: :add_lesson
+  post 'sessions/remove_lesson/:lesson' => 'sessions#remove_lesson', as: :remove_lesson
 
 
   # Example of regular route:
