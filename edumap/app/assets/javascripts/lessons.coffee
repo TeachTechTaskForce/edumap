@@ -11,11 +11,15 @@ $(document).ready =>
     if this.checked
       $.post Routes.add_lesson_path(lesson_id)
       .fail(
-        (response) -> alert "Your choice could not be saved."
-        that.checked = false)
+        (response) ->
+          alert "Your choice could not be saved."
+          that.checked = false
+          return)
     else
       $.post Routes.remove_lesson_path(lesson_id)
       .fail(
-        (response) -> alert "Your choice could not be saved."
-        that.checked = true)
+        (response) ->
+          alert "Your choice could not be saved."
+          that.checked = true
+          return)
 )
