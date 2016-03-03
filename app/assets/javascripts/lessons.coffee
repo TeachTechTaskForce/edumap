@@ -4,6 +4,10 @@
 
 
 $(document).ready =>
-  $(document).on "click", ".foo", (e) =>
-    $.post Routes.add_lesson_path(1),
-      success: -> alert "successful!"
+  $(document).on("change",".lesson-checkbox", ->
+    lesson_id = $(this).attr('data-lesson-id')
+    if $(this).is(':checked')
+      $.post Routes.add_lesson_path(lesson_id)
+    else
+      $.post Routes.remove_lesson_path(lesson_id)
+)
