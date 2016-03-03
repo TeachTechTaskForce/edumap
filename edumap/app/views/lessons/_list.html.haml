@@ -9,14 +9,15 @@
 
 %table.table
   %tr
-    %th Foo
+    %th Select
     %th Curriculum
     %th Lesson
     %th Time
     %th Level
   - lessons.each do |lesson|
     %tr.accordion-toggle{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}
-      %td.btn.foo= "foo"
+      %td
+        %input.lesson-checkbox{type: "checkbox", checked: in_session?("#{lesson.id}"), data: {lesson_id: "#{lesson.id}"}}
       %td= lesson.curriculum.name
       %td= link_to lesson.name, lesson.lesson_url, :target => "_blank"
       %td= lesson.time
