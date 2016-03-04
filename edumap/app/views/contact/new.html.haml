@@ -1,0 +1,14 @@
+.row
+  .col-md-10.col-sm-12.col-md-offset-1
+    %h2= t('.contact_us')
+    = simple_form_for @contact, :url => contacts_path do |f|
+      .row
+        .col-sm-12.col-md-6
+          = f.input :name, :label => t('.name') if ContactUs.require_name
+        .col-sm-12.col-md-6
+          = f.input :email, :label => t('.email')
+      = f.input :subject, :label => t('.subject') if ContactUs.require_subject
+      = f.input :message, :as => :text, :label => t('.message')
+      = f.input :url, :as => :string, :label => t('.url')
+      = f.button :submit, {:value => "Submit"}
+      -# = f.button :submit, {:value => t('.submit'), :alt => t('.submit'), :id => 'contact_us_contact_submit', :title => t('.submit')}
