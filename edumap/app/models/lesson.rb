@@ -36,13 +36,8 @@ class Lesson < ActiveRecord::Base
 
   scope :with_standard, -> (standards) { with_association(:standards, standards) }
   scope :with_grade, -> (level) do
-    grade_at_most(level).grade_at_least(level)
-  end
-  scope :grade_at_most, -> (level) do
     where(id: joins(:levels).where("levels.id <= ?", level))
-  end
-  scope :grade_at_least, -> (level) do
-    where(id: joins(:levels).where("levels.id >= ?", level))
+      .where(id: joins(:levels).where("levels.id >= ?", level))
   end
   scope :with_association, -> (assoc, assoc_ids) do
     joins(assoc).where(assoc => {id: assoc_ids}).group("lessons.id")
