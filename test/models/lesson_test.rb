@@ -86,4 +86,3 @@ class LessonTestSorting < ActiveSupport::TestCase
     assert_equal (Lesson.sorted_by :created_at_bob), [first, second]
   end
 end
-
