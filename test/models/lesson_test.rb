@@ -55,10 +55,17 @@ class LessonTestScopes < ActiveSupport::TestCase
     assert_equal (Lesson.with_standard standards(:defence).id), [in_scope]
   end
 
-  test "it scopes to the grade" do
+  test "it scopes to the grade when a matching level is present" do
     in_scope = Lesson.create!(levels: [levels(:one)])
     out_of_scope = Lesson.create!(levels: [levels(:two)])
     assert_equal (Lesson.with_grade levels(:one).id), [in_scope]
+  end
+
+  test "it scopes to the grade when a matching range of levels is present" do
+    [levels(:one), levels(:two), levels(:three), levels(:four)].each(&:touch)
+    in_scope = Lesson.create!(levels: [levels(:one), levels(:three)])
+    out_of_scope = Lesson.create!(levels: [levels(:three), levels(:four)])
+    assert_equal (Lesson.with_grade levels(:two).id), [in_scope]
   end
 
   test "it groups by the lesson id" do
