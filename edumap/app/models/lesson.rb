@@ -35,7 +35,10 @@ class Lesson < ActiveRecord::Base
   scope :with_created_at_gte, -> (ref_date) { where('created_at >= ?', ref_date) }
 
   scope :with_standard, -> (standards) { with_association(:standards, standards) }
-  scope :with_grade, -> (levels) { with_association(:levels, levels) }
+  scope :with_grade, -> (level) do
+    where(id: joins(:levels).where("levels.id <= ?", level))
+      .where(id: joins(:levels).where("levels.id >= ?", level))
+  end
   scope :with_association, -> (assoc, assoc_ids) do
     joins(assoc).where(assoc => {id: assoc_ids}).group("lessons.id")
   end
