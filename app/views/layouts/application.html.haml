@@ -43,6 +43,13 @@
                           { :include_blank => '- Any -' },
                           { :class => 'form-control' }
             .row
+              .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by pluggedness.' }
+                %label Computer required?
+                = f.select :with_plugged,
+                          @filterrific.select_options[:with_plugged],
+                          { :include_blank => '- Any -' },
+                          { :class => 'form-control' }
+            .row
               .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Change the sorting.' }
                 %label Sorted by
                 = f.select :sorted_by,
