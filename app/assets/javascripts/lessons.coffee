@@ -4,7 +4,7 @@
 
 
 $(document).ready =>
-  $("table.table").on("change",".lesson-checkbox", (event)->
+  $("table.table").on("change",".lesson-checkbox", (event) ->
     that = $(this)[0]
     event.preventDefault()
     lesson_id = $(this).attr('data-lesson-id')
