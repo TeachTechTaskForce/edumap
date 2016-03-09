@@ -78,6 +78,12 @@ class LessonTestScopes < ActiveSupport::TestCase
     out_of_scope = Lesson.create!(created_at: 3.day.ago)
     assert_equal (Lesson.with_created_at_gte 2.days.ago), [in_scope]
   end
+
+  test "it scopes by plugged versus unplugged" do
+    in_scope = Lesson.create!(plugged?: false)
+    out_of_scope = Lesson.create!(plugged?: true)
+    assert_equal Lesson.with_plugged(false), [in_scope]
+  end
 end
 
 class LessonTestSorting < ActiveSupport::TestCase
