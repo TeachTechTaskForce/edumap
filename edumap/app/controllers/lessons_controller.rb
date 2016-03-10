@@ -7,7 +7,8 @@ class LessonsController < ApplicationController
       :select_options => {
         sorted_by: Lesson.options_for_sorted_by,
         with_standard: Standard.options_for_select,
-        with_grade: Level.options_for_select
+        with_grade: Level.options_for_select,
+        with_plugged: [["Yes", true], ["No", false]]
       }
     ) or return
     @lessons = @filterrific.find.page(params[:page])
