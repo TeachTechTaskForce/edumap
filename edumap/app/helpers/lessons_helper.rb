@@ -1,5 +1,7 @@
 module LessonsHelper
   def in_session?(id)
-    session[:lessons].include? id
+    unless session[:lessons].blank?
+      session[:lessons].include? id
+    end
   end
 end
