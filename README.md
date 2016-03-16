@@ -57,6 +57,10 @@ In general curricula are broken up into lessons; that is the quantum of curricul
 - Topic area
   - string, e.g. `"Loops"`, `"Internet security"`
 
+### To Deploy to Heroku
+From the root directory of the app:
+`git subtree push --prefix edumap heroku master`
+
 ## Standards so far
 ### [International Standards](https://docs.google.com/spreadsheets/d/1SE7hGK5CkOlAf6oEnqk0DPr8OOSdyGZmRnROhr0XHys/edit#gid=218360034)
 - [CSTA](http://csta.acm.org/Curriculum/sub/CurrFiles/CSTA_K-12_CSS.pdf)
