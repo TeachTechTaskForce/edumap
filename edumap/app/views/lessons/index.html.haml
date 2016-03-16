@@ -1,12 +1,43 @@
-.page-header{ :style => 'margin-bottom: 20px;' }
-  %h1 Lessons
+.container-fluid
+  .row
+    %aside{class: "col-md-3 filter-frame"}
+      = form_for_filterrific @filterrific, html: {class: "filter col-md-12" } do |f|
+        .row
+          .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Search lessons.' }
+            %label Search
+            = f.text_field :search_query,
+                           :class => 'filterrific-periodically-observed form-control'
+        .row
+          .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by standard.' }
+            %label Standard
+            = f.select :with_standard,
+                       @filterrific.select_options[:with_standard],
+                       { :include_blank => '- Any -' },
+                       { :class => 'form-control' }
+        .row
+          .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by grade level.' }
+            %label Grade Level
+            = f.select :with_grade,
+                      @filterrific.select_options[:with_grade],
+                      { :include_blank => '- Any -' },
+                      { :class => 'form-control' }
+        .row
+          .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Change the sorting.' }
+            %label Sorted by
+            = f.select :sorted_by,
+                       @filterrific.select_options[:sorted_by],
+                       {},
+                       { :class => 'form-control' }
+    %div{class: "col-md-9 main-content"}
+      .page-header{ :style => 'margin-bottom: 20px;' }
+        %h1 Lessons
 
-#results
-  = render :partial => 'lessons/list',
-           :locals => { :lessons => @lessons }
+      #results
+        = render :partial => 'lessons/list',
+                 :locals => { :lessons => @lessons }
 
-:javascript
-  $('#overlayTrigger').click(function(event) {
-    event.preventDefault();
-    $('body').chardinJs('start');
-  });
+      :javascript
+        $('#overlayTrigger').click(function(event) {
+          event.preventDefault();
+          $('body').chardinJs('start');
+        });
