@@ -58,4 +58,4 @@ group :development do
   gem 'spring'
 end
 
-#raise 'Ruby should be >2.1' unless RUBY_VERSION.to_f > 2.1
+raise 'Ruby should be >2.1' unless RUBY_VERSION.to_f > 2.1
