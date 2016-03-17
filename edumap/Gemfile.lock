@@ -148,7 +148,13 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    sendgrid (1.2.0)
+      json
+      json
     sexp_processor (4.6.0)
+    simple_form (3.2.1)
+      actionpack (> 4, < 5.1)
+      activemodel (> 4, < 5.1)
     spring (1.4.0)
     sprockets (3.4.0)
       rack (> 1, < 3)
@@ -199,6 +205,8 @@ DEPENDENCIES
   rails (= 4.2.4)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  sendgrid
+  simple_form
   spring
   thin
   turbolinks
@@ -206,6 +214,3 @@ DEPENDENCIES
   web-console (~> 2.0)
   will_paginate
   will_paginate-bootstrap
-
-BUNDLED WITH
-   1.11.2

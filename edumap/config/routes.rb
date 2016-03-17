@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post 'sessions/add_lesson/:lesson' => 'sessions#add_lesson', as: :add_lesson
   post 'sessions/remove_lesson/:lesson' => 'sessions#remove_lesson', as: :remove_lesson
 
+  get '/contact' => 'contact#new', as: :contact_new
+  post '/contact' => 'contact#create' as: :contact_go
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
