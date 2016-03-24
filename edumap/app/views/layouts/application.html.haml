@@ -19,4 +19,9 @@
                 =image_tag "EduMap_Logo_150x150.png"
             %div#site-title
               %h1 EDU MAP
+    %div.flash-errors
+      - flash.each do |key, value|
+        %div
+          %a{"data-dismiss" => "alert", :href => "#"} ×
+          = value
     = yield
