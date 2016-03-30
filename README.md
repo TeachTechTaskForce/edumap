@@ -78,7 +78,7 @@ From the root directory of the app:
   - string, e.g. `"NGSS"`, `"CC Math"`
 - Standard code
   - string, e.g. `"6.NS.8"`
-- Standard item description
+- Description of student outcome
   - string, e.g. `"Solve real-world and mathematical problems by graphing points in all four quadrants of the coordinate plane. Include use of coordinates and absolute value to find distances between points with the same first coordinate or the same second coordinate."`
 
 #### Scraping Essentials
