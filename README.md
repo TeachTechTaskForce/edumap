@@ -30,6 +30,7 @@ And visit <http://localhost:3000/>
 - [Computational Thinking (Northwestern)](http://ct-stem.northwestern.edu/lesson-plans/)
 - [CS First](http://www.cs-first.com/)
 - Find more resources here...  http://cs4hs.com/resources/cscs-results.html#q=
+- Possibility: [TED Ed](http://ed.ted.com/)
 
 ### Desiderata for each curriculum
 In general curricula are broken up into lessons; that is the quantum of curriculum we are working with. Most information will be one-to-one (e.g. age range), and some will be many-to-one (many standards codes map onto one lesson).
