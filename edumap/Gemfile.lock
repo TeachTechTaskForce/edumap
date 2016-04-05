@@ -150,7 +150,6 @@ GEM
       rdoc (~> 4.0)
     sendgrid (1.2.0)
       json
-      json
     sexp_processor (4.6.0)
     simple_form (3.2.1)
       actionpack (> 4, < 5.1)
@@ -216,4 +215,4 @@ DEPENDENCIES
   will_paginate-bootstrap
 
 BUNDLED WITH
-  1.11.2
+   1.11.2
