@@ -50,10 +50,17 @@ class LessonTestSearchQueryScope < ActiveSupport::TestCase
 
   test "it searches the outcome code for exact matches only" do
     in_scope = Lesson.create!
-    in_scope_code = in_scope.codes.create!(identifier: "Foo.1")
+    in_scope.codes.create!(identifier: "Foo.1")
     out_of_scope = Lesson.create!
-    out_of_scope_code = out_of_scope.codes.create!(identifier: "Foo.11")
+    out_of_scope.codes.create!(identifier: "Foo.11")
     assert_equal Lesson.search_query("Foo.1"), [in_scope]
+  end
+
+  test "it searches across multiple codes" do
+    in_scope = Lesson.create!
+    in_scope.codes.create!(description: "Foo")
+    in_scope.codes.create!(description: "Bar")
+    assert_equal Lesson.search_query("foo bar"), [in_scope]
   end
 
   test "it can match to the same query twice" do

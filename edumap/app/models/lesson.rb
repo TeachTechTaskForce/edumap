@@ -22,12 +22,14 @@ class Lesson < ActiveRecord::Base
     # MySQL uses % instead for reasons
     terms = query.downcase.split(/\s+/)
     terms.inject(self) do |current_scope, term|
-      current_scope.includes(:codes).references(:codes).where(
-          "LOWER(lessons.name) LIKE :wildcard_term " \
-          "OR LOWER(lessons.lesson_url) LIKE :wildcard_term " \
-          "OR LOWER(codes.description) LIKE :wildcard_term " \
-          "OR LOWER(codes.identifier) = :term",
-          term: term, wildcard_term: "%#{term.gsub('*', '%')}%"
+      current_scope.where(
+          id: includes(:codes).references(:codes).where(
+            "LOWER(lessons.name) LIKE :wildcard_term " \
+            "OR LOWER(lessons.lesson_url) LIKE :wildcard_term " \
+            "OR LOWER(codes.description) LIKE :wildcard_term " \
+            "OR LOWER(codes.identifier) = :term",
+            term: term, wildcard_term: "%#{term.gsub('*', '%')}%"
+          ).pluck("DISTINCT lessons.id")
       )
     end
   }
