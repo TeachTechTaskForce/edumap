@@ -21,13 +21,15 @@ class Lesson < ActiveRecord::Base
     # most people use * for wildcard searches
     # MySQL uses % instead for reasons
     terms = query.downcase.split(/\s+/)
-                 .map{|e| e.gsub('*', '%')}
-                 .map{|e| "%#{e}%"}
-
     terms.inject(self) do |current_scope, term|
       current_scope.where(
-          "LOWER(lessons.name) LIKE :term OR LOWER(lessons.lesson_url) LIKE :term",
-          term: term
+          id: includes(:codes).references(:codes).where(
+            "LOWER(lessons.name) LIKE :wildcard_term " \
+            "OR LOWER(lessons.lesson_url) LIKE :wildcard_term " \
+            "OR LOWER(codes.description) LIKE :wildcard_term " \
+            "OR LOWER(codes.identifier) = :term",
+            term: term, wildcard_term: "%#{term.gsub('*', '%')}%"
+          ).pluck("DISTINCT lessons.id")
       )
     end
   }

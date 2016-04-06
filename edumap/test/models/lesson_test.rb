@@ -32,9 +32,35 @@ class LessonTestSearchQueryScope < ActiveSupport::TestCase
     assert_equal (Lesson.search_query "foo baz"), [in_scope]
   end
 
-  test "it allows partial matches" do
+  test "it allows partial matches on name" do
     in_scope = Lesson.create!(name: "foobar")
     assert_equal (Lesson.search_query "foo"), [in_scope]
+  end
+
+  test "it allows partial matches on url" do
+    in_scope = Lesson.create!(lesson_url: "foobar")
+    assert_equal (Lesson.search_query "foo"), [in_scope]
+  end
+
+  test "it searches the outcome description" do
+    in_scope = Lesson.create!
+    in_scope.codes.create!(description: "Foo bar")
+    assert_equal Lesson.search_query("foo"), [in_scope]
+  end
+
+  test "it searches the outcome code for exact matches only" do
+    in_scope = Lesson.create!
+    in_scope.codes.create!(identifier: "Foo.1")
+    out_of_scope = Lesson.create!
+    out_of_scope.codes.create!(identifier: "Foo.11")
+    assert_equal Lesson.search_query("Foo.1"), [in_scope]
+  end
+
+  test "it searches across multiple codes" do
+    in_scope = Lesson.create!
+    in_scope.codes.create!(description: "Foo")
+    in_scope.codes.create!(description: "Bar")
+    assert_equal Lesson.search_query("foo bar"), [in_scope]
   end
 
   test "it can match to the same query twice" do
