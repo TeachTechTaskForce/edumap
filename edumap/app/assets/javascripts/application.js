@@ -21,3 +21,24 @@
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.en-GB.js
 //= require filterrific/filterrific-jquery
 //= require chardinjs
+
+//document.getElementById('search_query_box')
+
+function handleTableClass(){
+    var searchQuery = document.getElementById('search_query_box').value;
+    var tableResults = document.getElementById('table-results')
+    var entryText = document.getElementById('entry-text')
+    if(searchQuery.length > 0){
+        tableResults.classList.remove('hidden-table');
+        entryText.classList.add('hidden-table');
+    }
+    else{
+        tableResults.classList.add('hidden-table');
+        entryText.classList.remove('hidden-table');
+    }
+}
+
+$(document).ready(function(){
+    handleTableClass();
+    $('#search_query_box').change(handleTableClass);
+})
