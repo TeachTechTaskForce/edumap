@@ -6,6 +6,7 @@
           .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Search lessons.' }
             %label Search
             = f.text_field :search_query,
+                           :id => 'search_query_box',
                            :class => 'filterrific-periodically-observed form-control'
         .row
           .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by standard.' }

@@ -4,6 +4,7 @@
 
 
 $(document).ready =>
+    
   $(document).on("change",".lesson-checkbox", (event) ->
     that = $(this)[0]
     event.preventDefault()
