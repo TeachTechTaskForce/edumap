@@ -11,6 +11,9 @@ class SessionsController < ApplicationController
 
   def send_lessons
     SessionsMailer.lessons_email(params[:email], lessons).deliver_now
+    if params[:clear_lessons]
+      lessons = []
+    end
   end
 
   protected
