@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   post 'sessions/add_lesson/:lesson' => 'sessions#add_lesson', as: :add_lesson
   post 'sessions/remove_lesson/:lesson' => 'sessions#remove_lesson', as: :remove_lesson
+  post 'sessions/send_lessons' => 'sessions#send_lessons', as: :send_lessons
 
   get '/contact' => 'contact#new', as: :contact
   post '/contact' => 'contact#create', as: :contact_go
