@@ -64,27 +64,16 @@ default: &default
 
 Update template1 postgresql for database.yml on cloud9:
 
-18. $ sudo sudo -u postgres psql
-
-19. postgres=# UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1';
->> UPDATE 1
-
-20. postgres=# DROP DATABASE template1;
->> DROP DATABASE
-
-21. postgres=# CREATE DATABASE template1 WITH TEMPLATE = template0 ENCODING = 'UNICODE';
->> CREATE DATABASE
-
-22. postgres=# UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template1';
->> UPDATE 1
-
-23. postgres=# \c template1
->> You are now connected to database "template1" as user "postgres".
-
-24. template1=# VACUUM FREEZE;
->> VACUUM
-
-25. template1=# \q
+```
+$ sudo sudo -u postgres psql
+postgres=# UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1';
+postgres=# DROP DATABASE template1;
+postgres=# CREATE DATABASE template1 WITH TEMPLATE = template0 ENCODING = 'UNICODE';
+postgres=# UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template1';
+postgres=# \c template1
+template1=# VACUUM FREEZE;
+template1=# \q
+```
 
 Now configure the workspace:
 
