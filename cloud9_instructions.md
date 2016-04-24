@@ -46,10 +46,11 @@ $ source ~/.profile
 
 Update database.yml: 
 
-16. Open edumap/config/database.yml
+1. Open edumap/config/database.yml
 
-17. The 'default' block begins on line 17. Make it look exactly like this:
+2. The 'default' block begins on line 17. Make it look exactly like this:
 
+```ruby
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -59,6 +60,7 @@ default: &default
   username: <%= ENV['USERNAME'] %>
   password: <%= ENV['PASSWORD'] %>
   host:     <%= ENV['IP'] %>
+```
 
 Update template1 postgresql for database.yml on cloud9:
 
