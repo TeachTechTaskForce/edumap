@@ -1,6 +1,6 @@
-# Introduction
+### Introduction
 
-[Cloud9](https://c9.io) is an open source, online IDE. Among other things, it supports Ruby, Ruby on Rails, 
+Cloud9 is an open source, online IDE. Among other things, it supports Ruby, Ruby on Rails, 
 GitHub, Heroku, and PostgreSQL. 
 
 Follow the instructions below to set up your own Cloud9 workspace for the [EduMap application](https://edumap2.herokuapp.com). 
@@ -9,7 +9,7 @@ Follow the instructions below to set up your own Cloud9 workspace for the [EduMa
 
 1. In GitHub, fork the [EduMap repository](https://github.com/andyras/edumap).
 
-2. Log into Cloud9 using your GitHub credentials. Click on the octocat icon in the top right corner of the home page. 
+2. Open [Cloud9](https://c9.io) and click on the octocat icon in the top right corner of the home page. Log in using your GitHub credentials.  
 
 3. Once logged in, click on "Create A New Workspace". 
 
@@ -24,6 +24,8 @@ Follow the instructions below to set up your own Cloud9 workspace for the [EduMa
 8. Click "Create Workspace"
 
 This gives you a Cloud9 workspace with all the EduMap files and necessary software installed. 
+
+### Configure PostgrSQL
 
 Create a new username and password for postgresql on cloud9:
 
