@@ -1,13 +1,13 @@
 # Introduction
 
-[Cloud9](c9.io) is an open source, online IDE. Among other things, it supports Ruby, Ruby on Rails, 
+[Cloud9](https://c9.io) is an open source, online IDE. Among other things, it supports Ruby, Ruby on Rails, 
 GitHub, Heroku, and PostgreSQL. 
 
-Follow the instructions below to set up your own Cloud9 workspace for the [EduMap application](edumap2.herokuapp.com). 
+Follow the instructions below to set up your own Cloud9 workspace for the [EduMap application](https://edumap2.herokuapp.com). 
 
 ### Get the code in Cloud9
 
-1. In GitHub, fork the [EduMap repository](github.com/andyras/edumap).
+1. In GitHub, fork the [EduMap repository](https://github.com/andyras/edumap).
 
 2. Log into Cloud9 using your GitHub credentials. Click on the octocat icon in the top right corner of the home page. 
 
