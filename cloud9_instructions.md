@@ -25,18 +25,17 @@ Follow the instructions below to set up your own Cloud9 workspace for the [EduMa
 
 This gives you a Cloud9 workspace with all the EduMap files and necessary software installed. 
 
-### Configure PostgrSQL
+### Configure PostgreSQL
 
 Create a new username and password for postgresql on cloud9:
 
-9. $ sudo service postgresql start
-
-10. $ sudo sudo -u postgres psql
-
-11. postgres=# CREATE USER username SUPERUSER PASSWORD 'password';
+```
+$ sudo service postgresql start
+$ sudo sudo -u postgres psql
+postgres=# CREATE USER username SUPERUSER PASSWORD 'password';
+postgres=# \q
+```
 >> CREATE ROLE
-
-12. postgres=# \q
 
 Create ENV variable on Cloud9:
 
