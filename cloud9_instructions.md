@@ -27,7 +27,8 @@ This gives you a Cloud9 workspace with all the EduMap files and necessary softwa
 
 ### Configure PostgreSQL
 
-Create a new username and password for postgresql on cloud9:
+Create a new username and password for postgresql on Cloud9 by running the following commands, 
+one-by-one, in the terminal. Note: make up your own username and password.
 
 ```
 $ sudo service postgresql start
@@ -35,15 +36,13 @@ $ sudo sudo -u postgres psql
 postgres=# CREATE USER username SUPERUSER PASSWORD 'password';
 postgres=# \q
 ```
->> CREATE ROLE
+Now run these commands to create the necessary ENV variables:
 
-Create ENV variable on Cloud9:
-
-13. $ echo "export USERNAME=username" >> ~/.profile
-
-14. $ echo "export PASSWORD=password" >> ~/.profile
-
-15. $ source ~/.profile
+```
+$ echo "export USERNAME=username" >> ~/.profile
+$ echo "export PASSWORD=password" >> ~/.profile
+$ source ~/.profile
+```
 
 Update database.yml: 
 
