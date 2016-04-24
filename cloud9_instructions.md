@@ -75,19 +75,16 @@ template1=# VACUUM FREEZE;
 template1=# \q
 ```
 
-Now configure the workspace:
+### Create and set up the database
 
-26. cd to edumap/
-
-27. gem install bundler
-
-28. bundle install
-
-29. bundle exec rake db:create
-
-30. bundle exec rake db:migrate
-
-31. bundle exec rake db:seed
+```
+cd edumap/
+gem install bundler
+bundle install
+bundle exec rake db:create
+bundle exec rake db:migrate
+bundle exec rake db:seed
+```
 
 You can now run the app in the Cloud9 environment with the follwoing command:
 
