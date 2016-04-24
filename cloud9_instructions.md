@@ -77,6 +77,8 @@ template1=# \q
 
 ### Create and set up the database
 
+Run these commands in the terminal.
+
 ```
 cd edumap/
 gem install bundler
@@ -86,9 +88,11 @@ bundle exec rake db:migrate
 bundle exec rake db:seed
 ```
 
-You can now run the app in the Cloud9 environment with the follwoing command:
+### Run the app 
 
+```
 rails server -p $PORT -b $IP
+```
 
 The terminal output will have a link the home page. 
 
