@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Windows apps need this gem for timezones
-if RUBY_PLATFORM == win32
+if RUBY_PLATFORM =~ /mswin32/
   gem 'tzinfo'
 end
 
