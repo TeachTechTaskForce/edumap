@@ -27,7 +27,9 @@ def level_parser(file)
   end
 end
 
-def lesson_parser(file)
+# Kludge: all of our seed files are in different formats
+# TODO make all scrapers use the same data template-thingy
+def code_org_parser(file)
   resource_path = 'db/seeds'
   CSV.foreach(Rails.root.join(resource_path, file)) do |result|
     curriculum = Curriculum.find_or_create_by(name: result[1])
@@ -63,7 +65,7 @@ def bootstrap_parser(file)
       code = Code.find_or_create_by(identifier: result[1], standard: ccmath)
       standard = ccmath
     end
-    lesson = Lesson.find_or_create_by(name: result[4], curriculum: curriculum, lesson_url: result[0])
+    lesson = Lesson.find_or_create_by(name: result[4], curriculum: curriculum, lesson_url: result[0], description: result[5], time: result[-1])
     unless lesson.codes.exists?(identifier: result[1])
       lesson.codes << code
     end
@@ -77,7 +79,7 @@ def cs_first_parser(file)
   resource_path = "db/seeds"
   CSV.foreach(Rails.root.join(resource_path, file)) do |result|
     curriculum = Curriculum.find_or_create_by(name: result[1])
-    lesson = Lesson.find_or_create_by(name: result[2], curriculum: curriculum, lesson_url: result[0])
+    lesson = Lesson.find_or_create_by(name: result[2], curriculum: curriculum, lesson_url: result[0], description: result[3])
   end
 end
 
@@ -116,7 +118,7 @@ code_parser("standards/CSTA_codes.csv")
 code_parser("standards/CC_Codes.csv")
 code_parser("standards/ISTE_codes.csv")
 level_parser("levels/levels.csv")
-lesson_parser("lessons/code_org_lessons.csv")
+code_org_parser("lessons/code_org_lessons.csv")
 ct_stem_parser("ct_stem.csv")
 bootstrap_parser("lessons/bootstrap_world.csv")
 cs_first_parser("lessons/cs_first_lessons.csv")
