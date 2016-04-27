@@ -42,6 +42,7 @@
       #results
         = render :partial => 'lessons/list',
                  :locals => { :lessons => @lessons }
+        = render :partial => 'lessons/email_form'
 
       :javascript
         $('#overlayTrigger').click(function(event) {

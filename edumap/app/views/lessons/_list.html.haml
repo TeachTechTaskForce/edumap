@@ -39,4 +39,4 @@
 .row.pagination-row
   .chardin_box.pull-left{ :'data-position' => 'top', :'data-intro' => "will_paginate's paginator works as expected." }
     = will_paginate lessons, renderer: BootstrapPagination::Rails
-  %button.btn.btn-primary.pull-right Email to Me
+  %button.btn.btn-primary.pull-right{ :'data-toggle' => "modal", :'data-target' => "#emailFormModal" } Email to Me
