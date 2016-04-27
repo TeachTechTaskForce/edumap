@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+# Windows apps need this gem for timezones
+if RUBY_PLATFORM =~ /mswin32/
+  gem 'tzinfo'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

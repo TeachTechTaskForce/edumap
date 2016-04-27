@@ -9,6 +9,13 @@ class SessionsController < ApplicationController
     render status: :ok, json: lessons.to_a
   end
 
+  def send_lessons
+    SessionsMailer.lessons_email(params[:email], lessons).deliver_now
+    if params[:clear_lessons]
+      lessons = []
+    end
+  end
+
   protected
 
   def lessons
@@ -19,4 +26,3 @@ class SessionsController < ApplicationController
     params[:lesson]
   end
 end
-
