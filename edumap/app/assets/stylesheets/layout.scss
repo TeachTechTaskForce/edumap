@@ -32,19 +32,33 @@ a {
   border: none;
 }
 
-header {
-  background-color: #f8f8f8;;
+header, footer {
+  background-color: #B9DFC9;;
+}
+
+footer {
+  padding: 20px;
+}
+
+footer p {
+  text-align: center;
+  margin: 0;
 }
 
 //navigation
 
 .navbar {
+  background: transparent;
   padding: 20px 0;
   margin: 0 15px 25px 15px;
   border: none;
   // border-bottom: 5px solid black;
   border-radius: 0px;
   min-height: 150px;
+}
+
+.navbar h3{
+  text-align: center;
 }
 
 .navbar-default .navbar-brand {
@@ -77,6 +91,8 @@ header {
 .header-row {
   display: flex;
   align-items: center;
+  width: 500px;
+  margin: 0 auto;
 }
 
 #site-title h1 {
@@ -103,6 +119,10 @@ header {
 .main-content {
   // border-left: 1px solid #555;
   min-height: 100%;
+}
+
+.entry-text{
+  color: #2A9E5A;
 }
 
 //info well
