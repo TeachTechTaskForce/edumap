@@ -52,6 +52,11 @@ gem 'sendgrid'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'database_cleaner', '1.4.1'
+  gem 'capybara', '2.4.4'
+  gem 'launchy'
+  gem 'rspec-rails', '3.3.2'
+  gem 'shoulda', '~> 3.5'
 end
 
 group :development do
@@ -60,6 +65,11 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'simplecov', :require => false
 end
 
 raise 'Ruby should be >2.1' unless RUBY_VERSION.to_f > 2.1
