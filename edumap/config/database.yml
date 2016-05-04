@@ -22,7 +22,7 @@ default: &default
   pool: 5
   username: <%= ENV['USERNAME'] %>
   password: <%= ENV['PASSWORD'] %>
-  host:     <%= ENV['IP'] %>
+  host: <%= ENV['IP'] %>
 
 development:
   <<: *default
