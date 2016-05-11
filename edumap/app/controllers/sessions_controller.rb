@@ -10,10 +10,12 @@ class SessionsController < ApplicationController
   end
 
   def send_lessons
-    SessionsMailer.lessons_email(params[:email], lessons).deliver_now
+    @lessons = Lesson.where(id: lessons)
+    SessionsMailer.lessons_email(params[:email], @lessons).deliver_now
     if params[:clear_lessons]
       lessons = []
     end
+    redirect_to root_path
   end
 
   protected
