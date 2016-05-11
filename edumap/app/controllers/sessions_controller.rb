@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     @lessons = Lesson.where(id: lessons)
     SessionsMailer.lessons_email(params[:email], @lessons).deliver_now
     if params[:clear_lessons]
-      lessons = []
+      session[:lessons] = []
     end
     redirect_to root_path
   end
