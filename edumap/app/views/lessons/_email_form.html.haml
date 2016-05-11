@@ -13,4 +13,5 @@
               %label
                 = check_box_tag(:clear_lessons, nil, class: "form-control")
                 Clear saved lessons
-          = submit_tag "Send"
+          = submit_tag "Send", class: "btn btn-primary"
+          = button_tag "Cancel", class: "btn btn-default", data: { dismiss: "modal" }
