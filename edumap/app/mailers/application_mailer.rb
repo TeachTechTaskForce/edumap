@@ -1,3 +1,3 @@
 class ApplicationMailer < ActionMailer::Base
-  # Default from address should be specified here
+  default from: "no-reply@edumap2.herokuapp.com"
 end

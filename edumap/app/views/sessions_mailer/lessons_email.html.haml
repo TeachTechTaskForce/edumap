@@ -17,7 +17,7 @@
       %tbody
         - @lessons.each do |lesson|
           %tr
-            %td= lesson.curriculum.name
+            %td= lesson.curriculum.name if lesson.curriculum
             %td= link_to lesson.name, lesson.lesson_url
             %td= lesson.codes.pluck(:identifier).join(", ")
             %td= lesson.level_list
