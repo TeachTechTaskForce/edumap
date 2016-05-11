@@ -13,14 +13,13 @@
  *= require_tree .
  *= require_self
  */
-
 .search input {
-  text-indent: 20px;
-}
+  text-indent: 20px; }
 
 .search .fa-search {
   position: absolute;
   font-size: 16px;
   top: 41px;
-  left: 10px;
-}
+  left: 10px; }
+
+/*# sourceMappingURL=application.css.map */
