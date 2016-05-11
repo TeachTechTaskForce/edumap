@@ -1,40 +1,50 @@
-.well.well-small
-  %p
-    .pull-right{ :'data-position' => 'bottom', :'data-intro' => 'Reset the filter settings to defaults.' }
-      = link_to "Reset filters", reset_filterrific_url, :class => 'btn btn-default btn-sm'
-    .chardin_box{ :'data-position' => 'bottom', :'data-intro' => "will_paginate's entries info works as expected." }
-      = page_entries_info lessons, :model => 'lesson'
-    .chardin_box{ :'data-position' => 'bottom', :'data-intro' => 'Spinner indicates update.' }
-      = render_filterrific_spinner
+#entry-text
+  %h1 Welcome to EduMap!
+  %h3 Search here for computer science lessons to use in your classroom!
+  %h3.entry-text
+    Example: try searching for lessons related to the topic
+    %b Algorithms.
+    Then, filter out
+    %b 5th-grade
+    lessons that hit NGSS standards using the pull-down menu.
 
-%table.table
-  %tr
-    %th Select
-    %th Curriculum
-    %th Lesson
-    %th Time
-    %th Level
-  - lessons.each do |lesson|
-    %tr.accordion-toggle
-      %td
-        %input.lesson-checkbox{type: "checkbox", checked: in_session?("#{lesson.id}"), data: {lesson_id: "#{lesson.id}"}}
-      %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= lesson.curriculum.name
-      %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= link_to lesson.name, lesson.lesson_url, :target => "_blank"
-      %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= lesson.time
-      %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= lesson.level_list
-    %tr.accordion-body.collapse{:id => "#{lesson.id}"}
-      %td
-        - if lesson.plugged?
-          %i.fa.fa-plug.fa-lg.plugged
-        - else
-          %i.fa.fa-plug.fa-lg.unplugged Unplugged
-      %td
-        - if lesson.description
-          %p= lesson.description
-        - else
-          %p No description is available for this lesson.
-      %td
-      %td
+#table-results
+  .well.well-small
+    %p
+      .pull-right{ :'data-position' => 'bottom', :'data-intro' => 'Reset the filter settings to defaults.' }
+        = link_to "Reset filters", reset_filterrific_url, :class => 'btn btn-default btn-sm'
+      .chardin_box{ :'data-position' => 'bottom', :'data-intro' => "will_paginate's entries info works as expected." }
+        = page_entries_info lessons, :model => 'lesson'
+      .chardin_box{ :'data-position' => 'bottom', :'data-intro' => 'Spinner indicates update.' }
+        = render_filterrific_spinner
+  %table.table
+    %tr
+      %th Select
+      %th Curriculum
+      %th Lesson
+      %th Time
+      %th Level
+    - lessons.each do |lesson|
+      %tr.accordion-toggle
+        %td
+          %input.lesson-checkbox{type: "checkbox", checked: in_session?("#{lesson.id}"), data: {lesson_id: "#{lesson.id}"}}
+        %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= lesson.curriculum.name
+        %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= link_to lesson.name, lesson.lesson_url, :target => "_blank"
+        %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= lesson.time
+        %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= lesson.level_list
+      %tr.accordion-body.collapse{:id => "#{lesson.id}"}
+        %td
+          - if lesson.plugged?
+            %i.fa.fa-plug.fa-lg.plugged
+          - else
+            %i.fa.fa-plug.fa-lg.unplugged Unplugged
+        %td
+          - if lesson.description
+            %p= lesson.description
+          - else
+            %p No description is available for this lesson.
+        %td
+        %td
 
 .row.pagination-row
   .chardin_box.pull-left{ :'data-position' => 'top', :'data-intro' => "will_paginate's paginator works as expected." }

@@ -19,9 +19,14 @@
                 =image_tag "EduMap_Logo_150x150.png"
             %div#site-title
               %h1 EDU MAP
+        %h3 A search tool to connect educators with online computer science lesson plans
     %div.flash-errors
       - flash.each do |key, value|
         %div
           %a{"data-dismiss" => "alert", :href => "#"} ×
           = value
     = yield
+    %footer
+      %p
+        Made with &#10084; by the Teach Tech Taskforce at
+        %a{:href => "https://chihacknight.org/"} ChiHackNight
