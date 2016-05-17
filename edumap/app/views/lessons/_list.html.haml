@@ -3,11 +3,11 @@
   %h3 Search here for computer science lessons to use in your classroom!
   %h3.entry-text
     Example: try searching for lessons related to the topic
-    %b Algorithms. 
+    %b Algorithms.
     Then, filter out
-    %b 5th-grade 
+    %b 5th-grade
     lessons that hit NGSS standards using the pull-down menu.
-  
+
 #table-results
   .well.well-small
     %p
@@ -45,6 +45,8 @@
             %p No description is available for this lesson.
         %td
         %td
-  
-  .chardin_box{ :'data-position' => 'top', :'data-intro' => "will_paginate's paginator works as expected." }
+
+.row.pagination-row
+  .chardin_box.pull-left{ :'data-position' => 'top', :'data-intro' => "will_paginate's paginator works as expected." }
     = will_paginate lessons, renderer: BootstrapPagination::Rails
+  %button.btn.btn-primary.pull-right{ :'data-toggle' => "modal", :'data-target' => "#emailFormModal" } Email to Me
