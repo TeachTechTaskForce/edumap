@@ -41,9 +41,6 @@
                        {},
                        { :class => 'form-control' }
     %div{class: "col-md-9 main-content"}
-      .page-header{ :style => 'margin-bottom: 20px;' }
-        %h1 Lessons
-
       #results
         = render :partial => 'lessons/list',
                  :locals => { :lessons => @lessons }
