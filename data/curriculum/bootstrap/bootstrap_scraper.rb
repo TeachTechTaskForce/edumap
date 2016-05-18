@@ -17,7 +17,7 @@ class BootstrapPage < Page
   end
 
   def description
-    @html.css("#overviewDescr p").text
+    @html.css("#overviewDescr p").text.tr("\n", ' ')
   end
 
   def length
