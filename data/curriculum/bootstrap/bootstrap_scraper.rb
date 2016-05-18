@@ -1,8 +1,4 @@
-# http://stackoverflow.com/questions/14101985/extract-a-link-with-nokogiri-from-the-text-of-link
-require 'nokogiri'
-require 'csv'
-require 'open-uri'
-require '../page'
+require_relative '../page'
 
 materials_bootstrap1_page = Nokogiri::HTML(open("http://www.bootstrapworld.org/materials/spring2016/courses/bs1/index.shtml"))
 materials_bootstrap2_page = Nokogiri::HTML(open("http://www.bootstrapworld.org/materials/spring2016/courses/bs2/index.shtml"))
@@ -29,7 +25,7 @@ class BootstrapPage < Page
   end
 end
 
-CSV.open("bootstrap_world.csv", "w") do |csv|
+CSV.open(File.join(File.dirname(__FILE__), "bootstrap_world.csv"), "w") do |csv|
   csv << header
 
   materials_bootstrap1_page.xpath("//a[starts-with(text(), 'Unit')]/@href").each do |partial_link|
