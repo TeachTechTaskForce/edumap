@@ -23,12 +23,18 @@
 //= require chardinjs
 
 //document.getElementById('search_query_box')
+'use strict'
 
-function handleTableClass() {
-    var searchQuery = document.getElementById('search_query_box').value;
-    var tableResults = document.getElementById('table-results');
-    var entryText = document.getElementById('entry-text');
-    if (searchQuery.length > 0) {
+let handleTableClass = () => {
+    let searchQuery = document.getElementById('search_query_box').value;
+    let tableResults = document.getElementById('table-results');
+    let entryText = document.getElementById('entry-text');
+    let stFilter = document.getElementById('stFilter');
+    let grFilter = document.getElementById('grFilter');
+    let compReq = document.getElementById('compReq');
+    let sortOrder = document.getElementById('sortOrder');
+
+    if (searchQuery.length > 0 || stFilter.value !== '' || grFilter.value !== '' || compReq.value !== '' || sortOrder.value !== 'created_at_desc') {
         tableResults.classList.remove('hidden-table');
         entryText.classList.add('hidden-table');
     }
@@ -40,6 +46,15 @@ function handleTableClass() {
 
 $(document).ready(function() {
     handleTableClass();
-    var sqb = document.getElementById('search_query_box');
+    let sqb = document.getElementById('search_query_box');
+    let stFilter = document.getElementById('stFilter');
+    let grFilter = document.getElementById('grFilter');
+    let compReq = document.getElementById('compReq');
+    let sortOrder = document.getElementById('sortOrder');
+
     sqb.addEventListener('input', handleTableClass);
+    stFilter.addEventListener('input', handleTableClass);
+    grFilter.addEventListener('input', handleTableClass);
+    compReq.addEventListener('input', handleTableClass);
+    sortOrder.addEventListener('input', handleTableClass);
 });
