@@ -35,12 +35,10 @@ let handleTableClass = () => {
     let sortOrder = document.getElementById('sortOrder');
 
     if (searchQuery.length > 0 || stFilter.value !== '' || grFilter.value !== '' || compReq.value !== '' || sortOrder.value !== 'created_at_desc') {
-      console.log(stFilter.selectedIndex);
         tableResults.classList.remove('hidden-table');
         entryText.classList.add('hidden-table');
     }
     else {
-      console.log(stFilter.selectedIndex);
         tableResults.classList.add('hidden-table');
         entryText.classList.remove('hidden-table');
     }
