@@ -24,21 +24,22 @@
 
 //document.getElementById('search_query_box')
 
-function handleTableClass(){
+function handleTableClass() {
     var searchQuery = document.getElementById('search_query_box').value;
-    var tableResults = document.getElementById('table-results')
-    var entryText = document.getElementById('entry-text')
-    if(searchQuery.length > 0){
+    var tableResults = document.getElementById('table-results');
+    var entryText = document.getElementById('entry-text');
+    if (searchQuery.length > 0) {
         tableResults.classList.remove('hidden-table');
         entryText.classList.add('hidden-table');
     }
-    else{
+    else {
         tableResults.classList.add('hidden-table');
         entryText.classList.remove('hidden-table');
     }
 }
 
-$(document).ready(function(){
+$(document).ready(function() {
     handleTableClass();
-    $('#search_query_box').change(handleTableClass);
-})
+    var sqb = document.getElementById('search_query_box');
+    sqb.addEventListener('input', handleTableClass);
+});
