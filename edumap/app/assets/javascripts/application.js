@@ -35,10 +35,12 @@ let handleTableClass = () => {
     let sortOrder = document.getElementById('sortOrder');
 
     if (searchQuery.length > 0 || stFilter.value !== '' || grFilter.value !== '' || compReq.value !== '' || sortOrder.value !== 'created_at_desc') {
+      console.log(stFilter.selectedIndex);
         tableResults.classList.remove('hidden-table');
         entryText.classList.add('hidden-table');
     }
     else {
+      console.log(stFilter.selectedIndex);
         tableResults.classList.add('hidden-table');
         entryText.classList.remove('hidden-table');
     }
@@ -53,8 +55,8 @@ $(document).ready(function() {
     let sortOrder = document.getElementById('sortOrder');
 
     sqb.addEventListener('input', handleTableClass);
-    stFilter.addEventListener('input', handleTableClass);
-    grFilter.addEventListener('input', handleTableClass);
-    compReq.addEventListener('input', handleTableClass);
-    sortOrder.addEventListener('input', handleTableClass);
+    stFilter.addEventListener('change', handleTableClass);
+    grFilter.addEventListener('change', handleTableClass);
+    compReq.addEventListener('change', handleTableClass);
+    sortOrder.addEventListener('change', handleTableClass);
 });
