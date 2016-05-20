@@ -34,6 +34,11 @@ let handleTableClass = () => {
     let compReq = document.getElementById('compReq');
     let sortOrder = document.getElementById('sortOrder');
 
+    console.log(stFilter.value);
+    console.log(grFilter.value);
+    console.log(compReq.value);
+    console.log(sortOrder.value);
+
     if (searchQuery.length > 0 || stFilter.value !== '' || grFilter.value !== '' || compReq.value !== '' || sortOrder.value !== 'created_at_desc') {
         tableResults.classList.remove('hidden-table');
         entryText.classList.add('hidden-table');
@@ -47,14 +52,10 @@ let handleTableClass = () => {
 $(document).ready(function() {
     handleTableClass();
     let sqb = document.getElementById('search_query_box');
-    let stFilter = document.getElementById('stFilter');
-    let grFilter = document.getElementById('grFilter');
-    let compReq = document.getElementById('compReq');
-    let sortOrder = document.getElementById('sortOrder');
-
     sqb.addEventListener('input', handleTableClass);
-    stFilter.addEventListener('change', handleTableClass);
-    grFilter.addEventListener('change', handleTableClass);
-    compReq.addEventListener('change', handleTableClass);
-    sortOrder.addEventListener('change', handleTableClass);
+
+    $('#stFilter').change(handleTableClass);
+    $('#grFilter').change(handleTableClass);
+    $('#compReq').change(handleTableClass);
+    $('#sortOrder').change(handleTableClass);
 });
