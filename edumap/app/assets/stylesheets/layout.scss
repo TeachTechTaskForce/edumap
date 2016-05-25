@@ -91,7 +91,7 @@ footer p {
 .header-row {
   display: flex;
   align-items: center;
-  width: 425px;
+  width: 500px; //This is a magic number that centers the logo
   margin: 0 auto;
 }
 
@@ -141,6 +141,16 @@ footer p {
 
 .hidden-table{
   display: none;
+}
+
+//About Page Styles
+
+div.about{
+  padding-bottom: 15px;
+}
+
+div.about p{
+  text-align: center;
 }
 
 
