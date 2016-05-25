@@ -2,13 +2,21 @@
 .row
   .col-md-10.col-sm-12.col-md-offset-1
     %h2= t('.contact_us')
-    = simple_form_for @contact, :url => contact_path do |f|
+    = simple_form_for @contact, :url => contact_path, :html => { :class => "main-content-form" } do |f|
       .row
         .col-sm-12.col-md-3
           = f.input :name, :label => t('.name')
         .col-sm-12.col-md-3
           = f.input :email, :label => t('.email')
-      = f.input :subject, :label => t('.subject')
-      = f.input :message, :as => :text, :label => t('.message')
-      = f.input :url, :as => :string, :label => t('.url')
-      = f.button :submit, {:value => "Submit"}
+      .row
+        .col-sm-12.col-md-6
+          = f.input :subject, :label => t('.subject')
+      .row
+        .col-sm-12.col-md-6
+          = f.input :message, :as => :text, :label => t('.message')
+      .row
+        .col-sm-12.col-md-6
+          = f.input :url, :as => :string, :label => t('.url')
+      .row
+        .col-sm-12.col-md-6
+          = f.button :submit, { :value => "Submit" }
