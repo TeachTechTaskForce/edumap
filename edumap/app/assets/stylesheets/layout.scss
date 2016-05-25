@@ -157,8 +157,10 @@ div.about h1{
   text-align: center;
 }
 
-div.about p{
-  text-align: center;
+div.about p, div.about ul{
+  display: block;
+  margin: 15px auto;
+  width: 95%;
 }
 
 div.contributor-grid{
