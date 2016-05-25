@@ -153,10 +153,45 @@ div.about{
   padding-bottom: 15px;
 }
 
+div.about h1{
+  text-align: center;
+}
+
 div.about p{
   text-align: center;
 }
 
+div.contributor-grid{
+  width: 95%;
+  display: block;
+  margin: 0 auto;
+  font-size: 0;
+  text-align: center;
+}
+
+div.contributor{
+  display: inline-block;
+  width: 180px;
+  height: 40px;
+  margin: 10px 0;
+  text-align: left;
+}
+
+div.contributor img, div.contributor h4{
+  height: 40px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+div.contributor img{
+  width: 40px;
+  border-radius: 20px;
+}
+
+div.contributor h4{
+  font-size: 15px;
+  margin: 10px;
+}
 
 //pagination
 
