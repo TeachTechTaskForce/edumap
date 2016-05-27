@@ -10,31 +10,43 @@
   %table.table
     %tr
       %th Select
+      %th &nbsp;
       %th Curriculum
       %th Lesson
       %th Time
       %th Level
     - lessons.each do |lesson|
-      %tr.accordion-toggle
+      -# %tr.accordion-toggle
+      %tr
         %td
           %input.lesson-checkbox{type: "checkbox", checked: in_session?("#{lesson.id}"), data: {lesson_id: "#{lesson.id}"}}
-        %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= lesson.curriculum.name
-        %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= link_to lesson.name, lesson.lesson_url, :target => "_blank"
-        %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= lesson.time
-        %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= lesson.level_list
-      %tr.accordion-body.collapse{:id => "#{lesson.id}"}
         %td
           - if lesson.plugged?
             %i.fa.fa-plug.fa-lg.plugged
           - else
             %i.fa.fa-plug.fa-lg.unplugged Unplugged
-        %td
+        %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}
+          %h4{ :style => 'margin-top: 0px;'}= lesson.curriculum.name
           - if lesson.description
             %p= lesson.description
           - else
             %p No description is available for this lesson.
-        %td
-        %td
+        %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= link_to lesson.name, lesson.lesson_url, :target => "_blank"
+        %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= lesson.time
+        %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= lesson.level_list
+      -# %tr.accordion-body.collapse{:id => "#{lesson.id}"}
+      -#   %td
+      -#     - if lesson.plugged?
+      -#       %i.fa.fa-plug.fa-lg.plugged
+      -#     - else
+      -#       %i.fa.fa-plug.fa-lg.unplugged Unplugged
+      -#   %td
+      -#     - if lesson.description
+      -#       %p= lesson.description
+      -#     - else
+      -#       %p No description is available for this lesson.
+      -#   %td
+      -#   %td
   .row.pagination-row
     .chardin_box.pull-left{ :'data-position' => 'top', :'data-intro' => "will_paginate's paginator works as expected." }
       = will_paginate lessons, renderer: BootstrapPagination::Rails
