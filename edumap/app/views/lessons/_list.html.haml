@@ -16,8 +16,7 @@
       %th Time
       %th Level
     - lessons.each do |lesson|
-      -# %tr.accordion-toggle
-      %tr
+      %tr.accordion-toggle
         %td
           %input.lesson-checkbox{type: "checkbox", checked: in_session?("#{lesson.id}"), data: {lesson_id: "#{lesson.id}"}}
         %td
@@ -34,19 +33,17 @@
         %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= link_to lesson.name, lesson.lesson_url, :target => "_blank"
         %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= lesson.time
         %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= lesson.level_list
-      -# %tr.accordion-body.collapse{:id => "#{lesson.id}"}
-      -#   %td
-      -#     - if lesson.plugged?
-      -#       %i.fa.fa-plug.fa-lg.plugged
-      -#     - else
-      -#       %i.fa.fa-plug.fa-lg.unplugged Unplugged
-      -#   %td
-      -#     - if lesson.description
-      -#       %p= lesson.description
-      -#     - else
-      -#       %p No description is available for this lesson.
-      -#   %td
-      -#   %td
+      %tr.accordion-body.collapse{:id => "#{lesson.id}"}
+        %td
+        %td
+        %td
+          - (JSON.parse(lesson.codes.to_json)).each do |code|
+            %p= code["identifier"]
+            - if code["description"]
+              %p= code["description"]
+        %td
+        %td
+        %td
   .row.pagination-row
     .chardin_box.pull-left{ :'data-position' => 'top', :'data-intro' => "will_paginate's paginator works as expected." }
       = will_paginate lessons, renderer: BootstrapPagination::Rails
