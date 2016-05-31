@@ -18,29 +18,38 @@
             = f.select :with_standard,
                        @filterrific.select_options[:with_standard],
                        { :include_blank => '- Any -' },
-                       { :class => 'form-control' }
+                       { :class => 'form-control', :id => 'stFilter' }
         .row
           .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by grade level.' }
             %label Grade Level
             = f.select :with_grade,
                       @filterrific.select_options[:with_grade],
                       { :include_blank => '- Any -' },
-                      { :class => 'form-control' }
+                      { :class => 'form-control', :id => 'grFilter' }
         .row
           .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Filter by pluggedness.' }
             %label Computer required?
             = f.select :with_plugged,
                       @filterrific.select_options[:with_plugged],
                       { :include_blank => '- Any -' },
-                      { :class => 'form-control' }
+                      { :class => 'form-control', :id => 'compReq' }
         .row
           .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Change the sorting.' }
             %label Sorted by
             = f.select :sorted_by,
                        @filterrific.select_options[:sorted_by],
                        {},
-                       { :class => 'form-control' }
+                       { :class => 'form-control', :id => 'sortOrder' }
     %div{class: "col-md-9 main-content"}
+      #entry-text
+        %h1 Welcome to EduMap!
+        %h3 Search here for computer science lessons to use in your classroom!
+        %h3.entry-text
+          Example: try searching for lessons related to the topic
+          %b Algorithms.
+          Then, filter out
+          %b 5th-grade
+          lessons that hit NGSS standards using the pull-down menu.
       #results
         = render :partial => 'lessons/list',
                  :locals => { :lessons => @lessons }
