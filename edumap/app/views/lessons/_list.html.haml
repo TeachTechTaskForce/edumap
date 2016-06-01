@@ -7,7 +7,7 @@
       %th Grades
       %th Select
     - lessons.each do |lesson|
-      %tr.accordion-toggle
+      %tr.accordion-toggle{ class: ("selected" if in_session?("#{lesson.id}"))}
         %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= link_to lesson.name, lesson.lesson_url, :target => "_blank"
         %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= lesson.curriculum.name
         %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= lesson.time
