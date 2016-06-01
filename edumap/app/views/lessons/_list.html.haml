@@ -37,10 +37,16 @@
         %td
         %td
         %td
-          - (JSON.parse(lesson.codes.to_json)).each do |code|
-            %p= code["identifier"]
-            - if code["description"]
-              %p= code["description"]
+          -# - blah = lesson.standards.uniq
+          - lesson.standards.uniq.each do |standard|
+            %p
+              %strong= standard.abbreviation
+              &nbsp;&nbsp;&nbsp;
+              - standard.codes.each do |sc|
+                - lesson.codes.each do |lc|
+                  - if sc.identifier == lc.identifier
+                    = lc.identifier
+                    &nbsp;&nbsp;&nbsp;
         %td
         %td
         %td
