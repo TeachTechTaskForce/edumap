@@ -3,37 +3,31 @@
     %tr
       %th Lesson
       %th Curriculum
+      %th
       %th Time
       %th Grades
       %th Select
     - lessons.each do |lesson|
       %tr.accordion-toggle{ class: ("selected" if in_session?("#{lesson.id}"))}
         %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= link_to lesson.name, lesson.lesson_url, :target => "_blank"
-        %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= lesson.curriculum.name
-        %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= lesson.time
-        %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= lesson.level_list
-        %td
-          %input.lesson-checkbox{type: "checkbox", checked: in_session?("#{lesson.id}"), data: {lesson_id: "#{lesson.id}"}}
-      %tr.accordion-body.collapse{:id => "#{lesson.id}"}
-        %td
-          - if lesson.plugged?
-            %i.fa.fa-plug.fa-lg.plugged
-          - else
-            %i.fa.fa-plug.fa-lg.unplugged Unplugged
         %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}
           %h4{ :style => 'margin-top: 0px;'}= lesson.curriculum.name
           - if lesson.description
             %p= lesson.description
           - else
             %p No description is available for this lesson.
-        %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= link_to lesson.name, lesson.lesson_url, :target => "_blank"
+        %td
+          - if lesson.plugged?
+            %i.fa.fa-plug.fa-lg.plugged
+          - else
+            %i.fa.fa-plug.fa-lg.unplugged Unplugged
         %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= lesson.time
         %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= lesson.level_list
+        %td
+          %input.lesson-checkbox{type: "checkbox", checked: in_session?("#{lesson.id}"), data: {lesson_id: "#{lesson.id}"}}
       %tr.accordion-body.collapse{:id => "#{lesson.id}"}
         %td
         %td
-        %td
-          -# - blah = lesson.standards.uniq
           - lesson.standards.uniq.each do |standard|
             %p
               %strong= standard.abbreviation
@@ -43,6 +37,7 @@
                   - if sc.identifier == lc.identifier
                     = lc.identifier
                     &nbsp;&nbsp;&nbsp;
+        %td
         %td
         %td
         %td
