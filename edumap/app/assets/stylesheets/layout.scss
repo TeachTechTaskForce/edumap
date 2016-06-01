@@ -153,10 +153,47 @@ div.about{
   padding-bottom: 15px;
 }
 
-div.about p{
+div.about h1{
   text-align: center;
 }
 
+div.about p, div.about ul{
+  display: block;
+  margin: 15px auto;
+  width: 95%;
+}
+
+div.contributor-grid{
+  width: 95%;
+  display: block;
+  margin: 0 auto;
+  font-size: 0;
+  text-align: center;
+}
+
+div.contributor{
+  display: inline-block;
+  width: 180px;
+  height: 40px;
+  margin: 10px 0;
+  text-align: left;
+}
+
+div.contributor img, div.contributor h4{
+  height: 40px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+div.contributor img{
+  width: 40px;
+  border-radius: 20px;
+}
+
+div.contributor h4{
+  font-size: 15px;
+  margin: 10px;
+}
 
 //pagination
 
@@ -171,8 +208,8 @@ div.about p{
 
 .pagination > .active > span {
   border: none;
-  border-color: #00BFF3;
-  background-color: #00BFF3;
+  border-color: #2A9E5A;
+  background-color: #2A9E5A;
   background-size: cover;
 }
 
@@ -181,4 +218,18 @@ div.about p{
   button {
     margin: 20px;
   }
+}
+
+.btn-green {
+  background-color: #2A9E5A;
+  color: #FFFFFF;
+}
+
+.btn-green:hover {
+  background-color: #006B27;
+  color: #FFFFFF;
+}
+
+.modal-content {
+  border: 2px solid #2A9E5A;
 }
