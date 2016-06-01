@@ -4,13 +4,16 @@
 
 
 $(document).ready =>
-    
+
   $(document).on("change",".lesson-checkbox", (event) ->
     that = $(this)[0]
     event.preventDefault()
     lesson_id = $(this).attr('data-lesson-id')
     if this.checked
       $.post Routes.add_lesson_path(lesson_id)
+      .done(
+        $(this).parents("tr").addClass("selected")
+      )
       .fail(
         (response) ->
           alert "Your choice could not be saved."
@@ -18,6 +21,9 @@ $(document).ready =>
           return)
     else
       $.post Routes.remove_lesson_path(lesson_id)
+      .done(
+        $(this).parents("tr").removeClass("selected")
+      )
       .fail(
         (response) ->
           alert "Your choice could not be saved."
