@@ -1,5 +1,12 @@
 #table-results
   %table.table
+    %colgroup
+      %col{ :style => 'width:25%;'}
+      %col{ :style => 'width:40%;'}
+      %col{ :style => 'width:5%;'}
+      %col{ :style => 'width:10%;'}
+      %col{ :style => 'width:10%;'}
+      %col{ :style => 'width:10%;'}
     %tr
       %th Lesson
       %th Curriculum
@@ -16,7 +23,7 @@
             %p= lesson.description
           - else
             %p No description is available for this lesson.
-        %td
+        %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}
           - if lesson.plugged?
             %i.fa.fa-plug.fa-lg.plugged
           - else
@@ -27,7 +34,7 @@
           %input.lesson-checkbox{type: "checkbox", checked: in_session?("#{lesson.id}"), data: {lesson_id: "#{lesson.id}"}}
       %tr.accordion-body.collapse{:id => "#{lesson.id}"}
         %td
-        %td
+        %td{ :colspan => '5'}
           - lesson.standards.uniq.each do |standard|
             %p
               %strong= standard.abbreviation
@@ -37,10 +44,6 @@
                   - if sc.identifier == lc.identifier
                     = lc.identifier
                     &nbsp;&nbsp;&nbsp;
-        %td
-        %td
-        %td
-        %td
   .row.pagination-row
     .chardin_box.pull-left{ :'data-position' => 'top', :'data-intro' => "will_paginate's paginator works as expected." }
       = will_paginate lessons, renderer: BootstrapPagination::Rails
