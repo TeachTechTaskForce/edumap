@@ -9,3 +9,7 @@ tr.accordion-toggle {
 tr.selected {
   background-color: #DDEFE4;
 }
+
+tr.accordion-toggle td:last-child {
+  text-align: center;
+}
