@@ -16,7 +16,7 @@ $dark-green: #2A9E5A;
     vertical-align: middle;
   }
   .form-control {
-    width: 80%;
-    display: inline;
+    max-width: 400px;
+    margin: auto;
   }
 }
