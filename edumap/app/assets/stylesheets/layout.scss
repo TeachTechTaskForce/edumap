@@ -4,6 +4,9 @@
 
 // default styles
 
+$dark-green: #2A9E5A;
+$light-green: #B9DFC9;
+
 html{
   overflow-x: hidden;
 }
@@ -37,7 +40,7 @@ a {
 }
 
 header, footer {
-  background-color: #B9DFC9;;
+  background-color: $light-green;
 }
 
 footer {
@@ -221,15 +224,11 @@ div.contributor h4{
 }
 
 .btn-green {
-  background-color: #2A9E5A;
+  background-color: $dark-green;
   color: #FFFFFF;
 }
 
 .btn-green:hover {
   background-color: #006B27;
   color: #FFFFFF;
-}
-
-.modal-content {
-  border: 2px solid #2A9E5A;
 }
