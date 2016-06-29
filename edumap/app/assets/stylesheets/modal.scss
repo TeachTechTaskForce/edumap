@@ -1,0 +1,22 @@
+$dark-green: #2A9E5A;
+
+.modal-content {
+  border: 2px solid $dark-green;
+}
+
+.modal {
+  top: 20%;
+}
+
+.centered {
+  text-align: center;
+  i {
+    color: $dark-green;
+    margin: .2em .1em;
+    vertical-align: middle;
+  }
+  .form-control {
+    max-width: 400px;
+    margin: auto;
+  }
+}

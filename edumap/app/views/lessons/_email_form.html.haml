@@ -2,16 +2,19 @@
   .modal-dialog
     .modal-content
       .modal-body
-        %p You are about to email your saved lessons to yourself.
-        %p Enter your email address below and hit send.
-        = form_tag("sessions/send_lessons") do
-          .form-group
-            = label_tag(:email, "Email address")
-            = text_field_tag(:email, nil, class: "form-control")
-          .form-group
-            .checkbox
-              %label
-                = check_box_tag(:clear_lessons, nil, class: "form-control")
-                Clear saved lessons
-          = submit_tag "Send", class: "btn btn-green"
-          = button_tag "Cancel", class: "btn btn-default", data: { dismiss: "modal" }
+        .centered
+          %i.fa.fa-envelope-o.fa-4x
+          %i.fa.fa-arrow-right.fa-2x
+          %p You are about to email your saved lessons to yourself.
+          %p Enter your email address below and hit send.
+          = form_tag("sessions/send_lessons") do
+            .form-group
+              = label_tag(:email, "Email address")
+              = text_field_tag(:email, nil, class: "form-control")
+            .form-group
+              .checkbox
+                %label
+                  = check_box_tag(:clear_lessons, nil, class: "form-control")
+                  Clear saved lessons
+            = submit_tag "Send", class: "btn btn-green"
+            = button_tag "Cancel", class: "btn btn-default", data: { dismiss: "modal" }
