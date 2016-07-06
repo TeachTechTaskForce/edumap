@@ -98,7 +98,7 @@ footer p {
 .header-row {
   display: flex;
   align-items: center;
-  width: 500px; //This is a magic number that centers the logo
+  max-width: 500px; //This is a magic number that centers the logo
   margin: 0 auto;
 }
 
