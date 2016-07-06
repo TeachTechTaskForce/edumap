@@ -10,6 +10,10 @@ tr.selected {
   background-color: #DDEFE4;
 }
 
+tr.accordion-body td {
+  border-top: none !important;
+}
+
 tr.accordion-toggle td:last-child {
   text-align: center;
 }
