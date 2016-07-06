@@ -21,27 +21,6 @@ class LessonsController < ApplicationController
       :select_options => {
         sorted_by: Lesson.options_for_sorted_by,
         with_standard: Standard.options_for_select,
-        with_grade: Level.options_for_select,
-        with_plugged: [["Yes", true], ["No", false]]
-      }
-    ) or return
-    @lessons = @filterrific.find.page(params[:page])
-
-    render :index
-  end
-
-  def load_lessons
-    session[:lessons] = params[:lessons]
-    redirect_to :saved_lessons
-  end
-
-  def saved_lessons
-    @filterrific = initialize_filterrific(
-      Lesson.where(id: session[:lessons]),
-      params[:filterrific],
-      :select_options => {
-        sorted_by: Lesson.options_for_sorted_by,
-        with_standard: Standard.options_for_select,
         with_grade: Level.options_for_select
       }
     ) or return
