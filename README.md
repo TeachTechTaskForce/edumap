@@ -1,5 +1,5 @@
 # EduMap
-[The app is up on Heroku](https://edumap2.herokuapp.com)
+[The app is up on Heroku](https://edumap3.herokuapp.com)
 
 ## To use
 
