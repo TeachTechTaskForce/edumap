@@ -35,15 +35,18 @@
       %tr.accordion-body.collapse{:id => "#{lesson.id}"}
         %td
         %td{ :colspan => '5'}
-          - lesson.standards.uniq.each do |standard|
-            %p
-              %strong= standard.abbreviation
-              &nbsp;&nbsp;&nbsp;
-              - standard.codes.each do |sc|
-                - lesson.codes.each do |lc|
-                  - if sc.identifier == lc.identifier
-                    = lc.identifier
-                    &nbsp;&nbsp;&nbsp;
+          - if lesson.standards.empty?
+            %p No standards codes are currently associated with this lesson.
+          - else
+            - lesson.standards.uniq.each do |standard|
+              %p
+                %strong= standard.abbreviation
+                &nbsp;&nbsp;&nbsp;
+                - standard.codes.each do |sc|
+                  - lesson.codes.each do |lc|
+                    - if sc.identifier == lc.identifier
+                      = lc.identifier
+                      &nbsp;&nbsp;&nbsp;
   .row.pagination-row
     .chardin_box.pull-left{ :'data-position' => 'top', :'data-intro' => "will_paginate's paginator works as expected." }
       = will_paginate lessons, renderer: BootstrapPagination::Rails
