@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
@@ -53,4 +54,8 @@ $(document).ready(function() {
     $('#grFilter').change(handleTableClass);
     $('#compReq').change(handleTableClass);
     $('#sortOrder').change(handleTableClass);
+
+    $('aside.filter-frame').on('click', '#wipe-results', function(){
+      tableResults.classList.add('hidden-table');
+    });
 });
