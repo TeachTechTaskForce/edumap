@@ -11,9 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require turbolinks
+
 //= require js-routes
 //= require_tree .
 
@@ -33,6 +34,8 @@ let handleTableClass = () => {
     let grFilter = document.getElementById('grFilter');
     let compReq = document.getElementById('compReq');
     let sortOrder = document.getElementById('sortOrder');
+
+    tableResults.classList.add('hidden-table');
 
     if (searchQuery.length > 0 || stFilter.value !== '' || grFilter.value !== '' || compReq.value !== '' || sortOrder.value !== 'created_at_desc') {
         tableResults.classList.remove('hidden-table');
