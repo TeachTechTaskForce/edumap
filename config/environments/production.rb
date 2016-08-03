@@ -74,8 +74,8 @@ Rails.application.configure do
       domain: "edumap3.herokuapp.com",
       authentication: "plain",
       enable_starttls_auto: true,
-      user_name: SENDGRID_USERNAME,
-      password: SENDGRID_PASSWORD
+      user_name: "SENDGRID_USERNAME",
+      password: "SENDGRID_PASSWORD"
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

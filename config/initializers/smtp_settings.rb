@@ -4,6 +4,6 @@ ActionMailer::Base.smtp_settings = {
     :port => 587,
     :domain => 'gmail.com',
     :authentication => :plain,
-    :user_name => SENDGRID_USERNAME,
-    :password => SENDGRID_PASSWORD
+    :user_name => "SENDGRID_USERNAME",
+    :password => "SENDGRID_PASSWORD"
 }
