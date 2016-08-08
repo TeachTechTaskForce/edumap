@@ -14,6 +14,12 @@ rake db:seed
 rails s
 ```
 
+### Linux
+Linux users will have to install and configure postgresSQL before running the above commands.
+- [Arch](https://wiki.archlinux.org/index.php/PostgreSQL#Installing_PostgreSQL)
+- [Ubuntu](https://help.ubuntu.com/lts/serverguide/postgresql.html#postgresql-installation)
+- [Debian](https://wiki.debian.org/PostgreSql#Installation)
+
 And visit <http://localhost:3000/>
 
 ## Curricula
