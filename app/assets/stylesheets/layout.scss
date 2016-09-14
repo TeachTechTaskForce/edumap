@@ -39,12 +39,20 @@ a {
   border: none;
 }
 
+footer{ 
+  height: 5vh;
+}
+
+.content-container {
+  min-height: 95vh;
+}
+
 header, footer {
   background-color: $light-green;
 }
 
 footer {
-  padding: 20px;
+  padding: 10px;
 }
 
 footer p {
@@ -61,7 +69,7 @@ footer p {
   border: none;
   // border-bottom: 5px solid black;
   border-radius: 0px;
-  min-height: 150px;
+  // min-height: 150px;
 }
 
 .navbar h3{
@@ -72,8 +80,8 @@ footer p {
   font-size: 40px;
   font-weight: bold;
   color: black;
+  padding-left: 0;
   // font-family: 'Bookman Old Style', serif;
-  padding-left: 25px;
   height: 100%;
 }
 
@@ -88,7 +96,7 @@ footer p {
 }
 
 #logo img {
-  height: 80px;
+  height: 55px;
 }
 
 #site-title {
@@ -97,13 +105,18 @@ footer p {
 
 .header-row {
   display: flex;
-  align-items: center;
-  max-width: 500px; //This is a magic number that centers the logo
   margin: 0 auto;
 }
 
 #site-title h1 {
-  font-size: 85px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#site-title h3 {
+  font-size: 18px;
+  line-height: 0;
+  margin-top: 0;
 }
 
 .btn-nav-search {
