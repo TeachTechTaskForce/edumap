@@ -1,7 +1,7 @@
 .container-fluid
   .row
     %aside{class: "col-md-3 filter-frame"}
-      = form_for_filterrific @filterrific, html: {class: "filter col-md-12" } do |f|
+      = form_for_filterrific @filterrific, remote: true, html: { class: "filter col-md-12", id: 'filterrific-no-ajax-auto-submit' } do |f|
         .row
           .form-group.chardin_box{ :'data-position' => 'top', :'data-intro' => 'Search lessons.' }
             %label Search
@@ -40,6 +40,9 @@
                        @filterrific.select_options[:sorted_by],
                        {},
                        { :class => 'form-control', :id => 'sortOrder' }
+        .row
+          .form-group
+            = f.submit 'Submit', {:class => 'btn btn-green btn-sm'}
     %div{class: "col-md-9 main-content"}
       #entry-text
         %h1 Welcome to EduMap!
