@@ -32,7 +32,7 @@ function getUrlParameter(name) {
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 };
 
-let handleTableClass = () => {
+function handleTableClass() {
     let entryText = document.getElementById('entry-text');
     let tableResults = document.getElementById('table-results');
 
