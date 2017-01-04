@@ -23,37 +23,35 @@
 //= require filterrific/filterrific-jquery
 //= require chardinjs
 
-//document.getElementById('search_query_box')
 'use strict'
 
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
+
 let handleTableClass = () => {
-    let searchQuery = document.getElementById('search_query_box').value;
-    let tableResults = document.getElementById('table-results');
     let entryText = document.getElementById('entry-text');
-    let stFilter = document.getElementById('stFilter');
-    let grFilter = document.getElementById('grFilter');
-    let compReq = document.getElementById('compReq');
-    let sortOrder = document.getElementById('sortOrder');
+    let tableResults = document.getElementById('table-results');
 
-    tableResults.classList.add('hidden-table');
-
-    if (searchQuery.length > 0 || stFilter.value !== '' || grFilter.value !== '' || compReq.value !== '' || sortOrder.value !== 'created_at_desc') {
-        tableResults.classList.remove('hidden-table');
-        entryText.classList.add('hidden-table');
-    }
-    else {
-        tableResults.classList.add('hidden-table');
-        entryText.classList.remove('hidden-table');
-    }
+    entryText.classList.add('hidden-table');
+    tableResults.classList.remove('hidden-table');
 }
 
 $(document).ready(function() {
-    handleTableClass();
-    let sqb = document.getElementById('search_query_box');
-    sqb.addEventListener('input', handleTableClass);
+    let filterForm = document.getElementById('filterrific-no-ajax-auto-submit');
+    let entryText = document.getElementById('entry-text');
+    let tableResults = document.getElementById('table-results');
 
-    $('#stFilter').change(handleTableClass);
-    $('#grFilter').change(handleTableClass);
-    $('#compReq').change(handleTableClass);
-    $('#sortOrder').change(handleTableClass);
+    tableResults.classList.add('hidden-table');
+
+    let pageParam = getUrlParameter('page');
+    if (!isNaN(parseInt(pageParam))) {
+      tableResults.classList.remove('hidden-table');
+      entryText.classList.add('hidden-table');
+    }
+
+    filterForm.addEventListener('submit', handleTableClass);
 });
