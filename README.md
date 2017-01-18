@@ -25,6 +25,9 @@ Linux users will have to install and configure postgresSQL before running the ab
 
 ## How to contribute
 
+### Everyone: play with the site!
+If you see anything that you think could be improved on the [site](edumap3.herokuapp.com), let us know by submitting an [issue](https://github.com/TeachTechTaskForce/edumap/issues) (make sure you have a github account first).
+
 ### Web developers: code!
 There are usually a few frontend tweaks that we are working on; browse our [issues list](https://github.com/TeachTechTaskForce/edumap/issues) to see how you can contribute.
 
