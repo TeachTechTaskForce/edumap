@@ -1,18 +1,21 @@
 # EduMap
 [The app is up on Heroku](https://edumap3.herokuapp.com)
 
-## To use
+## Minimal commands to get the app running (if you have things set up)
+
+[More system-specific setup information is on our wiki](https://github.com/TeachTechTaskForce/edumap/wiki).
 
 ```sh
 git clone https://github.com/andyras/edumap.git
 cd edumap/edumap
 gem install bundler
 bundle install
-rake db:create
+rake db:create  # you may have to prepend `bundle exec` to get this to work.
 rake db:migrate
 rake db:seed
 rails s
 ```
+View the app at <http://localhost:3000>
 
 ### Linux
 Linux users will have to install and configure postgresSQL before running the above commands.
@@ -20,7 +23,19 @@ Linux users will have to install and configure postgresSQL before running the ab
 - [Ubuntu](https://help.ubuntu.com/lts/serverguide/postgresql.html#postgresql-installation)
 - [Debian](https://wiki.debian.org/PostgreSql#Installation)
 
-And visit <http://localhost:3000/>
+## How to contribute
+
+### Web developers: code!
+There are usually a few frontend tweaks that we are working on; browse our [issues list](https://github.com/TeachTechTaskForce/edumap/issues) to see how you can contribute.
+
+### Data scientists / data entry experts: add curriculum!
+**Option 1**: manual data entry
+[Our publicly editable curriculum status sheet](https://docs.google.com/spreadsheets/d/1jbdx7ImdbcGbpG2AB5V37Rdjj6ABXP5y4fkM0onpRzw/edit#gid=1308793623) has a 'template' tab; duplicate this tab, give it an appropriate name, and enter information from a particular curriculum.
+
+**Option 2**: scrape to .csv
+Some websites are organized enough (and large enough) to merit scraping the information programatically. If you have the expertise, you're welcome to scrape sites that are out there and output to .csv.
+
+**Both options**: Further down in this README, there is a specification of what we are looking for as far as data about curriculum options.
 
 ## Curricula
 
