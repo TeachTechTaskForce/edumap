@@ -92,6 +92,60 @@ def ct_stem_parser(file)
   end
 end
 
+# Assumes that the column names match their names in the database
+=begin
+Lesson
+ - name
+ - url
+ - time
+ - description
+ - plugged
+ - grade
+ - code
+ - standard
+=end
+def lesson_parser(file, curr_name, curr_url)
+  resource_path = 'db/seeds'
+  curriculum = Curriculum.find_or_create_by(name: curr_name, curriculum_url: curr_url)
+  CSV.foreach(Rails.root.join(resource_path, file), headers: true) do |result|
+    # Checking if plugged column exists, only process if not nil
+    unless result["plugged"]
+      plugged = true
+    else
+      # Checks if N/n/No/no is in col, otherwise follows default of true
+      plugged = (result["plugged"].downcase.include? "n") ? false : true
+    end
+    lesson = Lesson.find_or_create_by(
+      name: result["name"],
+      lesson_url: result["url"],
+      time: result["time"],
+      description: result["description"],
+      plugged?: plugged,
+      curriculum: curriculum
+    )
+    # In order to make loading as simple as possible, will only add one code,
+    # standard, or grade/level per row, so because using find_or_create_by,
+    # should have multiple rows for one lesson to reflect multiple standards
+    standard = Standard.find_or_create_by(abbreviation: result["standard"])
+    code = Code.find_or_create_by(identifier: result["code"], standard: standard)
+    unless lesson.codes.exists?(identifier: result["code"])
+      lesson.codes << code
+    end
+    unless lesson.standards.exists?(abbreviation: result["standard"])
+      lesson.standards << standard
+    end
+    if result["grade"]
+      unless lesson.levels.exists?(grade: result["grade"].to_i.ordinalize)
+        unless result["grade"] == 'K'
+          lesson.levels << Level.find_or_create_by(grade: result["grade"].to_i.ordinalize)
+        else
+          lesson.levels << Level.find_or_create_by(grade: result["grade"])
+        end
+      end
+    end
+  end
+end
+
 =begin
 def parser(file, resource)
   standard_parser = file.split(".")[0]
