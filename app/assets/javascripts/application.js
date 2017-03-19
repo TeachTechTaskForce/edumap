@@ -22,6 +22,7 @@
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.en-GB.js
 //= require filterrific/filterrific-jquery
 //= require chardinjs
+//= require jquery.stickytableheaders.min
 
 'use strict'
 

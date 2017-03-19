@@ -7,13 +7,15 @@
       %col{ :style => 'width:10%;'}
       %col{ :style => 'width:10%;'}
       %col{ :style => 'width:10%;'}
-    %tr
-      %th Lesson
-      %th Curriculum
-      %th
-      %th Time
-      %th Grades
-      %th Select
+    %thead
+      %tr
+        %th Lesson
+        %th Curriculum
+        %th
+        %th Time
+        %th Grades
+        %th Select
+    %tbody
     - lessons.each do |lesson|
       %tr.accordion-toggle{ class: ("selected" if in_session?("#{lesson.id}"))}
         %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}= link_to lesson.name, lesson.lesson_url, :target => "_blank"
@@ -51,3 +53,5 @@
     .chardin_box.pull-left{ :'data-position' => 'top', :'data-intro' => "will_paginate's paginator works as expected." }
       = will_paginate lessons, renderer: BootstrapPagination::Rails
     %button.btn.btn-green.pull-right{ :'data-toggle' => "modal", :'data-target' => "#emailFormModal" } Email to Me
+  :javascript
+    $('#table-results table').stickyTableHeaders();
