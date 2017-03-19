@@ -22,4 +22,8 @@
   top: 41px;
   left: 10px; }
 
+.table thead {
+  background-color: #fff;
+}
+
 /*# sourceMappingURL=application.css.map */
