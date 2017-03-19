@@ -71,7 +71,7 @@ class Lesson < ActiveRecord::Base
 
   def level_list
     if levels.blank?
-      "No data"
+      "See link"
     elsif levels.length == 1
       levels.first.grade
     else
