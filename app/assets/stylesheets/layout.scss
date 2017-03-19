@@ -39,7 +39,7 @@ a {
   border: none;
 }
 
-footer{ 
+footer{
   height: 5vh;
 }
 
@@ -64,7 +64,7 @@ footer p {
 
 .navbar {
   background: transparent;
-  padding: 20px 0;
+  padding: 5px 0;
   margin: 0 15px 25px 15px;
   border: none;
   // border-bottom: 5px solid black;
@@ -105,11 +105,13 @@ footer p {
 
 .header-row {
   display: flex;
+  align-items: center;
+  max-width: 320px; // magic number to center logo
   margin: 0 auto;
 }
 
 #site-title h1 {
-  font-size: 28px;
+  font-size: 64px;
   font-weight: bold;
 }
 
@@ -117,6 +119,10 @@ footer p {
   font-size: 18px;
   line-height: 0;
   margin-top: 0;
+}
+
+.navbar h3 {
+  margin-top: 10px;
 }
 
 .btn-nav-search {
