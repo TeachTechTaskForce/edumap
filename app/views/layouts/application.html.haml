@@ -10,22 +10,25 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    %header
-      %nav{ class: "navbar navbar-default"}
-        .container-fluid
-          %div{class: "header-row row", id: "logo"}
-            %div#logo
-              %a.navbar-brand{href: "/"}
-                =image_tag "EduMap_Logo_150x150.png"
-            %div#site-title
-              %h1 EDU MAP
-        %h3 A search tool to connect educators with online computer science lesson plans
-    %div.flash-errors
-      - flash.each do |key, value|
-        %div
-          %a{"data-dismiss" => "alert", :href => "#"} ×
-          = value
-    = yield
+    %div{ class: "content-container" }
+      %header
+        %nav{ class: "navbar navbar-default"}
+          .container-fluid
+            %div{class: "header-row row", id: "logo"}
+              %div#logo
+                %a.navbar-brand{href: "/"}
+                  =image_tag "EduMap_Logo_150x150.png"
+              %div#site-title
+                %h1 EDU MAP
+          %h3 A search tool to connect educators with online computer science lesson plans
+      %div.flash-errors
+        - flash.each do |key, value|
+          %div
+            %a{"data-dismiss" => "alert", :href => "#"} ×
+            = value
+
+      = yield
+
     %footer
       %p
         = link_to "About", about_path
