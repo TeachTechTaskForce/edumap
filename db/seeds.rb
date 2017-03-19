@@ -173,7 +173,7 @@ code_parser("standards/CC_Codes.csv")
 code_parser("standards/ISTE_codes.csv")
 level_parser("levels/levels.csv")
 code_org_parser("lessons/code_org_lessons.csv")
-ct_stem_parser("ct_stem.csv")
+# ct_stem_parser("ct_stem.csv")
 bootstrap_parser("lessons/bootstrap_world.csv")
 cs_first_parser("lessons/cs_first_lessons.csv")
 
