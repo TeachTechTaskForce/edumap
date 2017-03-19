@@ -22,7 +22,7 @@
           - if lesson.description
             %p= lesson.description
           - else
-            %p No description is available for this lesson.
+            %p See lesson link for more information.
         %td{ :'data-toggle' => 'collapse', :'data-target' => :"##{lesson.id}"}
           - if lesson.plugged?
             %i.fa.fa-plug.fa-lg.plugged
